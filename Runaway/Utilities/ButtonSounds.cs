@@ -21,12 +21,18 @@ namespace Runaway.Utilities
 
         public static void PlayClickSound()
         {
-            MainSoundFunc.StartAgain(ClickSound);
+            StartAgain(ClickSound);
         }
 
         public static void PlaySelectSound()
         {
-            MainSoundFunc.StartAgain(SelectSound);
+            StartAgain(SelectSound);
+        }
+
+        public static void StartAgain(object sender)
+        {
+            ((MediaPlayer)sender).Position = TimeSpan.Zero;
+            ((MediaPlayer)sender).Play();
         }
     }
 }
