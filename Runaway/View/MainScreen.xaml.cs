@@ -1,4 +1,5 @@
-﻿using Runaway.Utilities;
+﻿using Runaway.Objects;
+using Runaway.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,16 +28,6 @@ namespace Runaway.View
             InitializeComponent();
             Music.PlayMenuSound();
         }
-
-        private void Rectangle_MouseEnter(object sender, MouseEventArgs e)
-        {
-            byte green, red, blue;
-            Random rnd = new Random();
-            green = Convert.ToByte(rnd.Next(0, 255));
-            red = Convert.ToByte(rnd.Next(0, 255));
-            blue = Convert.ToByte(rnd.Next(0, 255));
-            ((Rectangle)sender).Fill = new SolidColorBrush(Color.FromRgb(red, green, blue));
-        }
         
         private void Button_MouseEnter(object sender, MouseEventArgs e)
         {
@@ -47,6 +38,53 @@ namespace Runaway.View
         private void Button_MouseLeave(object sender, MouseEventArgs e)
         {
             ((Button)sender).Foreground = new SolidColorBrush(Colors.Yellow);
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        private void Store_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Stats_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show($"Имя: {GamerStats.NickName}\n" +
+                $"Укрепление корабля({ShipStats.LvlHP} ур.): {ShipStats.HP}\n" +
+                $"Оружие({ShipStats.LvlWeaponDamage} ур.): {ShipStats.WeaponDamage}\n" +
+                $"Скорость пули({ShipStats.LvlBulletSpeed} ур.): {ShipStats.BulletSpeed}\n" +
+                $"Мощность выстрела({ShipStats.LvlFirePower} ур.): {ShipStats.FirePower})\n" +
+                $"Волна: {GamerStats.WaveState}\n" +
+                $"Боссов побеждено: {GamerStats.DestroyedBosses / 5}", 
+                "Статистика",
+                MessageBoxButton.OK,
+                MessageBoxImage.Information);
+        }
+        private void AboutProgram_Click(object sender, RoutedEventArgs e)
+        {
+            AboutProgramWindow win = new AboutProgramWindow();
+            win.ShowDialog();
+        }
+
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow.MainWin.Close();
         }
     }
 }

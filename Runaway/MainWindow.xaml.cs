@@ -22,8 +22,12 @@ namespace Runaway
     {
         public MainWindow()
         {
-            InitializeComponent();
+            InitializeComponent();\
+            MainWin = this;
+            Main = MainContent;
             MainContent.Content = new View.MainScreen();
         }
+        public static MainWindow MainWin;
+        public static ContentPresenter Main;
     }
 }

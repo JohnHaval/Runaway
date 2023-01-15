@@ -73,11 +73,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Utilities\MainScreenSounds.cs" />
+    <Compile Include="AboutProgramWindow.xaml.cs">
+      <DependentUpon>AboutProgramWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities\ButtonSounds.cs" />
     <Compile Include="Utilities\Music.cs" />
     <Compile Include="View\MainScreen.xaml.cs">
       <DependentUpon>MainScreen.xaml</DependentUpon>
     </Compile>
+    <Page Include="AboutProgramWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -136,9 +143,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="iprog.ico" />
-    <Resource Include="Sound\blipbut.wav" />
+    <Resource Include="Sound\button_select.wav" />
     <Resource Include="Sound\boom.wav" />
-    <Resource Include="Sound\buttonclick.wav" />
+    <Resource Include="Sound\button_click.wav" />
     <Resource Include="Sound\callofbox.wav" />
     <Resource Include="Sound\hit.wav" />
     <Resource Include="Sound\playnw.wav" />
@@ -159,7 +166,28 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Music\Bossfight - Intro.wav" />
+    <Content Include="Music\Boss\Boss Fight.mp3" />
+    <Content Include="Music\Boss\Bossfight - Endgame.mp3" />
+    <Content Include="Music\Boss\Enemy Ship.mp3" />
+    <Content Include="Music\Boss\Fight Inside.mp3" />
+    <Content Include="Music\Boss\KROWW - Call Of The Void.mp3" />
+    <Content Include="Music\Boss\Meet Of God.mp3" />
+    <Content Include="Music\Boss\Pain.mp3" />
+    <Content Include="Music\Menu\World End.mp3" />
+    <Content Include="Music\Marketplace\Bossfight, F.O.O.L - Mercy.mp3" />
+    <Content Include="Music\Marketplace\F.O.O.L, Power Glove - Mercenary.mp3" />
+    <Content Include="Music\Marketplace\Open Space.mp3" />
+    <Content Include="Music\Menu\Bossfight - Intro.mp3" />
+    <Content Include="Music\Menu\Bossfight - Outro.mp3" />
+    <Content Include="Music\Menu\F.O.O.L - Time Spender.mp3" />
+    <Content Include="Music\Raid\Alien Planet.mp3" />
+    <Content Include="Music\Raid\Black Hole.mp3" />
+    <Content Include="Music\Raid\F.O.O.L - Conflict.mp3" />
+    <Content Include="Music\Raid\F.O.O.L - Criminals.mp3" />
+    <Content Include="Music\Raid\Predict.mp3" />
+    <Content Include="Music\Raid\Soul Destroy.mp3" />
+    <Content Include="Music\Raid\To The City.mp3" />
+    <Content Include="Music\ShockOne, Blanke - Follow Me.mp3" />
     <Content Include="Sound\buy.wav" />
     <Content Include="Sound\cancel.wav" />
     <Content Include="Sound\sell.wav" />

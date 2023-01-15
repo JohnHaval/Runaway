@@ -36,9 +36,9 @@
                             <GradientStop Color="#FF32A2FF"/>
                             <GradientStop Color="#FFA200FF" Offset="1"/>
                         </LinearGradientBrush>
-                        
+
                     </Setter.Value>
-                    
+
                 </Setter>
 
                 <Setter Property="Effect">
@@ -51,37 +51,10 @@
                                           Color="Black"/>
 
                     </Setter.Value>
-                    
+
                 </Setter>
-                
+
             </Style.Setters>
-            
-        </Style>
-
-        <Style TargetType="Label">
-
-            <Setter Property="Effect" >
-
-                <Setter.Value>
-
-                    <DropShadowEffect BlurRadius="8"
-                                              ShadowDepth="4"
-                                              Color="Black"
-                                              Direction="-90"/>
-
-                </Setter.Value>
-
-            </Setter>
-
-            <Setter Property="FontFamily" Value="Segoe Print"/>
-
-            <Setter Property="FontSize" Value="48"/>
-
-            <Setter Property="FontWeight" Value="ExtraBlack"/>
-
-            <Setter Property="HorizontalAlignment" Value="Center"/>
-
-            <Setter Property="VerticalAlignment" Value="Top"/>
 
         </Style>
 
@@ -96,13 +69,15 @@
         </Grid.Background>
         
         <Label x:Name="Runaway" 
-               Content="Runaway" 
-               Foreground="Red"/>
+               Content="Беглец" 
+               Foreground="Red"
+               FontSize="60"/>
         
         <Label x:Name="WaveCount" 
-               Content="Wave:1" 
+               Content="Волна:1" 
                Foreground="Green"
-               Margin="0,80,0,0">
+               Margin="0,90,0,0"
+               FontSize="48">
 
         </Label>
         
@@ -112,8 +87,11 @@
                 Margin="0"
                 HorizontalAlignment="Right"
                 VerticalAlignment="Top" 
-                BorderThickness="0" BorderBrush="Transparent"
-                MouseEnter="Button_MouseEnter">
+                BorderThickness="0" 
+                BorderBrush="Transparent"
+                
+                MouseEnter="Button_MouseEnter" 
+                Click="AboutProgram_Click">
             
             <Button.Content>
                 <Image Source="/Images/icon.jpg"/>
@@ -127,33 +105,41 @@
 
             <Button x:Name="Play" 
                     Content="Играть" 
+                    
                     MouseEnter="Button_MouseEnter"
                     MouseLeave="Button_MouseLeave"/>
 
             <Button x:Name="LoadGame" 
                     Content="Загрузить игру"
+                    
                     MouseEnter="Button_MouseEnter"
                     MouseLeave="Button_MouseLeave"/>
 
             <Button x:Name="SaveGame" 
                     Content="Сохранить игру"
+                    
                     MouseEnter="Button_MouseEnter"
                     MouseLeave="Button_MouseLeave"/>
 
             <Button x:Name="Store" 
                     Content="Магазин"
+                    
                     MouseEnter="Button_MouseEnter"
-                    MouseLeave="Button_MouseLeave"/>
+                    MouseLeave="Button_MouseLeave" 
+                    Click="Store_Click"/>
 
             <Button x:Name="Stats" 
                     Content="Статистика"
+                    
                     MouseEnter="Button_MouseEnter"
-                    MouseLeave="Button_MouseLeave"/>
+                    MouseLeave="Button_MouseLeave" 
+                    Click="Stats_Click"/>
 
             <Button x:Name="Exit"
                     Content="Выйти"
+                    
                     MouseEnter="Button_MouseEnter"
-                    MouseLeave="Button_MouseLeave"/>
+                    MouseLeave="Button_MouseLeave" Click="Exit_Click"/>
         </StackPanel>
 
     </Grid>

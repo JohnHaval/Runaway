@@ -77,10 +77,10 @@ namespace Runaway.Utilities
         private static void Media_Ended(object sender, EventArgs e)
         {
             if (EnivironmentState == Enivironment.Menu) PlayingMusic.Open(PathsMusic[Rnd.Next(0, 4)]);
-            else if (EnivironmentState == Enivironment.Marketplace) PlayingMusic.Open(PathsMusic[Rnd.Next(4, 8)]);
-            else if (EnivironmentState == Enivironment.Raid) PlayingMusic.Open(PathsMusic[Rnd.Next(8, 15)]);
-            else if (EnivironmentState == Enivironment.Boss) PlayingMusic.Open(PathsMusic[Rnd.Next(15, 22)]);
-            else PlayingMusic.Open(PathsMusic[22]);
+            else if (EnivironmentState == Enivironment.Marketplace) PlayingMusic.Open(PathsMusic[Rnd.Next(4, 7)]);
+            else if (EnivironmentState == Enivironment.Raid) PlayingMusic.Open(PathsMusic[Rnd.Next(7, 14)]);
+            else if (EnivironmentState == Enivironment.Boss) PlayingMusic.Open(PathsMusic[Rnd.Next(15, 21)]);
+            else PlayingMusic.Open(PathsMusic[21]);
         }
 
 
@@ -95,28 +95,28 @@ namespace Runaway.Utilities
         public static void PlayMarketplaceSound()
         {
             EnivironmentState = Enivironment.Marketplace;
-            PlayingMusic.Open(PathsMusic[Rnd.Next(4, 8)]);
+            PlayingMusic.Open(PathsMusic[Rnd.Next(4, 7)]);
             PlayingMusic.Play();
         }
 
         public static void PlayRaidSound()
         {
             EnivironmentState = Enivironment.Raid;
-            PlayingMusic.Open(PathsMusic[Rnd.Next(8, 15)]);
+            PlayingMusic.Open(PathsMusic[Rnd.Next(7, 14)]);
             PlayingMusic.Play();
         }
 
         public static void PlayBossSound()
         {
             EnivironmentState = Enivironment.Boss;
-            PlayingMusic.Open(PathsMusic[Rnd.Next(15, 22)]);
+            PlayingMusic.Open(PathsMusic[Rnd.Next(14, 21)]);
             PlayingMusic.Play();
         }
 
         public static void PlayFollowMeSound()
         {
             EnivironmentState = Enivironment.FollowMe;
-            PlayingMusic.Open(PathsMusic[22]);
+            PlayingMusic.Open(PathsMusic[21]);
             PlayingMusic.Play();
         }
     }

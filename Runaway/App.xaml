@@ -4,6 +4,31 @@
              xmlns:local="clr-namespace:Runaway"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        
+        <Style TargetType="Label">
+
+            <Setter Property="Effect" >
+
+                <Setter.Value>
+
+                    <DropShadowEffect BlurRadius="8"
+                                              ShadowDepth="4"
+                                              Color="Black"
+                                              Direction="-90"/>
+
+                </Setter.Value>
+
+            </Setter>
+
+            <Setter Property="FontFamily" Value="Segoe Print"/>
+
+            <Setter Property="FontWeight" Value="ExtraBlack"/>
+
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+
+            <Setter Property="VerticalAlignment" Value="Top"/>
+
+        </Style>
+        
     </Application.Resources>
 </Application>
