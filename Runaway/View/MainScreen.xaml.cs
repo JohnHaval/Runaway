@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -22,7 +23,6 @@ namespace Runaway.View
     {
         public MainScreen()
         {
-            Sound = new MediaPlayer();
             InitializeComponent();
         }
 
@@ -36,12 +36,13 @@ namespace Runaway.View
             ((Rectangle)sender).Fill = new SolidColorBrush(Color.FromRgb(red, green, blue));
         }
 
-        MediaPlayer Sound;
+        SoundPlayer Sound = new SoundPlayer(new Uri(@"..\..\Sound\blipbut.wav", UriKind.Relative).ToString());
+
 
         private void Button_MouseEnter(object sender, MouseEventArgs e)
         {
-            ((Button)sender).Foreground = new SolidColorBrush(Colors.Black);            
-            Sound.Open(new Uri(@"..\..\Sound\blipbut.wav", UriKind.Relative));
+            ((Button)sender).Foreground = new SolidColorBrush(Colors.Black);
+            Sound.Stop();
             Sound.Play();
         }
 
