@@ -45,9 +45,9 @@
 
                     <Setter.Value>
 
-                        <DropShadowEffect BlurRadius="55"
+                        <DropShadowEffect BlurRadius="25"
                                           Direction="-90"
-                                          ShadowDepth="12"
+                                          ShadowDepth="1"
                                           Color="Black"/>
 
                     </Setter.Value>
@@ -67,7 +67,7 @@
                     <DropShadowEffect BlurRadius="8"
                                               ShadowDepth="4"
                                               Color="Black"
-                                              Direction="-80"/>
+                                              Direction="-90"/>
 
                 </Setter.Value>
 

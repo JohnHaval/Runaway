@@ -118,37 +118,13 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="blipbut" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Sound\blipbut.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="boom" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Sound\boom.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="buttonclick" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Sound\buttonclick.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="buy" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Sound\buy.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="callofbox" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Sound\callofbox.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="cancel" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Sound\cancel.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="hit" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Sound\hit.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="playnw" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Sound\playnw.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="resultsofwave" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Sound\resultsofwave.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="sell" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Sound\sell.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="startfire" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Sound\startfire.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>
