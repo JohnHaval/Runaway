@@ -73,6 +73,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Utilities\MainScreenSounds.cs" />
+    <Compile Include="Utilities\Music.cs" />
     <Compile Include="View\MainScreen.xaml.cs">
       <DependentUpon>MainScreen.xaml</DependentUpon>
     </Compile>
@@ -137,18 +139,13 @@
     <Resource Include="Sound\blipbut.wav" />
     <Resource Include="Sound\boom.wav" />
     <Resource Include="Sound\buttonclick.wav" />
-    <Resource Include="Sound\buy.mp3" />
     <Resource Include="Sound\callofbox.wav" />
-    <Resource Include="Sound\cancel.mp3" />
     <Resource Include="Sound\hit.wav" />
     <Resource Include="Sound\playnw.wav" />
     <Resource Include="Sound\resultsofwave.wav" />
-    <Resource Include="Sound\sell.mp3" />
     <Resource Include="Sound\startfire.wav" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Music\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
       <Visible>False</Visible>
@@ -160,6 +157,12 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Music\Bossfight - Intro.wav" />
+    <Content Include="Sound\buy.wav" />
+    <Content Include="Sound\cancel.wav" />
+    <Content Include="Sound\sell.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

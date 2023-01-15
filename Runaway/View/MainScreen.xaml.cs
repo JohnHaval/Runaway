@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Runaway.Utilities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Media;
@@ -22,8 +23,9 @@ namespace Runaway.View
     public partial class MainScreen : UserControl
     {
         public MainScreen()
-        {
+        {            
             InitializeComponent();
+            Music.PlayMenuSound();
         }
 
         private void Rectangle_MouseEnter(object sender, MouseEventArgs e)
@@ -35,15 +37,11 @@ namespace Runaway.View
             blue = Convert.ToByte(rnd.Next(0, 255));
             ((Rectangle)sender).Fill = new SolidColorBrush(Color.FromRgb(red, green, blue));
         }
-
-        SoundPlayer Sound = new SoundPlayer(new Uri(@"..\..\Sound\blipbut.wav", UriKind.Relative).ToString());
-
-
+        
         private void Button_MouseEnter(object sender, MouseEventArgs e)
         {
             ((Button)sender).Foreground = new SolidColorBrush(Colors.Black);
-            Sound.Stop();
-            Sound.Play();
+            ButtonSounds.PlaySelectSound();
         }
 
         private void Button_MouseLeave(object sender, MouseEventArgs e)
