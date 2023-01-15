@@ -23,6 +23,7 @@ namespace Runaway
         public MainWindow()
         {
             InitializeComponent();
+            MainContent.Content = new View.MainScreen();
         }
     }
 }
