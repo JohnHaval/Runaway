@@ -11,15 +11,11 @@ using System.Windows.Shapes;
 
 namespace Runaway.Objects.GUI_Control
 {
-    public class Boss
+    public class Ship : Base
     {
-        public Rect BossPosition { get; set; } = new Rect(283, 320, 215, 144);
-        public Rect HPBackgroundLine { get; set; } = new Rect(0, 385, 794, 30);
+        public Rect ShipPosition { get; set; } = new Rect(371, 30, 50, 50);
         public Rectangle HPLine { get; set; }
-        public bool IsStoped { get; set; }
-        public bool IsShooting { get; set; }
-        public bool IsRightWay { get; set; }
-        public Label HP { get; private set; }
+        public Label HP { get; set; }
         public Rectangle HPBackground
         {
             get
@@ -31,25 +27,25 @@ namespace Runaway.Objects.GUI_Control
                     Height = 28
                 };
                 Canvas.SetLeft(background, 0);
-                Canvas.SetTop(background, 0);
+                Canvas.SetBottom(background, 0);
                 return background;
             }
         }
-        public Image Look { get; private set; }
-        public Boss()
+        public Ship()
         {
             HP = new Label()
             {
-                Content = Enemy_Control.HPControl.EnemyHP.ToString(),
+                Content = ShipStats.HP,
                 Width = 784,
                 Height = 28,
                 Background = null,
                 FontWeight = FontWeights.Bold,
                 FontSize = 16,
                 BorderBrush = null,
-                Foreground = Brushes.LightBlue,
+                Foreground = Brushes.LightGreen,
                 HorizontalContentAlignment = HorizontalAlignment.Center,
             };
+            Canvas.SetBottom(HP, 0);
             HPLine = new Rectangle()
             {
                 Fill = Brushes.Red,
@@ -58,16 +54,24 @@ namespace Runaway.Objects.GUI_Control
                 Stroke = Brushes.Black,
                 StrokeThickness = 3,
             };
-            Canvas.SetTop(HPLine, 0);
             Canvas.SetLeft(HPLine, 0);
+            Canvas.SetBottom(HPLine, 0);
+
             Look = new Image()
             {
-                Source = new BitmapImage(new Uri("images\\boss.png", UriKind.Relative)),
-                Height = 144,
-                Width = 215,
+                Source = new BitmapImage(new Uri("images\\spaceship.png", UriKind.Relative)),
+                Height = 50,
+                Width = 50,
                 Stretch = Stretch.Fill,
+                RenderTransformOrigin = new Point(0.434, 0.408),
             };
+            Canvas.SetLeft(Look, 371);
+            Canvas.SetBottom(Look, 30);
         }
 
+        protected override void Timer_Tick(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

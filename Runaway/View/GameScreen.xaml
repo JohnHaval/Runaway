@@ -6,5 +6,11 @@
              xmlns:local="clr-namespace:Runaway.View"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Canvas x:Name="Ggame"/>
+    <Canvas x:Name="Ggame">
+        <Canvas.Background>
+
+            <ImageBrush ImageSource="/Images/space.jpg"/>
+
+        </Canvas.Background>
+    </Canvas>
 </UserControl>
