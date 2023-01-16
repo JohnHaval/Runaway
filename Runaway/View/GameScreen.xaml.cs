@@ -26,7 +26,8 @@ namespace Runaway.View
         public GameScreen()
         {
             InitializeComponent();
-            GameField = Ggame;
+
+            GameField = MainGameField;
             if (GamerStats.WaveState % 5 != 0) Control.RaidWaveField();
             else Control.BossWaveField();            
         }
@@ -34,9 +35,7 @@ namespace Runaway.View
         public static Canvas GameField;
 
         bool IsPause = false;
-        WaveControl Control = new WaveControl();
-        public void 
+        WaveControl Control = new WaveControl();        
         
-    }
-        
+    }        
 }

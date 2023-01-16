@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Runaway.Objects.Enemy_Control;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,8 +18,9 @@ namespace Runaway.Objects.GUI_Control
         public Rectangle HPLine { get; set; }
         public Label HP { get; private set; }
         public bool IsRightWay { get; set; }
-        public Boss()
+        public Boss() : base()
         {
+            Speed = SpeedControl.BossSpeed;
             HP = new Label()
             {
                 Content = Enemy_Control.HPControl.EnemyHP,
@@ -43,16 +45,11 @@ namespace Runaway.Objects.GUI_Control
             Canvas.SetLeft(HPLine, 0);
             Look = new Image()
             {
-                Source = new BitmapImage(new Uri("images\\boss.png", UriKind.Relative)),
+                Source = new BitmapImage(new Uri("Images\\boss.png", UriKind.Relative)),
                 Height = 144,
                 Width = 215,
                 Stretch = Stretch.Fill,
             };
-        }
-
-        protected override void Timer_Tick(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
         }
     }
 }

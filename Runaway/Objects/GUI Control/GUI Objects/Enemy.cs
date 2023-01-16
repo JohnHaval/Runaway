@@ -17,11 +17,11 @@ namespace Runaway.Objects.GUI_Control
         public Rectangle HPLine { get; set; }
         public Label HP { get; set; }
         public bool IsRightWay { get; set; }
-        public Enemy(bool isFirstEnemy)
+        public Enemy(bool isFirstEnemy) : base()
         {
             Look = new Image()
             {
-                Source = new BitmapImage(new Uri("images\\smallenemy.png", UriKind.Relative)),
+                Source = new BitmapImage(new Uri("Images\\smallenemy.png", UriKind.Relative)),
                 Height = 50,
                 Width = 50,
                 Stretch = Stretch.Fill
@@ -70,10 +70,9 @@ namespace Runaway.Objects.GUI_Control
                 Canvas.SetTop(Look, 110);
             }
         }
-
-        protected override void Timer_Tick(object sender, EventArgs e)
+        protected new void Timer_Tick(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            base.Timer_Tick(sender, e);
         }
     }
 }

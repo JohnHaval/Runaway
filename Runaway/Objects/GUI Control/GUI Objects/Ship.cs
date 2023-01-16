@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Runaway.Objects.Enemy_Control;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -31,8 +32,9 @@ namespace Runaway.Objects.GUI_Control
                 return background;
             }
         }
-        public Ship()
+        public Ship() : base()
         {
+            Speed = ShipStats.BulletSpeed;
             HP = new Label()
             {
                 Content = ShipStats.HP,
@@ -59,7 +61,7 @@ namespace Runaway.Objects.GUI_Control
 
             Look = new Image()
             {
-                Source = new BitmapImage(new Uri("images\\spaceship.png", UriKind.Relative)),
+                Source = new BitmapImage(new Uri("Images\\spaceship.png", UriKind.Relative)),
                 Height = 50,
                 Width = 50,
                 Stretch = Stretch.Fill,
@@ -67,11 +69,6 @@ namespace Runaway.Objects.GUI_Control
             };
             Canvas.SetLeft(Look, 371);
             Canvas.SetBottom(Look, 30);
-        }
-
-        protected override void Timer_Tick(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
         }
     }
 }

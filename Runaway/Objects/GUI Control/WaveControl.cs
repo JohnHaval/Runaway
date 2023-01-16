@@ -14,11 +14,17 @@ namespace Runaway.Objects.GUI_Control
 {
     public class WaveControl
     {
-        Meteorit Meteor;
-        Enemy FirstEnemy;
-        Enemy SecondEnemy;
-        Ship GamerShip;
-        Boss WaveBoss;
+        public Meteorit Meteor;
+        public Enemy FirstEnemy;
+        public Enemy SecondEnemy;
+        public Ship GamerShip;
+        public Boss WaveBoss;
+        public WaveControl()
+        {
+            ThisWave = this;
+        }
+
+        public static WaveControl ThisWave { get; private set; }
 
         public void RaidWaveField()
         {
@@ -34,6 +40,7 @@ namespace Runaway.Objects.GUI_Control
             GameScreen.GameField.Children.Add(SecondEnemy.HPLine);
             GameScreen.GameField.Children.Add(SecondEnemy.HP);
 
+
         }
 
         public void BossWaveField()
@@ -45,6 +52,7 @@ namespace Runaway.Objects.GUI_Control
             GameScreen.GameField.Children.Add(WaveBoss.Look);
             GameScreen.GameField.Children.Add(WaveBoss.HPLine);
             GameScreen.GameField.Children.Add(WaveBoss.HP);
+
         }
 
 
@@ -81,11 +89,7 @@ namespace Runaway.Objects.GUI_Control
         }
 
 
-
-
-
-
-        public void StartAll()
+        public void StartWave()
         {
             Meteor.Start();
             GamerShip.Start();
@@ -96,7 +100,7 @@ namespace Runaway.Objects.GUI_Control
                 SecondEnemy.Start();
             }
         }
-        public void StopAll()
+        public void StopWave()
         {
             Meteor.Stop();
             GamerShip.Stop();
@@ -107,5 +111,6 @@ namespace Runaway.Objects.GUI_Control
                 SecondEnemy.Stop();
             }
         }
+
     }
 }
