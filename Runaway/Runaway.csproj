@@ -73,24 +73,46 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="AboutProgramWindow.xaml.cs">
+    <Compile Include="MiniWindows\AboutProgramWindow.xaml.cs">
       <DependentUpon>AboutProgramWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Objects\GamerStats.cs" />
-    <Compile Include="Objects\GUI Control\Boss.cs" />
-    <Compile Include="Objects\GUI Control\Enemy.cs" />
-    <Compile Include="Objects\GUI Control\Meteorit.cs" />
-    <Compile Include="Objects\GUI Control\Ship.cs" />
-    <Compile Include="Objects\Inventory.cs" />
+    <Compile Include="MiniWindows\EndGameWindow.xaml.cs">
+      <DependentUpon>EndGameWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MiniWindows\MenuPauseWindow.xaml.cs">
+      <DependentUpon>MenuPauseWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MiniWindows\NewGameWindow.xaml.cs">
+      <DependentUpon>NewGameWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objects\Enemy Control\DamageControl.cs" />
+    <Compile Include="Objects\Enemy Control\HPControl.cs" />
+    <Compile Include="Objects\Enemy Control\SpeedControl.cs" />
+    <Compile Include="Objects\Gamer Control\GamerStats.cs" />
+    <Compile Include="Objects\GUI Control\GUI Objects\Base.cs" />
+    <Compile Include="Objects\GUI Control\GUI Objects\Boss.cs" />
+    <Compile Include="Objects\GUI Control\GUI Objects\Enemy.cs" />
+    <Compile Include="Objects\GUI Control\Borders.cs" />
+    <Compile Include="Objects\GUI Control\GUI Objects\Meteorit.cs" />
+    <Compile Include="Objects\GUI Control\GUI Objects\Ship.cs" />
+    <Compile Include="Objects\GUI Control\WaveControl.cs" />
+    <Compile Include="Objects\Gamer Control\Inventory.cs" />
     <Compile Include="Objects\Marketplace.cs" />
-    <Compile Include="Objects\ShipStats.cs" />
+    <Compile Include="Objects\Gamer Control\ShipStats.cs" />
     <Compile Include="Utilities\ButtonSounds.cs" />
     <Compile Include="Utilities\DataControl.cs" />
+    <Compile Include="Utilities\GameSounds.cs" />
     <Compile Include="Utilities\Music.cs" />
+    <Compile Include="View\GameScreen.xaml.cs">
+      <DependentUpon>GameScreen.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\MainScreen.xaml.cs">
       <DependentUpon>MainScreen.xaml</DependentUpon>
     </Compile>
-    <Page Include="AboutProgramWindow.xaml">
+    <Compile Include="View\StoreScreen.xaml.cs">
+      <DependentUpon>StoreScreen.xaml</DependentUpon>
+    </Compile>
+    <Page Include="MiniWindows\AboutProgramWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -106,7 +128,27 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="MiniWindows\EndGameWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MiniWindows\MenuPauseWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MiniWindows\NewGameWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\GameScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\MainScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\StoreScreen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

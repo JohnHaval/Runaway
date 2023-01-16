@@ -10,25 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Runaway
+namespace Runaway.MiniWindows
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для EndGameWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class EndGameWindow : Window
     {
-        public MainWindow()
+        public EndGameWindow()
         {
             InitializeComponent();
-            MainWin = this;
-
-            Main = MainContent;
-            MainContent.Content = new View.MainScreen();
         }
-        public static MainWindow MainWin;
-        public static ContentPresenter Main;
     }
 }

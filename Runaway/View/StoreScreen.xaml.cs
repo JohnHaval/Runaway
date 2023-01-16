@@ -13,22 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Runaway
+namespace Runaway.View
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для StoreScreen.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class StoreScreen : UserControl
     {
-        public MainWindow()
+        public StoreScreen()
         {
             InitializeComponent();
-            MainWin = this;
-
-            Main = MainContent;
-            MainContent.Content = new View.MainScreen();
         }
-        public static MainWindow MainWin;
-        public static ContentPresenter Main;
     }
 }

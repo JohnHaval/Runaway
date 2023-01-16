@@ -9,7 +9,7 @@ namespace Runaway.Utilities
 {
     public static class GameSounds
     {
-    {
+    
         private readonly static MediaPlayer Boom = new MediaPlayer();
         private readonly static MediaPlayer Hit = new MediaPlayer();
         private readonly static MediaPlayer Fire = new MediaPlayer();
