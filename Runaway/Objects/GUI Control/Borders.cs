@@ -17,6 +17,21 @@ namespace Runaway.Objects.GUI_Control
     {
         public static Rect TopBorder { get; set; } = new Rect(0, 385, 794, 30);
         public static Rect BottomBorder { get; set; } = new Rect(0, 0, 794, 30);
+        public static Rectangle HPBackground
+        {
+            get
+            {
+                var background = new Rectangle()
+                {
+                    Fill = Brushes.Black,
+                    Width = 784,
+                    Height = 28
+                };
+                Canvas.SetLeft(background, 0);
+                Canvas.SetTop(background, 0);
+                return background;
+            }
+        }
 
     }
 }

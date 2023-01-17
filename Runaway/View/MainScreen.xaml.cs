@@ -78,18 +78,13 @@ namespace Runaway.View
         }
         private void AboutProgram_Click(object sender, RoutedEventArgs e)
         {
-            MiniWindows.AboutProgramWindow win = new MiniWindows.AboutProgramWindow();
-            win.ShowDialog(); 
+            AboutProgramWindow win = new AboutProgramWindow();
+            win.ShowDialog();
         }
 
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
             MainWindow.MainWin.Close();
-        }
-
-        private void Play_Click(object sender, RoutedEventArgs e)
-        {
-            MainWindow.MainWin.Content = new GameScreen();
         }
     }
 }

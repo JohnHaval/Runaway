@@ -9,7 +9,6 @@ using System.Windows.Controls;
 using System.Windows.Media.Imaging;
 using System.Windows.Media;
 using System.Windows.Shapes;
-using Runaway.Utilities;
 
 namespace Runaway.Objects.GUI_Control
 {
@@ -30,6 +29,8 @@ namespace Runaway.Objects.GUI_Control
         public void RaidWaveField()
         {
             InitializeRaidObjects();
+            AddShip();
+            GameScreen.GameField.Children.Add(Borders.HPBackground);
 
 
 
@@ -38,6 +39,8 @@ namespace Runaway.Objects.GUI_Control
         public void BossWaveField()
         {
             InitializeBossObjects();
+            AddShip();
+            GameScreen.GameField.Children.Add(Borders.HPBackground);
 
 
         }
@@ -54,7 +57,6 @@ namespace Runaway.Objects.GUI_Control
             GamerShip = new Ship();
             FirstEnemy = new Enemy(true);
             SecondEnemy = new Enemy(false);
-            GameSounds.BeginWave.Position = TimeSpan.Zero;
         }
 
         public void InitializeBossObjects()
@@ -62,15 +64,23 @@ namespace Runaway.Objects.GUI_Control
             Meteor = new Meteorit();
             GamerShip = new Ship();
             WaveBoss = new Boss();
-            GameSounds.BeginWave.Position = TimeSpan.Zero;
         }
 
 
 
 
+
+        public void AddShip()
+        {
+            GameScreen.GameField.Children.Add(GamerShip.HP);
+            GameScreen.GameField.Children.Add(GamerShip.HPLine);
+            GameScreen.GameField.Children.Add(GamerShip.HPBackground);
+            GameScreen.GameField.Children.Add(GamerShip.Look);
+        }
+
+
         public void StartWave()
         {
-            GameSounds.BeginWave.Play();
             Meteor.Start();
             GamerShip.Start();
             if (GamerStats.WaveState % 5 == 0) WaveBoss.Start();

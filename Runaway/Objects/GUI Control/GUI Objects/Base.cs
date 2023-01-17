@@ -11,13 +11,14 @@ using System.Xml.Linq;
 
 namespace Runaway.Objects.GUI_Control
 {
-    public class Base
+    public abstract class Base
     {
         public WaveControl Control = WaveControl.ThisWave;
+        public static Canvas GameField = GameScreen.GameField;
         public DispatcherTimer Timer { get; set; }
         public double Speed { get; set; }
         public bool IsStopped { get; protected set; }
-        public Image Look { get; set; }
+        public Image Look { get; protected set; }
 
         public Base()
         {
@@ -32,7 +33,6 @@ namespace Runaway.Objects.GUI_Control
         public void Start()
         {
             Timer.Interval = TimeSpan.FromMilliseconds(Speed);
-            Timer.IsEnabled = true;
             IsStopped = false;
         }
         public void Stop()

@@ -10,7 +10,7 @@
         AllowsTransparency="True"
         Background="Transparent"
         WindowStartupLocation="CenterOwner">
-    <!--#region MenuPause--><!--
+    <!--#region MenuPause-->
     <GroupBox x:Name="MenuPause" HorizontalAlignment="Center" VerticalAlignment="Center" Width="200" Header="Pause" FontSize="20" FontWeight="Bold" BorderBrush="Black" Height="146" Margin="281,126,313,149">
         <GroupBox.Foreground>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -37,5 +37,5 @@
             <Button x:Name="exittomainmenu" Content="Back To Menu" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" Margin="10,71,10,10" Width="168" Background="#3F0023FF" Foreground="Black" FontFamily="Sitka Banner" FontSize="22" Click="Exittomainmenu_Click" MouseEnter="Continue_MouseEnter"/>
         </Grid>
     </GroupBox>
-    --><!--#endregion-->
+    <!--#endregion-->
 </Window>

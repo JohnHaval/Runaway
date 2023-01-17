@@ -26,7 +26,7 @@ namespace Runaway.Utilities
             ShipStats.HP = Convert.ToInt32(dataReader.ReadLine());
             ShipStats.BulletSpeed = Convert.ToInt32(dataReader.ReadLine());
             ShipStats.FirePower = Convert.ToInt32(dataReader.ReadLine());
-/*            senemyspeedbullet2 = Convert.ToInt32(dataReader.ReadLine());
+            senemyspeedbullet2 = Convert.ToInt32(dataReader.ReadLine());
             bossspeedbullet = Convert.ToInt32(dataReader.ReadLine());
             timebossspeedbullet = Convert.ToInt32(dataReader.ReadLine());
             timese2speedbullet = Convert.ToInt32(dataReader.ReadLine());
@@ -35,12 +35,12 @@ namespace Runaway.Utilities
             schpboss = Convert.ToInt32(dataReader.ReadLine());
             schpsenemy2 = Convert.ToInt32(dataReader.ReadLine());
             cbdamage = Convert.ToInt32(dataReader.ReadLine());
-            cse2damage = Convert.ToInt32(dataReader.ReadLine());*/
+            cse2damage = Convert.ToInt32(dataReader.ReadLine());
             dataReader.Close();
         }
-        public static void SaveData(string filePath)
+        public static void SaveData()
         {
-            StreamWriter gssave = new StreamWriter(filePath);
+            StreamWriter gssave = new StreamWriter(save.FileName);
             gssave.WriteLine(GamerStats.NickName);
             gssave.WriteLine(GamerStats.WaveState);
             gssave.WriteLine(Inventory.Wallet);
@@ -53,7 +53,7 @@ namespace Runaway.Utilities
             gssave.WriteLine(ShipStats.HP);
             gssave.WriteLine(ShipStats.BulletSpeed);
             gssave.WriteLine(ShipStats.FirePower);
-/*            gssave.WriteLine(senemyspeedbullet2);
+            gssave.WriteLine(senemyspeedbullet2);
             gssave.WriteLine(bossspeedbullet);
             gssave.WriteLine(timebossspeedbullet);
             gssave.WriteLine(timese2speedbullet);
@@ -62,7 +62,7 @@ namespace Runaway.Utilities
             gssave.WriteLine(schpboss);
             gssave.WriteLine(schpsenemy2);
             gssave.WriteLine(cbdamage);
-            gssave.WriteLine(cse2damage);*/
+            gssave.WriteLine(cse2damage);
             gssave.Close();
         }
     }

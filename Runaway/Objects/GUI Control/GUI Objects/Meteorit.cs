@@ -50,45 +50,41 @@ namespace Runaway.Objects.GUI_Control
 
         private void MeteoritMove()
         {
-            _meteoritPosition.Y -= RectYSpeed;
-            Canvas.SetBottom(Look, MeteoritPosition.Y);
-            //ObjectInterspects();
+            _meteoritPosition.Y = RectYSpeed;
+            Canvas.SetBottom(Look, MeteoritPosition.Y - 10);
+            ObjectInterspects();
         }
-        //private void ObjectInterspects()
-        //{
-        //    if (MeteoritPosition.IntersectsWith(Control.GamerShip.ShipPosition) == true)
-        //    {
-        //        IsStopped = false;
-        //        double currentHP = Convert.ToDouble(Control.GamerShip.HP.Content);
-        //        if ((currentHP -= DamageControl.EnemyDamage) < 0)
-        //        {
-        //            Control.GamerShip.HP.Content = 0;
-        //            Control.GamerShip.HPLine.Width = 0;
-        //            var boom = new Image
-        //            {
-        //                Source = new BitmapImage(new Uri("Images\\bigbom.png", UriKind.Relative)),
-        //                Stretch = Stretch.Fill,
-        //                Width = 50,
-        //                Height = 50,
-        //            };
-        //            Canvas.SetBottom(boom, Control.GamerShip.ShipPosition.Y);
-        //            Canvas.SetLeft(boom, Control.GamerShip.ShipPosition.X);
-        //            GameField.Children.Add(boom);
-
-        //            GameSounds.PlayBoom();
-
-
-        //            GameField.Children.Remove(this.Look);
-        //            Control.StopWave();
-
-        //            MessageBox.Show("К сожалению, вы проиграли :c\nВ результате сражения вы ничего не получили", "YOU LOSE ^.^", MessageBoxButton.OK, MessageBoxImage.Error);            
-        //        }     
-        //        else Control.GamerShip.HP.Content = currentHP;
-        //    }
-        //    else if (MeteoritPosition.IntersectsWith(Borders.BottomBorder) == true)
-        //    {
-        //        SpawnNew();
-        //    }
-        //}
+        private void ObjectInterspects()
+        {
+            if (MeteoritPosition.IntersectsWith(Control.GamerShip.ShipPosition) == true)
+            {
+                IsStopped = false;
+                GameField.Children.Remove(this.Look);
+                double currentHP = Convert.ToDouble(Control.GamerShip.HP.Content);
+                if (currentHP - DamageControl.MeteoritDamage < 0)
+                {
+                    Control.GamerShip.HP.Content = 0;
+                    Control.GamerShip.HPLine.Width = 0;
+                    var boom = new Image
+                    {
+                        Source = new BitmapImage(new Uri("images\\bigbom.png", UriKind.Relative)),
+                        Stretch = Stretch.Fill,
+                        Width = 50,
+                        Height = 50,
+                    };
+                    Canvas.SetBottom(boom, MeteoritPosition.Y);
+                    Canvas.SetLeft(boom, MeteoritPosition.X);
+                    GameField.Children.Add(boom);
+                    GameSounds.PlayBoom();
+                    Control.StopWave();
+                    MessageBox.Show("К сожалению, вы проиграли :c\nВ результате сражения вы ничего не получили", "YOU LOSE ^.^", MessageBoxButton.OK, MessageBoxImage.Error);            
+                }     
+                else Control.GamerShip.HP.Content = currentHP;
+            }
+            else if (MeteoritPosition.IntersectsWith(Borders.BottomBorder) == true)
+            {
+                SpawnNew();
+            }
+        }
     }
 }

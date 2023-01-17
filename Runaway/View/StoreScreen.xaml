@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:Runaway.View"
              mc:Ignorable="d" 
              d:DesignHeight="413" d:DesignWidth="800">
-    <!--<Grid x:Name="storeandupgrader">
+    <Grid x:Name="storeandupgrader">
         <Grid.Background>
 
             <ImageBrush/>
@@ -118,5 +118,5 @@
 
             </Label.Effect>
         </Label>
-    </Grid>-->
+    </Grid>
 </UserControl>

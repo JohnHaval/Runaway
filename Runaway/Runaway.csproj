@@ -91,13 +91,10 @@
     <Compile Include="Objects\Gamer Control\GamerStats.cs" />
     <Compile Include="Objects\GUI Control\GUI Objects\Base.cs" />
     <Compile Include="Objects\GUI Control\GUI Objects\Boss.cs" />
-    <Compile Include="Objects\GUI Control\GUI Objects\BossBullet.cs" />
-    <Compile Include="Objects\GUI Control\GUI Objects\EnemyBullet.cs" />
     <Compile Include="Objects\GUI Control\GUI Objects\Enemy.cs" />
     <Compile Include="Objects\GUI Control\Borders.cs" />
     <Compile Include="Objects\GUI Control\GUI Objects\Meteorit.cs" />
     <Compile Include="Objects\GUI Control\GUI Objects\Ship.cs" />
-    <Compile Include="Objects\GUI Control\GUI Objects\ShipBullet.cs" />
     <Compile Include="Objects\GUI Control\WaveControl.cs" />
     <Compile Include="Objects\Gamer Control\Inventory.cs" />
     <Compile Include="Objects\Marketplace.cs" />
