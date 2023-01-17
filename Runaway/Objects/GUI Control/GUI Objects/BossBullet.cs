@@ -24,7 +24,7 @@ namespace Runaway.Objects.GUI_Control.GUI_Objects
                 Stretch = Stretch.Fill,
                 Width = 25,
                 Height = 25,
-                Source = new BitmapImage(new Uri("images\\bullet.png", UriKind.Relative)),
+                Source = new BitmapImage(new Uri("/Images/bullet.png", UriKind.Relative)),
             };
             SpawnNew();
         }
