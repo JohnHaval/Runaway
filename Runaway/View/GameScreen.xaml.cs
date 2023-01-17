@@ -35,7 +35,45 @@ namespace Runaway.View
         public static Canvas GameField;
 
         bool IsPause = false;
-        WaveControl Control = new WaveControl();        
-        
+        WaveControl Control = new WaveControl();
+        public void MainWin_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Left)
+            {
+                Control.GamerShip.ShipPosition.X -= 10;
+                if (Control.GamerShip.ShipPosition.X <= 0) Control.GamerShip.ShipPosition.X = 744;
+                else Canvas.SetLeft(GamerShip, Control.GamerShip.ShipPosition.X);
+            }
+            if (e.Key == Key.Right)
+            {
+                Control.GamerShip.ShipPosition.X += 10;
+                if (Control.GamerShip.ShipPosition.X >= 744) Control.GamerShip.ShipPosition.X = 0;
+                else Canvas.SetLeft(GamerShip, Control.GamerShip.ShipPosition.X);
+            }
+            if (e.Key == Key.Up)
+            {
+                CreateGUIEnemies();
+            }
+        }
+
+
+        public void CreateGUIEnemies()
+        {
+            var senemy1 = new Image
+            {
+                Source = new BitmapImage(new Uri("Images\\smallenemy.png", UriKind.Relative)),
+                Height = 50,
+                Width = 50,
+                Stretch = Stretch.Fill,
+            };
+            Canvas.SetLeft(senemy1, 130);
+            Canvas.SetTop(senemy1, 110);
+            MainGameField.Children.Add(senemy1);
+        }
+        public void CreateGUIBoss()
+        {
+
+        }
+
     }        
 }
