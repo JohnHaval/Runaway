@@ -11,7 +11,7 @@
         Background="Transparent"
         WindowStartupLocation="CenterOwner">
     
-    <GroupBox x:Name="EndGame" HorizontalAlignment="Center" VerticalAlignment="Center" Width="200" Header="WaveMenu" FontSize="20" FontWeight="Bold" BorderBrush="Black" Height="146" Margin="281,126,313,149">
+    <!--<GroupBox x:Name="EndGame" HorizontalAlignment="Center" VerticalAlignment="Center" Width="200" Header="WaveMenu" FontSize="20" FontWeight="Bold" BorderBrush="Black" Height="146" Margin="281,126,313,149">
         <GroupBox.Foreground>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                 <GradientStop Color="Black" Offset="1"/>
@@ -36,6 +36,6 @@
             <Button x:Name="NextWave" Content="Next Wave" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" Margin="10,10,10,71" Width="168" Background="#3F0023FF" Foreground="Black" FontFamily="Sitka Banner" FontSize="22" Click="Play_Click" MouseEnter="Continue_MouseEnter"/>
             <Button x:Name="Back2" Content="Back To Menu" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" Margin="10,71,10,10" Width="168" Background="#3F0023FF" Foreground="Black" FontFamily="Sitka Banner" FontSize="22" Click="Exittomainmenu_Click" MouseEnter="Continue_MouseEnter"/>
         </Grid>
-    </GroupBox>
+    </GroupBox>-->
     
 </Window>

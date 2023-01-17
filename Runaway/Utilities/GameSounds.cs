@@ -13,12 +13,17 @@ namespace Runaway.Utilities
         private readonly static MediaPlayer Boom = new MediaPlayer();
         private readonly static MediaPlayer Hit = new MediaPlayer();
         private readonly static MediaPlayer Fire = new MediaPlayer();
+        /// <summary>
+        /// Используется для управления вручную
+        /// </summary>
+        public readonly static MediaPlayer BeginWave = new MediaPlayer();
 
         static GameSounds()
         {
             Boom.Open(new Uri(@"..\..\Sound\boom.wav", UriKind.Relative));
             Hit.Open(new Uri(@"..\..\Sound\hit.wav", UriKind.Relative));
             Fire.Open(new Uri(@"..\..\Sound\startfire.wav", UriKind.Relative));
+            BeginWave.Open(new Uri(@"..\..\sound\playnw.wav", UriKind.Relative));
         }
 
         public static void PlayBoom()
@@ -33,7 +38,7 @@ namespace Runaway.Utilities
         public static void PlayFire()
         {
             StartAgain(Fire);
-        }
+        }        
 
         public static void StartAgain(object sender)
         {

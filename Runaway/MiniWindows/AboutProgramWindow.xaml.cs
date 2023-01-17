@@ -13,7 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace Runaway
+namespace Runaway.MiniWindows
 {
     /// <summary>
     /// Логика взаимодействия для AboutProgramWindow.xaml

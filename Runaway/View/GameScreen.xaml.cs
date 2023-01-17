@@ -35,7 +35,15 @@ namespace Runaway.View
         public static Canvas GameField;
 
         bool IsPause = false;
-        WaveControl Control = new WaveControl();        
+        public WaveControl Control = new WaveControl();        
         
+		private void MainWin_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (IsPause == true)
+            {                                               
+             
+            }
+        }
     }        
+	
 }

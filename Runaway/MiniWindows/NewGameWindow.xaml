@@ -11,7 +11,7 @@
         AllowsTransparency="True"
         Background="Transparent"
         WindowStartupLocation="CenterOwner">
-    <GroupBox HorizontalAlignment="Center" 
+    <!--<GroupBox HorizontalAlignment="Center" 
               VerticalAlignment="Center" 
               Width="200" 
               Header="Введите ваше имя" 
@@ -77,5 +77,5 @@
                     MouseEnter="Button_MouseEnter"/>
         </StackPanel>
         
-    </GroupBox>
+    </GroupBox>-->
 </Window>

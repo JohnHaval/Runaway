@@ -1,4 +1,5 @@
 ﻿using Runaway.Objects.Enemy_Control;
+using Runaway.Objects.GUI_Control.GUI_Objects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,61 +15,31 @@ namespace Runaway.Objects.GUI_Control
 {
     public class Ship : Base
     {
-        public Rect ShipPosition { get; set; } = new Rect(371, 30, 50, 50);
-        public Rectangle HPLine { get; set; }
-        public Label HP { get; set; }
-        public Rectangle HPBackground
-        {
-            get
-            {
-                var background = new Rectangle()
-                {
-                    Fill = Brushes.Black,
-                    Width = 784,
-                    Height = 28
-                };
-                Canvas.SetLeft(background, 0);
-                Canvas.SetBottom(background, 0);
-                return background;
-            }
-        }
+        public Rect ShipPosition = new Rect(380, 30, 40, 40);
+		public long HP { get; set; }
+        public ShipBullet Bullet { get; set; }
         public Ship() : base()
         {
             Speed = ShipStats.BulletSpeed;
-            HP = new Label()
-            {
-                Content = ShipStats.HP,
-                Width = 784,
-                Height = 28,
-                Background = null,
-                FontWeight = FontWeights.Bold,
-                FontSize = 16,
-                BorderBrush = null,
-                Foreground = Brushes.LightGreen,
-                HorizontalContentAlignment = HorizontalAlignment.Center,
-            };
-            Canvas.SetBottom(HP, 0);
-            HPLine = new Rectangle()
-            {
-                Fill = Brushes.Red,
-                Width = 784,
-                Height = 28,
-                Stroke = Brushes.Black,
-                StrokeThickness = 3,
-            };
-            Canvas.SetLeft(HPLine, 0);
-            Canvas.SetBottom(HPLine, 0);
-
-            Look = new Image()
-            {
-                Source = new BitmapImage(new Uri("Images\\spaceship.png", UriKind.Relative)),
-                Height = 50,
-                Width = 50,
-                Stretch = Stretch.Fill,
-                RenderTransformOrigin = new Point(0.434, 0.408),
-            };
-            Canvas.SetLeft(Look, 371);
-            Canvas.SetBottom(Look, 30);
+			HP = ShipStats.HP;
+            //ShipBullet = new EnemyBullet(ShipPosition);
         }
+		
+		protected new void Timer_Tick(object sender, EventArgs e)
+		{
+			
+		}
+		
+		public new void Stop()
+		{
+			Bullet.Stop();
+			base.Stop();
+		}
+		
+		public new void Start()
+		{
+			Bullet.Start();
+			base.Start();
+		}
     }
 }

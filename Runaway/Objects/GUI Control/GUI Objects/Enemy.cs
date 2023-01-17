@@ -8,15 +8,20 @@ using System.Windows.Media.Imaging;
 using System.Windows.Media;
 using System.Windows.Controls;
 using System.Windows.Shapes;
+using Runaway.Objects.GUI_Control.GUI_Objects;
+using Runaway.Objects.Enemy_Control;
 
 namespace Runaway.Objects.GUI_Control
 {
     public class Enemy : Base
     {
-        public Rect EnemyPosition { get; set; }
+        private Rect _enemyPosition;
+        public Rect EnemyPosition { get => _enemyPosition; set => _enemyPosition = value; }
         public Rectangle HPLine { get; set; }
         public Label HP { get; set; }
         public bool IsRightWay { get; set; }
+        public bool IsFirstEnemy { get;set; }
+        public EnemyBullet Bullet { get; set; }
         public Enemy(bool isFirstEnemy) : base()
         {
             Look = new Image()
@@ -39,7 +44,7 @@ namespace Runaway.Objects.GUI_Control
 
             HP = new Label
             {
-                Content = DamageControl.EnemyDamage,
+                Content = HPControl.EnemyHP,
                 Width = 392,
                 Height = 28,
                 Background = null,
@@ -48,11 +53,12 @@ namespace Runaway.Objects.GUI_Control
                 BorderBrush = null,
                 Foreground = Brushes.LightBlue,
                 HorizontalContentAlignment = HorizontalAlignment.Center,
+                VerticalContentAlignment = VerticalAlignment.Top,
             };
 
 
 
-            if (isFirstEnemy)
+            if (IsFirstEnemy = isFirstEnemy)
             {
                 EnemyPosition = new Rect(130, 260, 50, 50);
                 Canvas.SetTop(HPLine, 0);
@@ -69,10 +75,48 @@ namespace Runaway.Objects.GUI_Control
                 Canvas.SetLeft(Look, 600);
                 Canvas.SetTop(Look, 110);
             }
+            Bullet = new EnemyBullet(EnemyPosition);
         }
+		
+		
         protected new void Timer_Tick(object sender, EventArgs e)
         {
             base.Timer_Tick(sender, e);
+            EnemyMove();
+        }
+		
+        private void EnemyMove()
+        {
+            if (IsRightWay == true) Canvas.SetLeft(Look, _enemyPosition.X += 1);
+            else if (IsRightWay == false) Canvas.SetLeft(Look, _enemyPosition.X -= 1);
+            if (IsFirstEnemy)
+            {
+                if (_enemyPosition.X == 0) IsRightWay = true;
+                else if (_enemyPosition.X == 310) IsRightWay = false;
+            }
+            else
+            {
+                if (_enemyPosition.X == 370) IsRightWay = true;
+                else if (_enemyPosition.X == 740) IsRightWay = false;
+            }
+            if (Bullet.IsStopped) Bullet.Start();
+        }
+		
+		
+        public new void Stop()
+		{
+			Bullet.Stop();
+			base.Stop();
+		}
+		
+		public new void Start()
+		{
+			Bullet.Start();
+			base.Start();
+		}
+
+        protected void SpawnNew()
+        {
         }
     }
 }
