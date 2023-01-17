@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Runaway"
         mc:Ignorable="d"
-        Title="Runaway" Height="450" Width="800" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen">
+        Title="Runaway" Height="450" Width="800" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" KeyDown="Window_KeyDown">
     <Grid>
         <ContentPresenter x:Name="MainContent"/>
     </Grid>

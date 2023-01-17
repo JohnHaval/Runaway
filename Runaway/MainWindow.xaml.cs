@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Runaway.View;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -30,5 +31,10 @@ namespace Runaway
         }
         public static MainWindow MainWin;
         public static ContentPresenter Main;
+
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            ((GameScreen)this.Content).MainWin_KeyDown(sender, e);
+        }
     }
 }
