@@ -93,8 +93,10 @@
     <Compile Include="Objects\GUI Control\GUI Objects\Boss.cs" />
     <Compile Include="Objects\GUI Control\GUI Objects\Enemy.cs" />
     <Compile Include="Objects\GUI Control\Borders.cs" />
+    <Compile Include="Objects\GUI Control\GUI Objects\EnemyBullet.cs" />
     <Compile Include="Objects\GUI Control\GUI Objects\Meteorit.cs" />
     <Compile Include="Objects\GUI Control\GUI Objects\Ship.cs" />
+    <Compile Include="Objects\GUI Control\GUI Objects\ShipBullet.cs" />
     <Compile Include="Objects\GUI Control\WaveControl.cs" />
     <Compile Include="Objects\Gamer Control\Inventory.cs" />
     <Compile Include="Objects\Marketplace.cs" />
@@ -103,17 +105,11 @@
     <Compile Include="Utilities\DataControl.cs" />
     <Compile Include="Utilities\GameSounds.cs" />
     <Compile Include="Utilities\Music.cs" />
-    <Compile Include="View\BossWaveScreen.xaml.cs">
-      <DependentUpon>BossWaveScreen.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\GameScreen.xaml.cs">
       <DependentUpon>GameScreen.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\MainScreen.xaml.cs">
       <DependentUpon>MainScreen.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\RaidWaveScreen.xaml.cs">
-      <DependentUpon>RaidWaveScreen.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\StoreScreen.xaml.cs">
       <DependentUpon>StoreScreen.xaml</DependentUpon>
@@ -146,19 +142,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\BossWaveScreen.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="View\GameScreen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\MainScreen.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\RaidWaveScreen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
