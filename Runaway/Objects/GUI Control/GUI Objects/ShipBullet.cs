@@ -13,9 +13,7 @@ namespace Runaway.Objects.GUI_Control.GUI_Objects
 {
     public class ShipBullet : Base
     {
-        private Rect _bulletPosition;
-        public Rect BulletPosition { get => _bulletPosition; set => _bulletPosition = value; }
-		
+        public Rect BulletPosition;
         public ShipBullet(Rect objectRect)
         {
             BulletPosition = objectRect;
@@ -30,7 +28,7 @@ namespace Runaway.Objects.GUI_Control.GUI_Objects
         }
         protected void SpawnNew()
         {
-            _bulletPosition = new Rect(BulletPosition.X + 17, BulletPosition.Y - 15, 15, 15);
+            BulletPosition = new Rect(BulletPosition.X + 17, BulletPosition.Y - 15, 15, 15);
             Canvas.SetBottom(Look, BulletPosition.Y);
             Canvas.SetLeft(Look, BulletPosition.X);
         }
@@ -41,7 +39,7 @@ namespace Runaway.Objects.GUI_Control.GUI_Objects
         }
         public void BulletMove()
         {
-            Canvas.SetBottom(Look, _bulletPosition.Y += ShipStats.FirePower);
+            Canvas.SetBottom(Look, BulletPosition.Y += ShipStats.FirePower);
 			//ObjectIntersects();
         }
         //public void ObjectIntersects()

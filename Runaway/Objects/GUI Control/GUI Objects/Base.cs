@@ -14,7 +14,6 @@ namespace Runaway.Objects.GUI_Control
     public class Base
     {
         public WaveControl Control = WaveControl.ThisWave;
-        public Canvas GameField = GameScreen.GameField;
         public DispatcherTimer Timer { get; set; }
         public double Speed { get; set; }
         public bool IsStopped { get; protected set; }

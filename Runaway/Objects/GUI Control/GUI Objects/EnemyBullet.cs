@@ -61,12 +61,10 @@ namespace Runaway.Objects.GUI_Control.GUI_Objects
                     };
                     Canvas.SetBottom(boom, Control.GamerShip.ShipPosition.Y);
                     Canvas.SetLeft(boom, Control.GamerShip.ShipPosition.X);
-                    GameField.Children.Add(boom);
 
                     GameSounds.PlayBoom();
 
 
-                    GameField.Children.Remove(Look);
                     Control.StopWave();
 
                     MessageBox.Show("К сожалению, вы проиграли :c\nВ результате сражения вы ничего не получили", "YOU LOSE ^.^", MessageBoxButton.OK, MessageBoxImage.Error);

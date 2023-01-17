@@ -106,11 +106,17 @@
     <Compile Include="Utilities\DataControl.cs" />
     <Compile Include="Utilities\GameSounds.cs" />
     <Compile Include="Utilities\Music.cs" />
+    <Compile Include="View\BossWaveScreen.xaml.cs">
+      <DependentUpon>BossWaveScreen.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\GameScreen.xaml.cs">
       <DependentUpon>GameScreen.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\MainScreen.xaml.cs">
       <DependentUpon>MainScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\RaidWaveScreen.xaml.cs">
+      <DependentUpon>RaidWaveScreen.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\StoreScreen.xaml.cs">
       <DependentUpon>StoreScreen.xaml</DependentUpon>
@@ -143,11 +149,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\BossWaveScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\GameScreen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\MainScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\RaidWaveScreen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

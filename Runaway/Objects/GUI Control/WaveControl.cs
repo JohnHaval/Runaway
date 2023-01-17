@@ -31,13 +31,6 @@ namespace Runaway.Objects.GUI_Control
         {
             InitializeRaidObjects();
 
-            GameScreen.GameField.Children.Add(FirstEnemy.Look);
-            GameScreen.GameField.Children.Add(FirstEnemy.HPLine);
-            GameScreen.GameField.Children.Add(FirstEnemy.HP);            
-
-            GameScreen.GameField.Children.Add(SecondEnemy.Look);
-            GameScreen.GameField.Children.Add(SecondEnemy.HPLine);
-            GameScreen.GameField.Children.Add(SecondEnemy.HP);
 
 
         }
@@ -46,9 +39,6 @@ namespace Runaway.Objects.GUI_Control
         {
             InitializeBossObjects();
 
-            GameScreen.GameField.Children.Add(WaveBoss.Look);
-            GameScreen.GameField.Children.Add(WaveBoss.HPLine);
-            GameScreen.GameField.Children.Add(WaveBoss.HP);
 
         }
 

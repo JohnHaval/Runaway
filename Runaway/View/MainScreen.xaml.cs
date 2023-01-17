@@ -89,7 +89,7 @@ namespace Runaway.View
 
         private void Play_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow.Main.Content = new GameScreen();
+            MainWindow.MainWin.Content = new GameScreen();
         }
     }
 }
