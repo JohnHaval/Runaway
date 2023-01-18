@@ -8,7 +8,7 @@ namespace Runaway.Objects.Enemy_Control
 {
     public static class HPControl
     {
-        public static long BossHP { get => GamerStats.WaveState * 300; }
-        public static long EnemyHP { get => GamerStats.WaveState * 50; }
+        public static long BossHP { get => GamerStats.WaveState * 100; }
+        public static long EnemyHP { get => GamerStats.WaveState * 10; }
     }
 }

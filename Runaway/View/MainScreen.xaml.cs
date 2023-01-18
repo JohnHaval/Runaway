@@ -15,6 +15,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Runaway.MiniWindows;
+using Microsoft.Win32;
 
 namespace Runaway.View
 {
@@ -46,10 +48,36 @@ namespace Runaway.View
 
 
 
+        private void Play_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow.Main.Content = new View.GameScreen();
+        }
 
 
 
+        private void LoadGame_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog open = new OpenFileDialog()
+            {
+                Title = "Загрузка игры",
+                Filter = "Сохранение игры(*.runsave*) |*.runsave",
+                DefaultExt = ".runsave",
+            };
+            if (open.ShowDialog() == true) DataControl.LoadData(open.FileName);
+        }
 
+
+
+        private void SaveGame_Click(object sender, RoutedEventArgs e)
+        {
+            SaveFileDialog save = new SaveFileDialog
+            {
+                Title = "Сохранение игры",
+                Filter = "Сохранение игры(*.runsave*) |*.runsave",
+                DefaultExt = ".runsave",
+            };
+            if (save.ShowDialog() == true) DataControl.SaveData(save.FileName);
+        }
 
 
 
@@ -60,7 +88,7 @@ namespace Runaway.View
 
         private void Store_Click(object sender, RoutedEventArgs e)
         {
-
+            MainWindow.Main.Content = new View.StoreScreen();
         }
 
         private void Stats_Click(object sender, RoutedEventArgs e)
@@ -87,9 +115,5 @@ namespace Runaway.View
             MainWindow.MainWin.Close();
         }
 
-        private void Play_Click(object sender, RoutedEventArgs e)
-        {
-            MainWindow.Main.Content = new View.GameScreen();
-        }
     }
 }

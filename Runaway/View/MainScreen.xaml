@@ -113,13 +113,13 @@
                     Content="Загрузить игру"
                     
                     MouseEnter="Button_MouseEnter"
-                    MouseLeave="Button_MouseLeave"/>
+                    MouseLeave="Button_MouseLeave" Click="LoadGame_Click"/>
 
             <Button x:Name="SaveGame" 
                     Content="Сохранить игру"
                     
                     MouseEnter="Button_MouseEnter"
-                    MouseLeave="Button_MouseLeave"/>
+                    MouseLeave="Button_MouseLeave" Click="SaveGame_Click"/>
 
             <Button x:Name="Store" 
                     Content="Магазин"

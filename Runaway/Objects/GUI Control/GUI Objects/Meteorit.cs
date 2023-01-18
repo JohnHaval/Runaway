@@ -17,8 +17,7 @@ namespace Runaway.Objects.GUI_Control
 {
     public class Meteorit : Base
     {
-        private Rect _meteoritPosition = new Rect(0, 335, 50, 50);
-        public Rect MeteoritPosition { get => _meteoritPosition; set => _meteoritPosition = value; } 
+        public Rect MeteoritPosition = new Rect(0, 335, 50, 50);
         public double RectYSpeed { get; private set; }
 
         public Meteorit() : base()
@@ -29,7 +28,7 @@ namespace Runaway.Objects.GUI_Control
                 Stretch = Stretch.Fill,
                 Width = 70,
                 Height = 70,
-                Source = new BitmapImage(new Uri("Images\\fireball.png", UriKind.Relative)),
+                Source = new BitmapImage(new Uri("/Images/fireball.png", UriKind.Relative)),
             };
             SpawnNew();
         }
@@ -50,7 +49,7 @@ namespace Runaway.Objects.GUI_Control
 
         private void MeteoritMove()
         {
-            _meteoritPosition.Y = RectYSpeed;
+            MeteoritPosition.Y = RectYSpeed;
             Canvas.SetBottom(Look, MeteoritPosition.Y - 10);
             ObjectInterspects();
         }
@@ -60,14 +59,14 @@ namespace Runaway.Objects.GUI_Control
             {
                 IsStopped = false;
                 GameField.Children.Remove(this.Look);
-                double currentHP = Convert.ToDouble(Control.GamerShip.HP.Content);
+                double currentHP = Control.GamerShip.HP;
                 if (currentHP - DamageControl.MeteoritDamage < 0)
-                {
-                    Control.GamerShip.HP.Content = 0;
+                {                    
+                    Control.GamerShip.HPLabel.Content = 0;
                     Control.GamerShip.HPLine.Width = 0;
                     var boom = new Image
                     {
-                        Source = new BitmapImage(new Uri("images\\bigbom.png", UriKind.Relative)),
+                        Source = new BitmapImage(new Uri("/Images/bigbom.png", UriKind.Relative)),
                         Stretch = Stretch.Fill,
                         Width = 50,
                         Height = 50,
@@ -79,7 +78,7 @@ namespace Runaway.Objects.GUI_Control
                     Control.StopWave();
                     MessageBox.Show("К сожалению, вы проиграли :c\nВ результате сражения вы ничего не получили", "YOU LOSE ^.^", MessageBoxButton.OK, MessageBoxImage.Error);            
                 }     
-                else Control.GamerShip.HP.Content = currentHP;
+                else Control.GamerShip.HPLabel.Content = Control.GamerShip.HP;
             }
             else if (MeteoritPosition.IntersectsWith(Borders.BottomBorder) == true)
             {

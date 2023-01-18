@@ -15,7 +15,7 @@ namespace Runaway.Objects.GUI_Control
     {
         public WaveControl Control = WaveControl.ThisWave;
         public static Canvas GameField = GameScreen.GameField;
-        public DispatcherTimer Timer { get; set; }
+        public DispatcherTimer Timer;
         public double Speed { get; set; }
         public bool IsStopped { get; protected set; }
         public Image Look { get; protected set; }
@@ -23,7 +23,6 @@ namespace Runaway.Objects.GUI_Control
         public Base()
         {
             Timer = new DispatcherTimer();
-            Timer.Tick += Timer_Tick;
         }
         protected void Timer_Tick(object sender, EventArgs e)
         {
@@ -33,11 +32,13 @@ namespace Runaway.Objects.GUI_Control
         public void Start()
         {
             Timer.Interval = TimeSpan.FromMilliseconds(Speed);
+            Timer.IsEnabled = true;
             IsStopped = false;
         }
         public void Stop()
         {
             IsStopped = true;
+            Timer.IsEnabled = false;
         }
     }
 }

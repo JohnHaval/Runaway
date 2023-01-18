@@ -12,10 +12,9 @@ namespace Runaway.Objects
         {
             NickName = "*NoName*";
             WaveState = 1;
-            DestroyedBosses = 0;
         }
         public static string NickName { get; set; }
         public static int WaveState { get; set; }
-        public static int DestroyedBosses { get; set; }
+        public static int DestroyedBosses { get => WaveState % 5 + 1; }
     }
 }

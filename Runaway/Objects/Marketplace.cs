@@ -8,27 +8,15 @@ namespace Runaway.Objects
 {
     public static class Marketplace
     {
-        static Marketplace()
-        {
-            HPCost = 3000;
-            WeaponDamageCost = 3000;
-            BulletSpeedCost = 5000;
-            FirePowerCost = 30000;
-
-            EnergyBlockCost = 500;
-            UFODebrisCost = 300;
-            MeteoritDebrisCost = 2000;
-            UFOSlimeCost = 1000;
-            MonolithPartCost = 15000;
-        }
-        public static int HPCost { get; set; }
-        public static int WeaponDamageCost { get; set; }
-        public static int BulletSpeedCost { get; set; }
-        public static int FirePowerCost { get; set; }
-        public static int EnergyBlockCost { get; set; }
-        public static int UFODebrisCost { get; set; }
-        public static int MeteoritDebrisCost { get; set; }
-        public static int UFOSlimeCost { get; set; }
-        public static int MonolithPartCost { get; set; }
+        public static long HPCost { get => 3000 * ShipStats.LvlHP; }
+        public static long WeaponDamageCost { get => 3000 * ShipStats.LvlWeaponDamage; }
+        public static long BulletSpeedCost { get => 5000 * ShipStats.LvlBulletSpeed; }
+        public static long FirePowerCost { get => 30000 * ShipStats.LvlFirePower; }
+        public static long EnergyBlockCost { get => 300; }
+        public static long UFODebrisCost { get => 500; }
+        public static long MeteoritDebrisCost { get => 1000; }
+        public static long UFOSlimeCost { get => 2000; }
+        public static long MonolithPartCost { get => 15000; }
+        
     }
 }

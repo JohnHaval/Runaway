@@ -91,6 +91,7 @@
     <Compile Include="Objects\Gamer Control\GamerStats.cs" />
     <Compile Include="Objects\GUI Control\GUI Objects\Base.cs" />
     <Compile Include="Objects\GUI Control\GUI Objects\Boss.cs" />
+    <Compile Include="Objects\GUI Control\GUI Objects\BossBullet.cs" />
     <Compile Include="Objects\GUI Control\GUI Objects\Enemy.cs" />
     <Compile Include="Objects\GUI Control\Borders.cs" />
     <Compile Include="Objects\GUI Control\GUI Objects\EnemyBullet.cs" />

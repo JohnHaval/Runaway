@@ -31,12 +31,28 @@ namespace Runaway.Objects.GUI_Control
         {
             InitializeRaidObjects();
             AddShip();
+
+            GameScreen.GameField.Children.Add(FirstEnemy.HPLine);
+            GameScreen.GameField.Children.Add(FirstEnemy.Look);
+            GameScreen.GameField.Children.Add(FirstEnemy.HPLabel);
+
+            GameScreen.GameField.Children.Add(SecondEnemy.HPLine);
+            GameScreen.GameField.Children.Add(SecondEnemy.Look);
+            GameScreen.GameField.Children.Add(SecondEnemy.HPLabel);
+
+            StartWave();
         }
 
         public void BossWaveField()
         {
             InitializeBossObjects();
             AddShip();
+
+            GameScreen.GameField.Children.Add(WaveBoss.HPLine);
+            GameScreen.GameField.Children.Add(WaveBoss.Look);
+            GameScreen.GameField.Children.Add(WaveBoss.HPLabel);
+
+            StartWave();
         }
 
 
@@ -66,9 +82,9 @@ namespace Runaway.Objects.GUI_Control
 
         public void AddShip()
         {
-            GameScreen.GameField.Children.Add(GamerShip.HP);
             GameScreen.GameField.Children.Add(GamerShip.HPLine);
             GameScreen.GameField.Children.Add(GamerShip.Look);
+            GameScreen.GameField.Children.Add(GamerShip.HPLabel);
         }
 
 
