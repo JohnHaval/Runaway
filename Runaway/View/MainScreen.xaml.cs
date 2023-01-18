@@ -86,5 +86,10 @@ namespace Runaway.View
         {
             MainWindow.MainWin.Close();
         }
+
+        private void Play_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow.Main.Content = new View.GameScreen();
+        }
     }
 }

@@ -11,7 +11,14 @@
         Background="Transparent"
         WindowStartupLocation="CenterOwner">
     
-    <GroupBox x:Name="EndGame" HorizontalAlignment="Center" VerticalAlignment="Center" Width="200" Header="WaveMenu" FontSize="20" FontWeight="Bold" BorderBrush="Black" Height="146" Margin="281,126,313,149">
+    <GroupBox HorizontalAlignment="Center" 
+              VerticalAlignment="Center" 
+              Width="200" 
+              Header="Следующая волна" 
+              FontSize="20" 
+              BorderBrush="Black" 
+              Height="146">
+        
         <GroupBox.Foreground>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                 <GradientStop Color="Black" Offset="1"/>
@@ -32,9 +39,34 @@
                 <GradientStop Color="#BF6E0073" Offset="0.5"/>
             </LinearGradientBrush>
         </GroupBox.Background>
+        
         <Grid>
-            <Button x:Name="NextWave" Content="Next Wave" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" Margin="10,10,10,71" Width="168" Background="#3F0023FF" Foreground="Black" FontFamily="Sitka Banner" FontSize="22" Click="Play_Click" MouseEnter="Continue_MouseEnter"/>
-            <Button x:Name="Back2" Content="Back To Menu" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" Margin="10,71,10,10" Width="168" Background="#3F0023FF" Foreground="Black" FontFamily="Sitka Banner" FontSize="22" Click="Exittomainmenu_Click" MouseEnter="Continue_MouseEnter"/>
+            <Button x:Name="NextWave" 
+                    Content="Играть дальше" 
+                    HorizontalAlignment="Center" 
+                    VerticalAlignment="Center" 
+                    Margin="10,10,10,71" 
+                    Width="168" 
+                    Background="#3F0023FF" 
+                    FontWeight="Bold"
+                    FontFamily="Sitka Banner" 
+                    FontSize="22" 
+                    
+                    Click="NextWave_Click"  
+                    MouseEnter="Button_MouseEnter"/>
+            <Button x:Name="BackToMenu" 
+                    Content="Выйти в меню" 
+                    HorizontalAlignment="Center" 
+                    VerticalAlignment="Center" 
+                    Margin="10,71,10,10" 
+                    Width="168" 
+                    Background="#3F0023FF" 
+                    FontWeight="Bold"
+                    FontFamily="Sitka Banner" 
+                    FontSize="22" 
+                    
+                    Click="BackToMenu_Click"
+                    MouseEnter="Button_MouseEnter"/>
         </Grid>
     </GroupBox>
     

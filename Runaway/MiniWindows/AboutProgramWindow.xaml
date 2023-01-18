@@ -11,10 +11,10 @@
         ResizeMode="NoResize" 
         WindowStartupLocation="CenterScreen" 
         WindowStyle="ToolWindow" 
-        Icon="images\icon.jpg" 
+        Icon="/Images/icon.jpg" 
         Closed="Window_Closed">
     <Grid>
-        <Image Source="images\abpro.jpg" Opacity="0.85"/>
+        <Image Source="/Images/abpro.jpg" Opacity="0.85"/>
 
         <Label Content="Звуки из игры Half-Life(Разработчик - Valve)" 
                HorizontalAlignment="Left" 

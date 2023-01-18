@@ -6,11 +6,21 @@
              xmlns:local="clr-namespace:Runaway.View"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    
     <Canvas x:Name="MainGameField">
         <Canvas.Background>
 
             <ImageBrush ImageSource="/Images/space.jpg"/>
 
         </Canvas.Background>
+
+        <Rectangle Width="800" 
+                   Height="30"
+                   Fill="Black"/>
+        <Rectangle Width="800" Height="30" 
+                   HorizontalAlignment="Center"
+                   Canvas.Bottom="0"
+                   Fill="Black"/>
     </Canvas>
+    
 </UserControl>

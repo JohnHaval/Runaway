@@ -42,13 +42,13 @@ namespace Runaway.View
             {
                 Control.GamerShip.ShipPosition.X -= 10;
                 if (Control.GamerShip.ShipPosition.X <= 0) Control.GamerShip.ShipPosition.X = 744;
-                else Canvas.SetLeft(GamerShip, Control.GamerShip.ShipPosition.X);
+                else Canvas.SetLeft(Control.GamerShip.Look, Control.GamerShip.ShipPosition.X);
             }
             if (e.Key == Key.Right)
             {
                 Control.GamerShip.ShipPosition.X += 10;
                 if (Control.GamerShip.ShipPosition.X >= 744) Control.GamerShip.ShipPosition.X = 0;
-                else Canvas.SetLeft(GamerShip, Control.GamerShip.ShipPosition.X);
+                else Canvas.SetLeft(Control.GamerShip.Look, Control.GamerShip.ShipPosition.X);
             }
             if (e.Key == Key.Up)
             {

@@ -9,6 +9,7 @@ using System.Windows.Controls;
 using System.Windows.Media.Imaging;
 using System.Windows.Media;
 using System.Windows.Shapes;
+using Runaway.Utilities;
 
 namespace Runaway.Objects.GUI_Control
 {
@@ -30,19 +31,12 @@ namespace Runaway.Objects.GUI_Control
         {
             InitializeRaidObjects();
             AddShip();
-            GameScreen.GameField.Children.Add(Borders.HPBackground);
-
-
-
         }
 
         public void BossWaveField()
         {
             InitializeBossObjects();
             AddShip();
-            GameScreen.GameField.Children.Add(Borders.HPBackground);
-
-
         }
 
 
@@ -74,13 +68,13 @@ namespace Runaway.Objects.GUI_Control
         {
             GameScreen.GameField.Children.Add(GamerShip.HP);
             GameScreen.GameField.Children.Add(GamerShip.HPLine);
-            GameScreen.GameField.Children.Add(GamerShip.HPBackground);
             GameScreen.GameField.Children.Add(GamerShip.Look);
         }
 
 
         public void StartWave()
         {
+            
             Meteor.Start();
             GamerShip.Start();
             if (GamerStats.WaveState % 5 == 0) WaveBoss.Start();

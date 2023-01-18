@@ -107,7 +107,7 @@
                     Content="Играть" 
                     
                     MouseEnter="Button_MouseEnter"
-                    MouseLeave="Button_MouseLeave"/>
+                    MouseLeave="Button_MouseLeave" Click="Play_Click"/>
 
             <Button x:Name="LoadGame" 
                     Content="Загрузить игру"

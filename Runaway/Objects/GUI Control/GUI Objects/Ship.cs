@@ -14,24 +14,9 @@ namespace Runaway.Objects.GUI_Control
 {
     public class Ship : Base
     {
-        public Rect ShipPosition { get; set; } = new Rect(371, 30, 50, 50);
+        public Rect ShipPosition = new Rect(371, 30, 50, 50);
         public Rectangle HPLine { get; set; }
         public Label HP { get; set; }
-        public Rectangle HPBackground
-        {
-            get
-            {
-                var background = new Rectangle()
-                {
-                    Fill = Brushes.Black,
-                    Width = 784,
-                    Height = 28
-                };
-                Canvas.SetLeft(background, 0);
-                Canvas.SetBottom(background, 0);
-                return background;
-            }
-        }
         public Ship() : base()
         {
             Speed = ShipStats.BulletSpeed;
@@ -47,6 +32,7 @@ namespace Runaway.Objects.GUI_Control
                 Foreground = Brushes.LightGreen,
                 HorizontalContentAlignment = HorizontalAlignment.Center,
             };
+            Canvas.SetLeft(HP, 0);
             Canvas.SetBottom(HP, 0);
             HPLine = new Rectangle()
             {

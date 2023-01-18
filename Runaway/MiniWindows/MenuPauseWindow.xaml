@@ -10,8 +10,15 @@
         AllowsTransparency="True"
         Background="Transparent"
         WindowStartupLocation="CenterOwner">
-    <!--#region MenuPause-->
-    <GroupBox x:Name="MenuPause" HorizontalAlignment="Center" VerticalAlignment="Center" Width="200" Header="Pause" FontSize="20" FontWeight="Bold" BorderBrush="Black" Height="146" Margin="281,126,313,149">
+    
+    <GroupBox HorizontalAlignment="Center" 
+              VerticalAlignment="Center" 
+              Width="200" 
+              Header="Пауза" 
+              FontSize="20" 
+              BorderBrush="Black" 
+              Height="146">
+        
         <GroupBox.Foreground>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                 <GradientStop Color="Black" Offset="1"/>
@@ -32,10 +39,34 @@
                 <GradientStop Color="#BF6E0073" Offset="0.5"/>
             </LinearGradientBrush>
         </GroupBox.Background>
+        
         <Grid>
-            <Button x:Name="continue" Content="Continue" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" Margin="10,10,10,71" Width="168" Background="#3F0023FF" Foreground="Black" FontFamily="Sitka Banner" FontSize="22" Click="Continue_Click" MouseEnter="Continue_MouseEnter"/>
-            <Button x:Name="exittomainmenu" Content="Back To Menu" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" Margin="10,71,10,10" Width="168" Background="#3F0023FF" Foreground="Black" FontFamily="Sitka Banner" FontSize="22" Click="Exittomainmenu_Click" MouseEnter="Continue_MouseEnter"/>
+            <Button x:Name="Continue" Content="Продолжить" 
+                    HorizontalAlignment="Center" 
+                    VerticalAlignment="Center" 
+                    FontWeight="Bold" 
+                    Margin="10,10,10,71" 
+                    Width="168" 
+                    Background="#3F0023FF" 
+                    FontFamily="Sitka Banner" 
+                    FontSize="22" 
+                    
+                    Click="Continue_Click" 
+                    MouseEnter="Button_MouseEnter"/>
+            <Button x:Name="BackToMenu" 
+                    Content="Выйти в меню" 
+                    HorizontalAlignment="Center" 
+                    VerticalAlignment="Center" 
+                    FontWeight="Bold" 
+                    Margin="10,71,10,10" 
+                    Width="168" 
+                    Background="#3F0023FF" 
+                    FontFamily="Sitka Banner" 
+                    FontSize="22" 
+                    
+                    Click="BackToMenu_Click" 
+                    MouseEnter="Button_MouseEnter"/>
         </Grid>
     </GroupBox>
-    <!--#endregion-->
+    
 </Window>

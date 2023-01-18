@@ -8,17 +8,20 @@ using System.Windows.Media.Imaging;
 using System.Windows.Media;
 using System.Windows.Controls;
 using System.Windows.Shapes;
+using Runaway.Objects.Enemy_Control;
 
 namespace Runaway.Objects.GUI_Control
 {
     public class Enemy : Base
     {
         public Rect EnemyPosition { get; set; }
+        public long HP { get; set; }
         public Rectangle HPLine { get; set; }
-        public Label HP { get; set; }
+        public Label HPLabel { get; set; }
         public bool IsRightWay { get; set; }
         public Enemy(bool isFirstEnemy) : base()
         {
+            HP = HPControl.EnemyHP;
             Look = new Image()
             {
                 Source = new BitmapImage(new Uri("Images\\smallenemy.png", UriKind.Relative)),
@@ -37,9 +40,9 @@ namespace Runaway.Objects.GUI_Control
             };
 
 
-            HP = new Label
+            HPLabel = new Label
             {
-                Content = DamageControl.EnemyDamage,
+                Content = HPControl.EnemyHP,
                 Width = 392,
                 Height = 28,
                 Background = null,
@@ -62,7 +65,7 @@ namespace Runaway.Objects.GUI_Control
             }
             else
             {
-                Canvas.SetLeft(HP, 392);
+                Canvas.SetLeft(HPLabel, 392);
                 EnemyPosition = new Rect(600, 260, 50, 50);
                 Canvas.SetTop(HPLine, 0);
                 Canvas.SetLeft(HPLine, 392);

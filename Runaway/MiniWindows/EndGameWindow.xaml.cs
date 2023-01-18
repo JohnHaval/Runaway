@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Runaway.Utilities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,25 @@ namespace Runaway.MiniWindows
         public EndGameWindow()
         {
             InitializeComponent();
+        }
+
+        private void NextWave_Click(object sender, RoutedEventArgs e)
+        {
+            ButtonSounds.PlayClickSound();
+            MainWindow.Main.Content = new View.GameScreen();
+            Close();
+        }
+
+        private void Button_MouseEnter(object sender, MouseEventArgs e)
+        {
+            ButtonSounds.PlaySelectSound();
+        }
+
+        private void BackToMenu_Click(object sender, RoutedEventArgs e)
+        {
+            ButtonSounds.PlayClickSound();
+            MainWindow.Main.Content = new View.MainScreen();
+            Close();
         }
     }
 }
