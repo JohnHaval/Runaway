@@ -13,7 +13,7 @@ namespace Runaway.Objects.Enemy_Control
         public static double MeteoritSpeed { get => GetSpeed(); }
         public static double GetSpeed()
         {
-            double speed = 1000 - GamerStats.WaveState;
+            double speed = 500 - GamerStats.WaveState;
             if (speed < 100) return 100;
             else return speed;
         }

@@ -30,19 +30,19 @@ namespace Runaway.Objects
             int slime = rnd.Next(0, 2);
             UFOSlimeCount += slime;
 
-            int monolith;
+            int monolith = 0;
             int chance = rnd.Next(1, 20);
             if (chance == 5)
             {
                 monolith = 1;
                 MonolithPartCount += monolith;
             }
-            MessageBox.Show($"Получено денег: {wallet}" +
-            "Ru\nЛут:\n-Получено энергоблоков: {energy}x\n" +
-            "-Получено обломков НЛО: {debris}x\n" +
-            "-Получено осколков метеорита: {meteorit}x\n" +
-            "-Получено кусочков инопланетной слизи: {slime}x\n" +
-            "-Получено частей монолита: {monolith}x",
+            MessageBox.Show($"Получено денег: {wallet} " +
+            $"Ru\nЛут:\n-Получено энергоблоков: {energy}x\n" +
+            $"-Получено обломков НЛО: {debris}x\n" +
+            $"-Получено осколков метеорита: {meteorit}x\n" +
+            $"-Получено кусочков инопланетной слизи: {slime}x\n" +
+            $"-Получено частей монолита: {monolith}x",
             "Победа ^.^",
             MessageBoxButton.OK,
             MessageBoxImage.Information);

@@ -26,16 +26,6 @@ namespace Runaway.Utilities
             ShipStats.HP = Convert.ToInt32(dataReader.ReadLine());
             ShipStats.BulletSpeed = Convert.ToInt32(dataReader.ReadLine());
             ShipStats.FirePower = Convert.ToInt32(dataReader.ReadLine());
-            //senemyspeedbullet2 = Convert.ToInt32(dataReader.ReadLine());
-            //bossspeedbullet = Convert.ToInt32(dataReader.ReadLine());
-            //timebossspeedbullet = Convert.ToInt32(dataReader.ReadLine());
-            //timese2speedbullet = Convert.ToInt32(dataReader.ReadLine());
-            //intervalboss = Convert.ToInt32(dataReader.ReadLine());
-            //intervalse2 = Convert.ToInt32(dataReader.ReadLine());
-            //schpboss = Convert.ToInt32(dataReader.ReadLine());
-            //schpsenemy2 = Convert.ToInt32(dataReader.ReadLine());
-            //cbdamage = Convert.ToInt32(dataReader.ReadLine());
-            //cse2damage = Convert.ToInt32(dataReader.ReadLine());
             dataReader.Close();
         }
         public static void SaveData(string filePath)
@@ -53,16 +43,6 @@ namespace Runaway.Utilities
             gssave.WriteLine(ShipStats.HP);
             gssave.WriteLine(ShipStats.BulletSpeed);
             gssave.WriteLine(ShipStats.FirePower);
-            //gssave.WriteLine(senemyspeedbullet2);
-            //gssave.WriteLine(bossspeedbullet);
-            //gssave.WriteLine(timebossspeedbullet);
-            //gssave.WriteLine(timese2speedbullet);
-            //gssave.WriteLine(intervalboss);
-            //gssave.WriteLine(intervalse2);
-            //gssave.WriteLine(schpboss);
-            //gssave.WriteLine(schpsenemy2);
-            //gssave.WriteLine(cbdamage);
-            //gssave.WriteLine(cse2damage);
             gssave.Close();
         }
     }

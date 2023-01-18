@@ -26,7 +26,7 @@ namespace Runaway.View
         public GameScreen()
         {
             InitializeComponent();
-
+            GameField = null;
             GameField = MainGameField;
             if (GamerStats.WaveState % 5 != 0) Control.RaidWaveField();
             else Control.BossWaveField();            
@@ -36,6 +36,7 @@ namespace Runaway.View
 
         public static bool IsEndWave = false;
         WaveControl Control = new WaveControl();
+        public bool IsPause = false;
         public void MainWin_KeyDown(object sender, KeyEventArgs e)
         {
             if (!IsEndWave)
@@ -56,11 +57,21 @@ namespace Runaway.View
                 {
                     Fire();
                 }
+                if (e.Key == Key.Escape)
+                {
+                    Control.StopWave();
+                    IsPause = true;
+                    MiniWindows.MenuPauseWindow win = new MiniWindows.MenuPauseWindow(Control)
+                    {
+                        Owner = MainWindow.MainWin
+                    };
+                    win.ShowDialog();
+                }
             }
         }
 
 
-        public void Fire()
+        private void Fire()
         {
             Control.GamerShip.Fire();
         }

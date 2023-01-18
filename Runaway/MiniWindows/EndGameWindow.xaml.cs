@@ -20,9 +20,14 @@ namespace Runaway.MiniWindows
     /// </summary>
     public partial class EndGameWindow : Window
     {
-        public EndGameWindow()
+        public EndGameWindow(bool isFail)
         {
             InitializeComponent();
+            if (isFail)
+            {
+                WinName.Header = "Повтор волны";
+                NextWave.Content = "Повторить";
+            }
         }
 
         private void NextWave_Click(object sender, RoutedEventArgs e)

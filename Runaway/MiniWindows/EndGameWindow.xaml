@@ -11,7 +11,7 @@
         Background="Transparent"
         WindowStartupLocation="CenterOwner">
     
-    <GroupBox HorizontalAlignment="Center" 
+    <GroupBox x:Name="WinName" HorizontalAlignment="Center" 
               VerticalAlignment="Center" 
               Width="200" 
               Header="Следующая волна" 

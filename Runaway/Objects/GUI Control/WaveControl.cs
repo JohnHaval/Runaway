@@ -25,7 +25,7 @@ namespace Runaway.Objects.GUI_Control
             ThisWave = this;
         }
 
-        public static WaveControl ThisWave { get; private set; }
+        public static WaveControl ThisWave { get; set; }
 
         public void RaidWaveField()
         {
@@ -40,6 +40,8 @@ namespace Runaway.Objects.GUI_Control
             GameScreen.GameField.Children.Add(SecondEnemy.Look);
             GameScreen.GameField.Children.Add(SecondEnemy.HPLabel);
 
+            GameScreen.GameField.Children.Add(Meteor.Look);
+
             StartWave();
         }
 
@@ -51,6 +53,8 @@ namespace Runaway.Objects.GUI_Control
             GameScreen.GameField.Children.Add(WaveBoss.HPLine);
             GameScreen.GameField.Children.Add(WaveBoss.Look);
             GameScreen.GameField.Children.Add(WaveBoss.HPLabel);
+
+            GameScreen.GameField.Children.Add(Meteor.Look);
 
             StartWave();
         }
@@ -90,7 +94,7 @@ namespace Runaway.Objects.GUI_Control
 
         public void StartWave()
         {
-            
+            GameScreen.IsEndWave = false;   
             Meteor.Start();
             GamerShip.Start();
             if (GamerStats.WaveState % 5 == 0) WaveBoss.Start();
@@ -102,6 +106,7 @@ namespace Runaway.Objects.GUI_Control
         }
         public void StopWave()
         {
+            GameScreen.IsEndWave = true;
             Meteor.Stop();
             GamerShip.Stop();
             if (GamerStats.WaveState % 5 == 0) WaveBoss.Stop();

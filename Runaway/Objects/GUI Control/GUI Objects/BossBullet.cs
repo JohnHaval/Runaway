@@ -18,6 +18,7 @@ namespace Runaway.Objects.GUI_Control.GUI_Objects
         public BossBullet(Rect objectRect)
         {
             BulletPosition = objectRect;
+
             Look = new Image
             {
                 Stretch = Stretch.Fill,
@@ -51,6 +52,7 @@ namespace Runaway.Objects.GUI_Control.GUI_Objects
                 GameSounds.PlayHit();
                 if ((Control.GamerShip.HP -= DamageControl.BossDamage) < 0)
                 {
+
                     Control.GamerShip.HPLabel.Content = 0;
                     Control.GamerShip.HPLine.Width = 0;
                     var boom = new Image
@@ -72,7 +74,7 @@ namespace Runaway.Objects.GUI_Control.GUI_Objects
                     MessageBox.Show("К сожалению, вы проиграли :c\nВ результате сражения вы ничего не получили", "YOU LOSE ^.^", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
 
-                else Control.GamerShip.HPLabel.Content = Control.GamerShip.HP;
+                Control.GamerShip.HPLabel.Content = Control.GamerShip.HP;
             }
             else if (BulletPosition.IntersectsWith(Borders.TopBorder) == true)
             {

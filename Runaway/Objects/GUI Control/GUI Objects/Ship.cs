@@ -68,12 +68,16 @@ namespace Runaway.Objects.GUI_Control
         public void Fire()
         {
             if (Bullet == null) Bullet = new ShipBullet();
-            else if (Bullet.IsStopped) Bullet.Start();
+            else if (Bullet.IsStopped) Bullet.Fire();
+        }
+        public new void Start()
+        {
+            if (Bullet != null)
+                if (Bullet.IsStopped) Bullet.Start();
         }
         public new void Stop()
         {
             if (Bullet != null) Bullet.Stop();
-            base.Stop();
         }
     }
 }

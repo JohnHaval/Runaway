@@ -14,7 +14,11 @@
         Icon="/Images/icon.jpg" 
         Closed="Window_Closed">
     <Grid>
-        <Image Source="/Images/abpro.jpg" Opacity="0.85"/>
+        <Grid.Background>
+
+            <ImageBrush ImageSource="/Images/abpro.jpg" Opacity="0.85"/>
+
+        </Grid.Background>
 
         <Label Content="Звуки из игры Half-Life(Разработчик - Valve)" 
                HorizontalAlignment="Left" 

@@ -22,6 +22,8 @@ namespace Runaway.Objects.GUI_Control
 
         public Meteorit() : base()
         {
+            Timer.Tick += Timer_Tick;
+
             Speed = SpeedControl.MeteoritSpeed;
             Look = new Image
             {
@@ -36,10 +38,11 @@ namespace Runaway.Objects.GUI_Control
         {
             Random rnd = new Random();
             int metx = rnd.Next(50, 734);
-            RectYSpeed = rnd.Next(1, 3);
+            RectYSpeed = rnd.Next(4, 10);
             MeteoritPosition = new Rect(metx, 285, 10, 10);            
             Canvas.SetBottom(Look, MeteoritPosition.Y);
             Canvas.SetLeft(Look, MeteoritPosition.X - 27);
+            Start();
         }
         protected new void Timer_Tick(object sender, EventArgs e)
         {            
@@ -49,21 +52,20 @@ namespace Runaway.Objects.GUI_Control
 
         private void MeteoritMove()
         {
-            MeteoritPosition.Y = RectYSpeed;
-            Canvas.SetBottom(Look, MeteoritPosition.Y - 10);
+            MeteoritPosition.Y -= RectYSpeed;
+            Canvas.SetBottom(Look, MeteoritPosition.Y);
             ObjectInterspects();
         }
         private void ObjectInterspects()
         {
             if (MeteoritPosition.IntersectsWith(Control.GamerShip.ShipPosition) == true)
             {
-                IsStopped = false;
-                GameField.Children.Remove(this.Look);
-                double currentHP = Control.GamerShip.HP;
-                if (currentHP - DamageControl.MeteoritDamage < 0)
-                {                    
-                    Control.GamerShip.HPLabel.Content = 0;
-                    Control.GamerShip.HPLine.Width = 0;
+                Control.GamerShip.HP -= DamageControl.MeteoritDamage;
+                if (Control.GamerShip.HP <= 0)
+                {
+                    Control.GamerShip.HP = 0;
+                    Control.GamerShip.HPLabel.Content = Control.GamerShip.HP;
+                    Control.GamerShip.HPLine.Width = 0;//--------------------------------------------------Везде так
                     var boom = new Image
                     {
                         Source = new BitmapImage(new Uri("/Images/bigbom.png", UriKind.Relative)),
@@ -71,14 +73,31 @@ namespace Runaway.Objects.GUI_Control
                         Width = 50,
                         Height = 50,
                     };
-                    Canvas.SetBottom(boom, MeteoritPosition.Y);
-                    Canvas.SetLeft(boom, MeteoritPosition.X);
+                    Canvas.SetBottom(boom, Control.GamerShip.ShipPosition.Y);
+                    Canvas.SetLeft(boom, Control.GamerShip.ShipPosition.X);
+
+
+                    GameField.Children.Remove(Look);
                     GameField.Children.Add(boom);
+
                     GameSounds.PlayBoom();
+
+
                     Control.StopWave();
-                    MessageBox.Show("К сожалению, вы проиграли :c\nВ результате сражения вы ничего не получили", "YOU LOSE ^.^", MessageBoxButton.OK, MessageBoxImage.Error);            
-                }     
-                else Control.GamerShip.HPLabel.Content = Control.GamerShip.HP;
+
+
+                    MessageBox.Show("К сожалению, вы проиграли :c\nВ результате сражения вы ничего не получили", "YOU LOSE ^.^", MessageBoxButton.OK, MessageBoxImage.Error);
+
+
+                    MiniWindows.EndGameWindow win = new MiniWindows.EndGameWindow(false)
+                    {
+                        Owner = MainWindow.MainWin
+                    };
+                    win.ShowDialog();
+                }
+                else SpawnNew();
+                   
+                Control.GamerShip.HPLabel.Content = Control.GamerShip.HP;
             }
             else if (MeteoritPosition.IntersectsWith(Borders.BottomBorder) == true)
             {

@@ -31,24 +31,20 @@ namespace Runaway.View
 
         public void LoadItems()
         {
-            if (GamerStats.WaveState == 1) MessageBox.Show("Магазин недоступен. Необходимо пройти первую волну для калибровки вашего скилла.", "Внимание", MessageBoxButton.OK, MessageBoxImage.Warning);
-            else
+            if (GamerStats.WaveState >= 2 && GamerStats.WaveState <= 5)
             {
-                if (GamerStats.WaveState == 2)
-                {
-                    MessageBox.Show("Это магазин. Здесь вы можете приобрести нужные товары у продавца(или продать свои). Они обновляются с каждым заходом в магазин. Никто не знает, откуда он моментально берет свои товары :D\n-Для того,чтобы купить интересующие вас товары - кликните на товар и нажмите \"Купить\"\n-Для того, чтобы продать ненужные предметы - кликните на них и нажмите \"Продать\"", "Космический магазин", MessageBoxButton.OK, MessageBoxImage.Question);
-                }
-                for (int i = 0; i < Inventory.EnergyBlockCount; i++) Ship.Items.Add("Энергетический блок(+500 Ru)");
-                for (int i = 0; i < Inventory.UFODebrisCount; i++) Ship.Items.Add("Обломки НЛО(+300 Ru)");
-                for (int i = 0; i < Inventory.MeteoritDebrisCount; i++) Ship.Items.Add("Осколки метеорита(+2000 Ru)");
-                for (int i = 0; i < Inventory.UFOSlimeCount; i++) Ship.Items.Add("Кусочек инопланетной слизи(+1000 Ru");
-                for (int i = 0; i < Inventory.MonolithPartCount; i++) Ship.Items.Add("Часть монолита(+15000 Ru)");
-                runsinstore.Text = Inventory.Wallet.ToString() + " Ru";
-                Seller.Items.Add($"Оружие {ShipStats.LvlWeaponDamage}ур.({Marketplace.WeaponDamageCost} Ru)({ShipStats.WeaponDamage}(+5) D)");
-                Seller.Items.Add($"Укрепление корабля {ShipStats.LvlHP}ур.({Marketplace.HPCost} Ru)({ShipStats.HP}(+10) HP)");
-                if (ShipStats.MaxBulletSpeed > 1) Seller.Items.Add($"Скорость пули {ShipStats.LvlBulletSpeed}ур.({Marketplace.BulletSpeedCost} Ru)({ShipStats.BulletSpeed}(-1) ms)");
-                if (ShipStats.MaxFirePower < 5) Seller.Items.Add($"Мощность выстрела {ShipStats.LvlFirePower}ур.({Marketplace.FirePowerCost} Ru)({ShipStats.FirePower}(+1) SpS)");
+                MessageBox.Show("Это магазин. Здесь вы можете приобрести нужные товары у продавца(или продать свои). Они обновляются с каждым заходом в магазин. Никто не знает, откуда он моментально берет свои товары :D\n-Для того,чтобы купить интересующие вас товары - кликните на товар и нажмите \"Купить\"\n-Для того, чтобы продать ненужные предметы - кликните на них и нажмите \"Продать\"", "Космический магазин", MessageBoxButton.OK, MessageBoxImage.Question);
             }
+            for (int i = 0; i < Inventory.EnergyBlockCount; i++) Ship.Items.Add("Энергетический блок(+500 Ru)");
+            for (int i = 0; i < Inventory.UFODebrisCount; i++) Ship.Items.Add("Обломки НЛО(+300 Ru)");
+            for (int i = 0; i < Inventory.MeteoritDebrisCount; i++) Ship.Items.Add("Осколки метеорита(+2000 Ru)");
+            for (int i = 0; i < Inventory.UFOSlimeCount; i++) Ship.Items.Add("Кусочек инопланетной слизи(+1000 Ru");
+            for (int i = 0; i < Inventory.MonolithPartCount; i++) Ship.Items.Add("Часть монолита(+15000 Ru)");
+            runsinstore.Text = Inventory.Wallet.ToString() + " Ru";
+            Seller.Items.Add($"Оружие {ShipStats.LvlWeaponDamage}ур.({Marketplace.WeaponDamageCost} Ru)({ShipStats.WeaponDamage}(+5) D)");
+            Seller.Items.Add($"Укрепление корабля {ShipStats.LvlHP}ур.({Marketplace.HPCost} Ru)({ShipStats.HP}(+10) HP)");
+            if (ShipStats.MaxBulletSpeed > 1) Seller.Items.Add($"Скорость пули {ShipStats.LvlBulletSpeed}ур.({Marketplace.BulletSpeedCost} Ru)({ShipStats.BulletSpeed}(-1) ms)");
+            if (ShipStats.MaxFirePower < 5) Seller.Items.Add($"Мощность выстрела {ShipStats.LvlFirePower}ур.({Marketplace.FirePowerCost} Ru)({ShipStats.FirePower}(+1) SpS)");
         }
 
 
@@ -140,6 +136,15 @@ namespace Runaway.View
             else
             {
                 ButtonSounds.PlayCancelSound();
+            }
+        }
+
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (GamerStats.WaveState == 1)
+            {
+                MessageBox.Show("Магазин недоступен. Необходимо пройти первую волну для калибровки вашего скилла.", "Внимание", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MainWindow.Main.Content = new View.MainScreen();
             }
         }
     }

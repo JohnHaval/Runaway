@@ -17,7 +17,7 @@ namespace Runaway.Objects.GUI_Control.GUI_Objects
         public Rect BulletPosition;
         public ShipBullet()
         {
-            Timer.Tick+= Timer_Tick;
+            Timer.Tick += Timer_Tick;
 
             Speed = ShipStats.BulletSpeed;
 
@@ -28,15 +28,13 @@ namespace Runaway.Objects.GUI_Control.GUI_Objects
                 Height = 15,
                 Source = new BitmapImage(new Uri("/Images/bullet.png", UriKind.Relative))
             };
-            SpawnNew();
+            Fire();
         }
         protected void SpawnNew()
         {
-            BulletPosition = new Rect(Control.GamerShip.ShipPosition.X + 17, Control.GamerShip.ShipPosition.Y - 15, 15, 15);
+            BulletPosition = new Rect(Control.GamerShip.ShipPosition.X + 17, Control.GamerShip.ShipPosition.Y + 50, 15, 15);
             Canvas.SetBottom(Look, BulletPosition.Y);
             Canvas.SetLeft(Look, BulletPosition.X);
-            GameField.Children.Add(Look);
-            base.Start();
         }
         protected new void Timer_Tick(object sender, EventArgs e)
         {
@@ -50,14 +48,14 @@ namespace Runaway.Objects.GUI_Control.GUI_Objects
         }
         public void ObjectIntersects()
         {
-            if (BulletPosition.IntersectsWith(Control.FirstEnemy.EnemyPosition) == true)
+            if (BulletPosition.IntersectsWith(Control.FirstEnemy.EnemyPosition) == true && Control.FirstEnemy.HP != 0)
             {
                 GameSounds.PlayHit();
 
                 Control.FirstEnemy.HP -= ShipStats.WeaponDamage;
                 if (Control.FirstEnemy.HP <= 0)
                 {
-                    Control.FirstEnemy.HPLabel.Content = 0;
+                    Control.FirstEnemy.HP = 0;
                     Control.FirstEnemy.HPLine.Width = 0;
                     var boom = new Image
                     {
@@ -74,6 +72,7 @@ namespace Runaway.Objects.GUI_Control.GUI_Objects
 
                     Control.FirstEnemy.Stop();
 
+                    GameField.Children.Remove(Control.FirstEnemy.Bullet.Look);
 
                     GameField.Children.Remove(Look);
 
@@ -82,12 +81,12 @@ namespace Runaway.Objects.GUI_Control.GUI_Objects
                         WaveEnd();
                     }
                 }
-                else Control.FirstEnemy.HPLabel.Content = Control.FirstEnemy.HP;
+                Control.FirstEnemy.HPLabel.Content = Control.FirstEnemy.HP;
             }
 
 
 
-            if (BulletPosition.IntersectsWith(Control.SecondEnemy.EnemyPosition) == true)
+            if (BulletPosition.IntersectsWith(Control.SecondEnemy.EnemyPosition) == true && Control.SecondEnemy.HP != 0)
             {
                 GameSounds.PlayHit();
 
@@ -95,7 +94,7 @@ namespace Runaway.Objects.GUI_Control.GUI_Objects
 
                 if (Control.SecondEnemy.HP <= 0)
                 {
-                    Control.SecondEnemy.HPLabel.Content = 0;
+                    Control.SecondEnemy.HP = 0;
                     Control.SecondEnemy.HPLine.Width = 0;
                     var boom = new Image
                     {
@@ -114,13 +113,15 @@ namespace Runaway.Objects.GUI_Control.GUI_Objects
 
                     GameField.Children.Remove(Look);
 
+                    GameField.Children.Remove(Control.SecondEnemy.Bullet.Look);
+
                     if (Control.FirstEnemy.HP == 0 && Control.SecondEnemy.HP == 0)
                     {
                         WaveEnd();
                     }
 
                 }
-                else Control.SecondEnemy.HPLabel.Content = Control.SecondEnemy.HP;
+                Control.SecondEnemy.HPLabel.Content = Control.SecondEnemy.HP;
             }
 
 
@@ -135,12 +136,30 @@ namespace Runaway.Objects.GUI_Control.GUI_Objects
         public void WaveEnd()
         {
             Control.StopWave();
-            Inventory.GetWinItems();
-        }
 
-        public new void Start()
+            Inventory.GetWinItems();
+
+            Objects.GamerStats.WaveState++;
+
+
+            MiniWindows.EndGameWindow win = new MiniWindows.EndGameWindow(false)
+            {
+                Owner = MainWindow.MainWin
+            };
+            win.ShowDialog();
+        }
+        public void Fire()
         {
             SpawnNew();
+            Start();
+        }
+        public new void Start()
+        {
+            if (!GameField.Children.Contains(Look))
+            {
+                GameField.Children.Add(Look);
+            }
+            base.Start();
         }
     }
 }

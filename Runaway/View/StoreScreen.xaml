@@ -5,11 +5,11 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Runaway.View"
              mc:Ignorable="d" 
-             d:DesignHeight="413" d:DesignWidth="800">
+             d:DesignHeight="413" d:DesignWidth="800" Loaded="UserControl_Loaded">
     <Grid x:Name="storeandupgrader">
         <Grid.Background>
 
-            <ImageBrush/>
+            <ImageBrush ImageSource="/Images/store.jpeg"/>
 
         </Grid.Background>
         <GroupBox x:Name="InvShip" Header="Инвентарь корабля" Height="370" Width="392" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="{x:Null}" FontSize="22" FontFamily="Sylfaen">

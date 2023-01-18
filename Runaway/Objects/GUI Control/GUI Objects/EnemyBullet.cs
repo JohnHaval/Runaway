@@ -75,6 +75,7 @@ namespace Runaway.Objects.GUI_Control.GUI_Objects
                 if ((Control.GamerShip.HP) <= 0)
                 {
                     Control.GamerShip.HP = 0;
+                    Control.GamerShip.HPLabel.Content = Control.GamerShip.HP;
                     var boom = new Image
                     {
                         Source = new BitmapImage(new Uri("/Images/bigbom.png", UriKind.Relative)),
@@ -91,7 +92,17 @@ namespace Runaway.Objects.GUI_Control.GUI_Objects
 
                     Control.StopWave();
 
+
+
                     MessageBox.Show("К сожалению, вы проиграли :c\nВ результате сражения вы ничего не получили", "YOU LOSE ^.^", MessageBoxButton.OK, MessageBoxImage.Error);
+
+                    MiniWindows.EndGameWindow win = new MiniWindows.EndGameWindow(true)
+                    {
+                        Owner = MainWindow.MainWin
+                    };
+                    win.ShowDialog();
+
+
                 }
                 else SpawnNew();
                 Control.GamerShip.HPLabel.Content = Control.GamerShip.HP;

@@ -34,7 +34,11 @@ namespace Runaway
 
         private void Window_KeyDown(object sender, KeyEventArgs e)
         {
-            ((GameScreen)this.MainContent.Content).MainWin_KeyDown(sender, e);
+            try
+            {
+                ((GameScreen)this.MainContent.Content).MainWin_KeyDown(sender, e);
+            }
+            catch { }
         }
     }
 }

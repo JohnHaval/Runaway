@@ -1,4 +1,6 @@
-﻿using Runaway.Utilities;
+﻿using Runaway.Objects.GUI_Control;
+using Runaway.Utilities;
+using Runaway.View;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,15 +22,16 @@ namespace Runaway.MiniWindows
     /// </summary>
     public partial class MenuPauseWindow : Window
     {
-        public MenuPauseWindow()
+        public MenuPauseWindow(WaveControl control)
         {
             InitializeComponent();
+            CurrentControl = control;
         }
-
+        WaveControl CurrentControl;
         private void Continue_Click(object sender, RoutedEventArgs e)
         {
             ButtonSounds.PlayClickSound();
-            MainWindow.Main.Content = new View.GameScreen();
+            CurrentControl.StartWave();
             Close();
         }
 
