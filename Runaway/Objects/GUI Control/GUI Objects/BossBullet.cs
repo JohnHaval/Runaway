@@ -15,9 +15,13 @@ namespace Runaway.Objects.GUI_Control.GUI_Objects
     {
         public Rect BulletPosition;
 
-        public BossBullet(Rect objectRect)
+        public BossBullet()
         {
-            BulletPosition = objectRect;
+            Timer.Tick += Timer_Tick;
+
+            BulletPosition = new Rect(Control.WaveBoss.BossPosition.X + 105, Control.WaveBoss.BossPosition.Y - 22, 20, 20);
+
+            Speed = 100;
 
             Look = new Image
             {
@@ -27,11 +31,12 @@ namespace Runaway.Objects.GUI_Control.GUI_Objects
                 Source = new BitmapImage(new Uri("/Images/bullet.png", UriKind.Relative)),
             };
             SpawnNew();
+            GameField.Children.Add(Look);
         }
 
         protected void SpawnNew()
         {
-            BulletPosition = new Rect(BulletPosition.X + 105, BulletPosition.Y - 22, 15, 15);
+            BulletPosition = new Rect(Control.WaveBoss.BossPosition.X + 105, Control.WaveBoss.BossPosition.Y - 22, 15, 15);
             Canvas.SetBottom(Look, BulletPosition.Y);
             Canvas.SetLeft(Look, BulletPosition.X);
         }
@@ -42,7 +47,7 @@ namespace Runaway.Objects.GUI_Control.GUI_Objects
         }
         public void BulletMove()
         {
-            Canvas.SetBottom(Look, BulletPosition.Y -= 2);
+            Canvas.SetBottom(Look, BulletPosition.Y -= 4);
             ObjectIntersects();
         }
         public void ObjectIntersects()
@@ -50,9 +55,12 @@ namespace Runaway.Objects.GUI_Control.GUI_Objects
             if (BulletPosition.IntersectsWith(Control.GamerShip.ShipPosition) == true)
             {
                 GameSounds.PlayHit();
-                if ((Control.GamerShip.HP -= DamageControl.BossDamage) < 0)
-                {
 
+                Control.GamerShip.HP -= DamageControl.BossDamage;
+
+                if (Control.GamerShip.HP <= 0)
+                {
+                    Control.GamerShip.HP = 0;
                     Control.GamerShip.HPLabel.Content = 0;
                     Control.GamerShip.HPLine.Width = 0;
                     var boom = new Image
@@ -72,7 +80,14 @@ namespace Runaway.Objects.GUI_Control.GUI_Objects
                     Control.StopWave();
 
                     MessageBox.Show("К сожалению, вы проиграли :c\nВ результате сражения вы ничего не получили", "YOU LOSE ^.^", MessageBoxButton.OK, MessageBoxImage.Error);
+
+                    MiniWindows.EndGameWindow win = new MiniWindows.EndGameWindow(true)
+                    {
+                        Owner = MainWindow.MainWin
+                    };
+                    win.ShowDialog();
                 }
+                else SpawnNew();
 
                 Control.GamerShip.HPLabel.Content = Control.GamerShip.HP;
             }

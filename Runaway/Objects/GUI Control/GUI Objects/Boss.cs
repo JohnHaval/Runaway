@@ -25,8 +25,19 @@ namespace Runaway.Objects.GUI_Control
 
         public Boss() : base()
         {
+
+            Timer.Tick += Timer_Tick;
+
+
+
             HP = HPControl.EnemyHP;
+
+            Timer.Tick += Timer_Tick;
+
+
             Speed = SpeedControl.BossSpeed;
+
+
             HPLabel = new Label()
             {
                 Content = HPControl.EnemyHP,
@@ -56,8 +67,8 @@ namespace Runaway.Objects.GUI_Control
                 Width = 215,
                 Stretch = Stretch.Fill,
             };
-            Bullet = new BossBullet(BossPosition);
-            Start();
+            Canvas.SetLeft(Look, 283);
+            Canvas.SetTop(Look, 0);
         }
         protected new void Timer_Tick(object sender, EventArgs e)
         {
@@ -71,7 +82,6 @@ namespace Runaway.Objects.GUI_Control
             else if (IsRightWay == false) Canvas.SetLeft(Look, BossPosition.X -= 1);
             if (BossPosition.X == 0) IsRightWay = true;
             else if (BossPosition.X == 565) IsRightWay = false;
-            if (Bullet.IsStopped) Bullet.Start();
         }
 
 
@@ -83,6 +93,7 @@ namespace Runaway.Objects.GUI_Control
 
         public new void Start()
         {
+            if (Bullet == null) Bullet = new BossBullet();
             Bullet.Start();
             base.Start();
         }

@@ -48,90 +48,142 @@ namespace Runaway.Objects.GUI_Control.GUI_Objects
         }
         public void ObjectIntersects()
         {
-            if (BulletPosition.IntersectsWith(Control.FirstEnemy.EnemyPosition) == true && Control.FirstEnemy.HP != 0)
+            if (Control.FirstEnemy != null)
             {
-                GameSounds.PlayHit();
-
-                Control.FirstEnemy.HP -= ShipStats.WeaponDamage;
-                if (Control.FirstEnemy.HP <= 0)
+                if (BulletPosition.IntersectsWith(Control.FirstEnemy.EnemyPosition) == true && Control.FirstEnemy.HP != 0)
                 {
-                    Control.FirstEnemy.HP = 0;
-                    Control.FirstEnemy.HPLine.Width = 0;
-                    var boom = new Image
+                    GameSounds.PlayHit();
+
+                    Control.FirstEnemy.HP -= ShipStats.WeaponDamage;
+                    if (Control.FirstEnemy.HP <= 0)
                     {
-                        Source = new BitmapImage(new Uri("/Images/bigbom.png", UriKind.Relative)),
-                        Stretch = Stretch.Fill,
-                        Width = 50,
-                        Height = 50,
-                    };
-                    Canvas.SetBottom(boom, Control.FirstEnemy.EnemyPosition.Y);
-                    Canvas.SetLeft(boom, Control.FirstEnemy.EnemyPosition.X);
-                    GameField.Children.Add(boom);
+                        Control.FirstEnemy.HP = 0;
+                        Control.FirstEnemy.HPLine.Width = 0;
+                        var boom = new Image
+                        {
+                            Source = new BitmapImage(new Uri("/Images/bigbom.png", UriKind.Relative)),
+                            Stretch = Stretch.Fill,
+                            Width = 50,
+                            Height = 50,
+                        };
+                        Canvas.SetBottom(boom, Control.FirstEnemy.EnemyPosition.Y);
+                        Canvas.SetLeft(boom, Control.FirstEnemy.EnemyPosition.X);
+                        GameField.Children.Add(boom);
 
-                    GameSounds.PlayBoom();
+                        GameSounds.PlayBoom();
 
-                    Control.FirstEnemy.Stop();
+                        Control.FirstEnemy.Stop();
 
-                    GameField.Children.Remove(Control.FirstEnemy.Bullet.Look);
+                        GameField.Children.Remove(Control.FirstEnemy.Bullet.Look);
 
-                    GameField.Children.Remove(Look);
+                        GameField.Children.Remove(Look);
 
-                    if (Control.FirstEnemy.HP == 0 && Control.SecondEnemy.HP == 0)
+                        if (Control.FirstEnemy.HP == 0 && Control.SecondEnemy.HP == 0)
+                        {
+                            WaveEnd();
+                        }
+                    }
+                    else
                     {
+                        ResetBullet();
+                    }
+                    Control.FirstEnemy.HPLabel.Content = Control.FirstEnemy.HP;
+                }
+
+
+                if (BulletPosition.IntersectsWith(Control.SecondEnemy.EnemyPosition) == true && Control.SecondEnemy.HP != 0)
+                {
+                    GameSounds.PlayHit();
+
+                    Control.SecondEnemy.HP -= ShipStats.WeaponDamage;
+
+                    if (Control.SecondEnemy.HP <= 0)
+                    {
+                        Control.SecondEnemy.HP = 0;
+                        Control.SecondEnemy.HPLine.Width = 0;
+                        var boom = new Image
+                        {
+                            Source = new BitmapImage(new Uri("/Images/bigbom.png", UriKind.Relative)),
+                            Stretch = Stretch.Fill,
+                            Width = 50,
+                            Height = 50,
+                        };
+                        Canvas.SetBottom(boom, Control.SecondEnemy.EnemyPosition.Y);
+                        Canvas.SetLeft(boom, Control.SecondEnemy.EnemyPosition.X);
+                        GameField.Children.Add(boom);
+
+                        GameSounds.PlayBoom();
+
+                        Control.SecondEnemy.Stop();
+
+                        GameField.Children.Remove(Look);
+
+                        GameField.Children.Remove(Control.SecondEnemy.Bullet.Look);
+
+                        if (Control.FirstEnemy.HP == 0 && Control.SecondEnemy.HP == 0)
+                        {
+                            WaveEnd();
+                        }
+
+                    }
+                    else
+                    {
+                        ResetBullet();
+                    }
+                    Control.SecondEnemy.HPLabel.Content = Control.SecondEnemy.HP;
+                }
+                else if (BulletPosition.IntersectsWith(Borders.TopBorder) == true)
+                {
+                    ResetBullet();
+                }
+            }
+          
+
+
+            if (Control.WaveBoss != null)
+            {
+                if (BulletPosition.IntersectsWith(Control.WaveBoss.BossPosition) == true && Control.WaveBoss.HP != 0)
+                {
+                    GameSounds.PlayHit();
+
+                    Control.WaveBoss.HP -= ShipStats.WeaponDamage;
+                    if (Control.WaveBoss.HP <= 0)
+                    {
+                        Control.WaveBoss.HP = 0;
+                        Control.WaveBoss.HPLine.Width = 0;
+                        var boom = new Image
+                        {
+                            Source = new BitmapImage(new Uri("/Images/bigbom.png", UriKind.Relative)),
+                            Stretch = Stretch.Fill,
+                            Width = 150,
+                            Height = 150,
+                        };
+                        Canvas.SetBottom(boom, Control.WaveBoss.BossPosition.Y);
+                        Canvas.SetLeft(boom, Control.WaveBoss.BossPosition.X);
+                        GameField.Children.Add(boom);
+
+                        GameSounds.PlayBoom();
+
+                        Control.WaveBoss.Stop();
+
+                        GameField.Children.Remove(Control.WaveBoss.Bullet.Look);
+
+                        GameField.Children.Remove(Look);
+
                         WaveEnd();
                     }
-                }
-                Control.FirstEnemy.HPLabel.Content = Control.FirstEnemy.HP;
-            }
-
-
-
-            if (BulletPosition.IntersectsWith(Control.SecondEnemy.EnemyPosition) == true && Control.SecondEnemy.HP != 0)
-            {
-                GameSounds.PlayHit();
-
-                Control.SecondEnemy.HP -= ShipStats.WeaponDamage;
-
-                if (Control.SecondEnemy.HP <= 0)
-                {
-                    Control.SecondEnemy.HP = 0;
-                    Control.SecondEnemy.HPLine.Width = 0;
-                    var boom = new Image
+                    else
                     {
-                        Source = new BitmapImage(new Uri("/Images/bigbom.png", UriKind.Relative)),
-                        Stretch = Stretch.Fill,
-                        Width = 50,
-                        Height = 50,
-                    };
-                    Canvas.SetBottom(boom, Control.SecondEnemy.EnemyPosition.Y);
-                    Canvas.SetLeft(boom, Control.SecondEnemy.EnemyPosition.X);
-                    GameField.Children.Add(boom);
-
-                    GameSounds.PlayBoom();
-
-                    Control.SecondEnemy.Stop();
-
-                    GameField.Children.Remove(Look);
-
-                    GameField.Children.Remove(Control.SecondEnemy.Bullet.Look);
-
-                    if (Control.FirstEnemy.HP == 0 && Control.SecondEnemy.HP == 0)
-                    {
-                        WaveEnd();
+                        ResetBullet();
                     }
-
+                    Control.WaveBoss.HPLabel.Content = Control.WaveBoss.HP;
                 }
-                Control.SecondEnemy.HPLabel.Content = Control.SecondEnemy.HP;
+                else if (BulletPosition.IntersectsWith(Borders.TopBorder) == true)
+                {
+                    ResetBullet();
+                }
             }
 
-
-
-
-            else if (BulletPosition.IntersectsWith(Borders.TopBorder) == true)
-            {
-                Stop();
-                GameField.Children.Remove(Look);
-            }
         } 
         public void WaveEnd()
         {
@@ -160,6 +212,13 @@ namespace Runaway.Objects.GUI_Control.GUI_Objects
                 GameField.Children.Add(Look);
             }
             base.Start();
+        }
+
+        public void ResetBullet()
+        {
+            Stop();
+            GameField.Children.Remove(Look);
+            SpawnNew();
         }
     }
 }
