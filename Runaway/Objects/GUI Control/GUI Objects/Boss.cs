@@ -45,7 +45,7 @@ namespace Runaway.Objects.GUI_Control
                 Height = 28,
                 Background = null,
                 FontWeight = FontWeights.Bold,
-                FontSize = 16,
+                FontSize = 12,
                 BorderBrush = null,
                 Foreground = Brushes.LightBlue,
                 HorizontalContentAlignment = HorizontalAlignment.Center,
