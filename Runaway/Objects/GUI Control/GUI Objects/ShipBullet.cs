@@ -145,8 +145,8 @@ namespace Runaway.Objects.GUI_Control.GUI_Objects
                             Width = 150,
                             Height = 150,
                         };
-                        Canvas.SetBottom(boom, Control.WaveBoss.BossPosition.Y);
-                        Canvas.SetLeft(boom, Control.WaveBoss.BossPosition.X);
+                        Canvas.SetBottom(boom, Control.WaveBoss.BossPosition.Y - 22);
+                        Canvas.SetLeft(boom, Control.WaveBoss.BossPosition.X + 105);
                         GameField.Children.Add(boom);
 
                         GameSounds.PlayBoom();

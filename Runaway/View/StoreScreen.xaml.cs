@@ -36,11 +36,11 @@ namespace Runaway.View
             {
                 MessageBox.Show("Это магазин. Здесь вы можете приобрести нужные товары у продавца(или продать свои). Они обновляются с каждым заходом в магазин. Никто не знает, откуда он моментально берет свои товары :D\n-Для того,чтобы купить интересующие вас товары - кликните на товар и нажмите \"Купить\"\n-Для того, чтобы продать ненужные предметы - кликните на них и нажмите \"Продать\"", "Космический магазин", MessageBoxButton.OK, MessageBoxImage.Question);
             }
-            for (int i = 0; i < Inventory.EnergyBlockCount; i++) Ship.Items.Add("Энергетический блок(+300 Ru)");
-            for (int i = 0; i < Inventory.UFODebrisCount; i++) Ship.Items.Add("Обломки НЛО(+500 Ru)");
-            for (int i = 0; i < Inventory.MeteoritDebrisCount; i++) Ship.Items.Add("Осколки метеорита(+1000 Ru)");
-            for (int i = 0; i < Inventory.UFOSlimeCount; i++) Ship.Items.Add("Кусочек инопланетной слизи(+2000 Ru)");
-            for (int i = 0; i < Inventory.MonolithPartCount; i++) Ship.Items.Add("Часть монолита(+15000 Ru)");
+            for (int i = 0; i < Inventory.EnergyBlockCount; i++) Ship.Items.Add($"Энергетический блок(+{Marketplace.EnergyBlockCost} Ru)");
+            for (int i = 0; i < Inventory.UFODebrisCount; i++) Ship.Items.Add($"Обломки НЛО(+{Marketplace.UFODebrisCost} Ru)");
+            for (int i = 0; i < Inventory.MeteoritDebrisCount; i++) Ship.Items.Add($"Осколки метеорита(+{Marketplace.MeteoritDebrisCost} Ru)");
+            for (int i = 0; i < Inventory.UFOSlimeCount; i++) Ship.Items.Add($"Кусочек инопланетной слизи(+{Marketplace.UFOSlimeCost} Ru)");
+            for (int i = 0; i < Inventory.MonolithPartCount; i++) Ship.Items.Add($"Часть монолита(+{Marketplace.MonolithPartCost} Ru)");
             runsinstore.Text = Inventory.Wallet.ToString() + " Ru";
             Seller.Items.Add($"Оружие {ShipStats.LvlWeaponDamage}ур.({Marketplace.WeaponDamageCost} Ru)({ShipStats.WeaponDamage}(+5) D)");
             Seller.Items.Add($"Укрепление корабля {ShipStats.LvlHP}ур.({Marketplace.HPCost} Ru)({ShipStats.HP}(+10) HP)");
@@ -108,27 +108,27 @@ namespace Runaway.View
             if (Ship.SelectedItem != null)
             {
                 ButtonSounds.PlaySellSound();
-                if (Convert.ToString(Ship.SelectedItem) == "Энергетический блок(+300 Ru)")
+                if (Convert.ToString(Ship.SelectedItem) == $"Энергетический блок(+{Marketplace.EnergyBlockCost} Ru)")
                 {
                     SellObject(Marketplace.EnergyBlockCost);
                     Inventory.EnergyBlockCount -= 1;
                 }
-                else if (Convert.ToString(Ship.SelectedItem) == "Обломки НЛО(+500 Ru)")
+                else if (Convert.ToString(Ship.SelectedItem) == $"Обломки НЛО(+{Marketplace.UFODebrisCost} Ru)")
                 {
                     SellObject(Marketplace.UFODebrisCost);
                     Inventory.UFODebrisCount -= 1;
                 }
-                else if (Convert.ToString(Ship.SelectedItem) == "Осколки метеорита(+1000 Ru)")
+                else if (Convert.ToString(Ship.SelectedItem) == $"Осколки метеорита(+{Marketplace.MeteoritDebrisCost} Ru)")
                 {
                     SellObject(Marketplace.MeteoritDebrisCost);
                     Inventory.MeteoritDebrisCount -= 1;
                 }
-                else if (Convert.ToString(Ship.SelectedItem) == "Кусочек инопланетной слизи(+2000 Ru)")
+                else if (Convert.ToString(Ship.SelectedItem) == $"Кусочек инопланетной слизи(+{Marketplace.UFOSlimeCost} Ru)")
                 {
                     SellObject(Marketplace.UFOSlimeCost);
                     Inventory.UFOSlimeCount -= 1;
                 }
-                else if (Convert.ToString(Ship.SelectedItem) == "Часть монолита(+15000 Ru)")
+                else if (Convert.ToString(Ship.SelectedItem) == $"Часть монолита(+{Marketplace.MonolithPartCost} Ru)")
                 {
                     SellObject(Marketplace.MonolithPartCost);
                     Inventory.MonolithPartCount -= 1;

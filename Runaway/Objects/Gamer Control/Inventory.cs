@@ -21,21 +21,37 @@ namespace Runaway.Objects
             Random rnd = new Random();
             int wallet = rnd.Next(GamerStats.WaveState * 50, GamerStats.WaveState * 250);
             Wallet += wallet;
+
+
             int energy = rnd.Next(0, 3);
             EnergyBlockCount += energy;
-            int debris = rnd.Next(0, 3);
+
+
+            int debris = rnd.Next(0, 2);
             UFODebrisCount += debris;
-            int meteorit = rnd.Next(0, 1);
-            MeteoritDebrisCount += meteorit;
-            int slime = rnd.Next(0, 2);
-            UFOSlimeCount += slime;
+
+
+            int meteorit = 0;
+            int meteoritChance = rnd.Next(1, 5);
+            if (meteoritChance == 3)
+            {
+                meteorit = rnd.Next(1, 3);
+                UFOSlimeCount += meteorit;
+            }
+
+            int slime = 0;
+            int slimeChance = rnd.Next(1, 10);
+            if (slimeChance == 5)
+            {
+                slime = rnd.Next(1,3);
+                UFOSlimeCount += slime;
+            }
 
             int monolith = 0;
-            int chance = rnd.Next(1, 20);
-            if (chance == 5)
-            {
-                monolith = 1;
-                MonolithPartCount += monolith;
+            int monolithChance = rnd.Next(1, 20);
+            if (monolithChance == 5)
+            {                
+                MonolithPartCount++;
             }
             MessageBox.Show($"Получено денег: {wallet} " +
             $"Ru\nЛут:\n-Получено энергоблоков: {energy}x\n" +

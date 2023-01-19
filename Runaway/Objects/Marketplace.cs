@@ -13,11 +13,11 @@ namespace Runaway.Objects
         public static long BulletSpeedCost { get => 5000 * ShipStats.LvlBulletSpeed; }
         public static long FirePowerCost { get => 30000 * ShipStats.LvlFirePower; }
         public static long ShipSpeedCost { get => 6000 * ShipStats.LvlShipSpeed; }
-        public static long EnergyBlockCost { get => 300; }
-        public static long UFODebrisCost { get => 500; }
-        public static long MeteoritDebrisCost { get => 1000; }
-        public static long UFOSlimeCost { get => 2000; }
-        public static long MonolithPartCost { get => 15000; }
+        public static long EnergyBlockCost { get => 100 * GamerStats.WaveState; }
+        public static long UFODebrisCost { get => 200 * GamerStats.WaveState; }
+        public static long MeteoritDebrisCost { get => 1000 * GamerStats.WaveState; }
+        public static long UFOSlimeCost { get => 2000 * GamerStats.WaveState; }
+        public static long MonolithPartCost { get => 15000 * GamerStats.WaveState; }
         
     }
 }
