@@ -16,9 +16,10 @@ namespace Runaway.Objects
         public static int UFOSlimeCount { get; set; }
         public static int MonolithPartCount { get; set; }
 
+        static Random rnd;
         public static void GetWinItems()
         {
-            Random rnd = new Random();
+            rnd = new Random();
             int wallet = rnd.Next(GamerStats.WaveState * 50, GamerStats.WaveState * 250);
             Wallet += wallet;
 
