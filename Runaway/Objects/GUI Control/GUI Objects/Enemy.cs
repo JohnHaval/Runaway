@@ -15,8 +15,10 @@ namespace Runaway.Objects.GUI_Control
 {
     public class Enemy : Base
     {
+        private long _hp;
+
         public Rect EnemyPosition;
-        public long HP { get; set; }
+        public long HP { get => _hp; set { HPStateChanger.HPChanged(this, value); _hp = value; } }
         public Label HPLabel { get; set; }
         public Rectangle HPLine { get; set; }
 
@@ -32,9 +34,9 @@ namespace Runaway.Objects.GUI_Control
             Timer.Tick += Timer_Tick;
 
 
-            Speed = 100;
+            Speed = SpeedControl.EnemySpeed;
 
-            HP = HPControl.EnemyHP;
+            _hp = HPControl.EnemyHP;
             Look = new Image()
             {
                 Source = new BitmapImage(new Uri("/Images/smallenemy.png", UriKind.Relative)),
@@ -71,8 +73,8 @@ namespace Runaway.Objects.GUI_Control
             {
                 EnemyPosition = new Rect(130, 260, 50, 50);
 
-                Canvas.SetLeft(HPLabel, 0);
                 Canvas.SetTop(HPLabel, 0);
+                Canvas.SetLeft(HPLabel, 0);
                 Canvas.SetTop(HPLine, 0);
                 Canvas.SetLeft(HPLine, 0);
                 Canvas.SetLeft(Look, 130);
@@ -80,9 +82,10 @@ namespace Runaway.Objects.GUI_Control
             }
             else
             {
+                EnemyPosition = new Rect(600, 260, 50, 50);
+
                 Canvas.SetTop(HPLabel, 0);
                 Canvas.SetLeft(HPLabel, 392);
-                EnemyPosition = new Rect(600, 260, 50, 50);
                 Canvas.SetTop(HPLine, 0);
                 Canvas.SetLeft(HPLine, 392);
                 Canvas.SetLeft(Look, 600);

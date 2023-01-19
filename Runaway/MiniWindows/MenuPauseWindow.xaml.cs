@@ -28,8 +28,10 @@ namespace Runaway.MiniWindows
             CurrentControl = control;
         }
         WaveControl CurrentControl;
+        bool IsNext;
         private void Continue_Click(object sender, RoutedEventArgs e)
         {
+            IsNext = true;
             ButtonSounds.PlayClickSound();
             CurrentControl.StartWave();
             Close();
@@ -40,11 +42,13 @@ namespace Runaway.MiniWindows
             ButtonSounds.PlaySelectSound();
         }
 
-        private void BackToMenu_Click(object sender, RoutedEventArgs e)
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            ButtonSounds.PlayClickSound();
-            MainWindow.Main.Content = new View.MainScreen();
-            Close();
+            if (!IsNext)
+            {
+                ButtonSounds.PlayClickSound();
+                MainWindow.Main.Content = new View.MainScreen();
+            }
         }
     }
 }

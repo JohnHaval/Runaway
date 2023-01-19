@@ -75,12 +75,13 @@ namespace Runaway.Utilities
         }
 
         private static void Media_Ended(object sender, EventArgs e)
-        {
+        {            
             if (EnivironmentState == Enivironment.Menu) PlayingMusic.Open(PathsMusic[Rnd.Next(0, 4)]);
             else if (EnivironmentState == Enivironment.Marketplace) PlayingMusic.Open(PathsMusic[Rnd.Next(4, 7)]);
             else if (EnivironmentState == Enivironment.Raid) PlayingMusic.Open(PathsMusic[Rnd.Next(7, 14)]);
-            else if (EnivironmentState == Enivironment.Boss) PlayingMusic.Open(PathsMusic[Rnd.Next(15, 21)]);
+            else if (EnivironmentState == Enivironment.Boss) PlayingMusic.Open(PathsMusic[Rnd.Next(14, 21)]);
             else PlayingMusic.Open(PathsMusic[21]);
+            PlayingMusic.Play();
         }
 
 

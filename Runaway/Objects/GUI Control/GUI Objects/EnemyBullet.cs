@@ -22,12 +22,9 @@ namespace Runaway.Objects.GUI_Control.GUI_Objects
         {
             Timer.Tick += Timer_Tick;
 
-            Speed = 100;//--------------------------------------------------------------------------------Скоростная        затычка
+            Speed = SpeedControl.EnemySpeed / 10;
 
             IsFirstEnemy = isFirstEnemy;
-
-            if (isFirstEnemy) BulletPosition = new Rect(Control.FirstEnemy.EnemyPosition.X, Control.FirstEnemy.EnemyPosition.Y, 15, 15);
-            else BulletPosition = new Rect(Control.SecondEnemy.EnemyPosition.X, Control.SecondEnemy.EnemyPosition.Y, 15, 15);
 
             Look = new Image
             {
@@ -35,23 +32,25 @@ namespace Runaway.Objects.GUI_Control.GUI_Objects
                 Width = 15,
                 Height = 15,
                 Source = new BitmapImage(new Uri("/Images/bullet.png", UriKind.Relative)),
+                RenderTransformOrigin = new Point(0.5, 0.5)
             };
             SpawnNew();
             GameField.Children.Add(Look);
         }
         protected void SpawnNew()
         {
+            GameSounds.PlayFire();
             if (IsFirstEnemy)
             {
-                BulletPosition = new Rect(Control.FirstEnemy.EnemyPosition.X + 17, Control.FirstEnemy.EnemyPosition.Y - 15, 15, 15);
-                Canvas.SetBottom(Look, Control.FirstEnemy.EnemyPosition.Y);
-                Canvas.SetLeft(Look, Control.FirstEnemy.EnemyPosition.X);
+                BulletPosition = new Rect(Control.FirstEnemy.EnemyPosition.X + 17, Control.FirstEnemy.EnemyPosition.Y - 15, 13, 13);
+                Canvas.SetBottom(Look, BulletPosition.Y);
+                Canvas.SetLeft(Look, BulletPosition.X);
             }
             else
             {
-                BulletPosition = new Rect(Control.SecondEnemy.EnemyPosition.X + 17, Control.SecondEnemy.EnemyPosition.Y - 15, 15, 15);
-                Canvas.SetBottom(Look, Control.SecondEnemy.EnemyPosition.Y);
-                Canvas.SetLeft(Look, Control.SecondEnemy.EnemyPosition.X);
+                BulletPosition = new Rect(Control.SecondEnemy.EnemyPosition.X + 17, Control.SecondEnemy.EnemyPosition.Y - 15, 13, 13);
+                Canvas.SetBottom(Look, BulletPosition.Y);
+                Canvas.SetLeft(Look, BulletPosition.X);
             }
         }
         protected new void Timer_Tick(object sender, EventArgs e)
@@ -71,11 +70,8 @@ namespace Runaway.Objects.GUI_Control.GUI_Objects
                 GameSounds.PlayHit();
 
                 Control.GamerShip.HP -= DamageControl.EnemyDamage;
-                //-------------------------------------------------------------------------------------Изменение полосы здоровья    ++++++      МУЗЫКА
                 if ((Control.GamerShip.HP) <= 0)
                 {
-                    Control.GamerShip.HP = 0;
-                    Control.GamerShip.HPLabel.Content = Control.GamerShip.HP;
                     var boom = new Image
                     {
                         Source = new BitmapImage(new Uri("/Images/bigbom.png", UriKind.Relative)),
@@ -93,6 +89,7 @@ namespace Runaway.Objects.GUI_Control.GUI_Objects
                     Control.StopWave();
 
 
+                    GameSounds.PlayFailedResultsSound();
 
                     MessageBox.Show("К сожалению, вы проиграли :c\nВ результате сражения вы ничего не получили", "YOU LOSE ^.^", MessageBoxButton.OK, MessageBoxImage.Error);
 
@@ -102,10 +99,8 @@ namespace Runaway.Objects.GUI_Control.GUI_Objects
                     };
                     win.ShowDialog();
 
-
                 }
                 else SpawnNew();
-                Control.GamerShip.HPLabel.Content = Control.GamerShip.HP;
             }
             else if (BulletPosition.IntersectsWith(Borders.BottomBorder) == true)
             {

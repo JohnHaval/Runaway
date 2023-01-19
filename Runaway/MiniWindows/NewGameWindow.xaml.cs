@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Runaway.Utilities;
+using Runaway.Objects;
 
 namespace Runaway.MiniWindows
 {
@@ -22,16 +24,32 @@ namespace Runaway.MiniWindows
         public NewGameWindow()
         {
             InitializeComponent();
+            NickName.Focus();
         }
 
         private void AcceptName_Click(object sender, RoutedEventArgs e)
         {
-
+            try
+            {
+                ButtonSounds.PlayClickSound();
+                GamerStats.NickName = NickName.Text;
+                DialogResult = true;
+                Close();
+            }
+            catch
+            {
+                MessageBox.Show("Необходимо ввести корректное имя!", "Некорректное имя для беглеца", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         private void Button_MouseEnter(object sender, MouseEventArgs e)
         {
+            ButtonSounds.PlaySelectSound();
+        }
 
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            ButtonSounds.PlayClickSound();
         }
     }
 }

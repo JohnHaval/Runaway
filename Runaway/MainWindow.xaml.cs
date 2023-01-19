@@ -1,4 +1,5 @@
-﻿using Runaway.View;
+﻿using Runaway.Utilities;
+using Runaway.View;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +25,9 @@ namespace Runaway
         public MainWindow()
         {
             InitializeComponent();
+
+            DataControl.LoadData();
+
             MainWin = this;
 
             Main = MainContent;
@@ -39,6 +43,11 @@ namespace Runaway
                 ((GameScreen)this.MainContent.Content).MainWin_KeyDown(sender, e);
             }
             catch { }
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            DataControl.SaveData();
         }
     }
 }

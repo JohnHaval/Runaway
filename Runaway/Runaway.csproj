@@ -98,6 +98,7 @@
     <Compile Include="Objects\GUI Control\GUI Objects\Meteorit.cs" />
     <Compile Include="Objects\GUI Control\GUI Objects\Ship.cs" />
     <Compile Include="Objects\GUI Control\GUI Objects\ShipBullet.cs" />
+    <Compile Include="Objects\GUI Control\HPStateChanger.cs" />
     <Compile Include="Objects\GUI Control\WaveControl.cs" />
     <Compile Include="Objects\Gamer Control\Inventory.cs" />
     <Compile Include="Objects\Marketplace.cs" />

@@ -10,7 +10,7 @@
         SizeToContent="WidthAndHeight"
         AllowsTransparency="True"
         Background="Transparent"
-        WindowStartupLocation="CenterOwner">
+        WindowStartupLocation="CenterOwner" Closed="Window_Closed">
     <GroupBox HorizontalAlignment="Center" 
               VerticalAlignment="Center" 
               Width="200" 
@@ -65,16 +65,19 @@
                     FontSize="22" 
                     Margin="0,2,0,2"
                     
+                    IsDefault="True"
+                    
                     Click="AcceptName_Click" MouseEnter="Button_MouseEnter"/>
             
-            <Button Content="Отмена" 
+            <Button x:Name="Cancel" Content="Отмена" 
                     HorizontalAlignment="Center" 
                     Width="168" 
                     Background="#3F0023FF" 
                     Foreground="Black" 
                     FontFamily="Sitka Banner" 
                     FontSize="22" 
-                    MouseEnter="Button_MouseEnter"/>
+                    
+                    IsCancel="True"/>
         </StackPanel>
         
     </GroupBox>

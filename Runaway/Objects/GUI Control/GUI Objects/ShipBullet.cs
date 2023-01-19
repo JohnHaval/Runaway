@@ -50,15 +50,13 @@ namespace Runaway.Objects.GUI_Control.GUI_Objects
         {
             if (Control.FirstEnemy != null)
             {
-                if (BulletPosition.IntersectsWith(Control.FirstEnemy.EnemyPosition) == true && Control.FirstEnemy.HP != 0)
+                if (BulletPosition.IntersectsWith(Control.FirstEnemy.EnemyPosition) == true && Control.FirstEnemy.HP > 0)
                 {
                     GameSounds.PlayHit();
 
                     Control.FirstEnemy.HP -= ShipStats.WeaponDamage;
                     if (Control.FirstEnemy.HP <= 0)
                     {
-                        Control.FirstEnemy.HP = 0;
-                        Control.FirstEnemy.HPLine.Width = 0;
                         var boom = new Image
                         {
                             Source = new BitmapImage(new Uri("/Images/bigbom.png", UriKind.Relative)),
@@ -78,20 +76,16 @@ namespace Runaway.Objects.GUI_Control.GUI_Objects
 
                         GameField.Children.Remove(Look);
 
-                        if (Control.FirstEnemy.HP == 0 && Control.SecondEnemy.HP == 0)
+                        if (Control.FirstEnemy.HP <= 0 && Control.SecondEnemy.HP <= 0)
                         {
                             WaveEnd();
                         }
                     }
-                    else
-                    {
-                        ResetBullet();
-                    }
-                    Control.FirstEnemy.HPLabel.Content = Control.FirstEnemy.HP;
+                    ResetBullet();
                 }
 
 
-                if (BulletPosition.IntersectsWith(Control.SecondEnemy.EnemyPosition) == true && Control.SecondEnemy.HP != 0)
+                if (BulletPosition.IntersectsWith(Control.SecondEnemy.EnemyPosition) == true && Control.SecondEnemy.HP > 0)
                 {
                     GameSounds.PlayHit();
 
@@ -100,7 +94,6 @@ namespace Runaway.Objects.GUI_Control.GUI_Objects
                     if (Control.SecondEnemy.HP <= 0)
                     {
                         Control.SecondEnemy.HP = 0;
-                        Control.SecondEnemy.HPLine.Width = 0;
                         var boom = new Image
                         {
                             Source = new BitmapImage(new Uri("/Images/bigbom.png", UriKind.Relative)),
@@ -116,21 +109,17 @@ namespace Runaway.Objects.GUI_Control.GUI_Objects
 
                         Control.SecondEnemy.Stop();
 
-                        GameField.Children.Remove(Look);
-
                         GameField.Children.Remove(Control.SecondEnemy.Bullet.Look);
 
-                        if (Control.FirstEnemy.HP == 0 && Control.SecondEnemy.HP == 0)
+                        GameField.Children.Remove(Look);
+
+                        if (Control.FirstEnemy.HP <= 0 && Control.SecondEnemy.HP <= 0)
                         {
                             WaveEnd();
                         }
 
                     }
-                    else
-                    {
-                        ResetBullet();
-                    }
-                    Control.SecondEnemy.HPLabel.Content = Control.SecondEnemy.HP;
+                    ResetBullet();
                 }
                 else if (BulletPosition.IntersectsWith(Borders.TopBorder) == true)
                 {
@@ -142,15 +131,13 @@ namespace Runaway.Objects.GUI_Control.GUI_Objects
 
             if (Control.WaveBoss != null)
             {
-                if (BulletPosition.IntersectsWith(Control.WaveBoss.BossPosition) == true && Control.WaveBoss.HP != 0)
+                if (BulletPosition.IntersectsWith(Control.WaveBoss.BossPosition) == true && Control.WaveBoss.HP > 0)
                 {
                     GameSounds.PlayHit();
 
                     Control.WaveBoss.HP -= ShipStats.WeaponDamage;
                     if (Control.WaveBoss.HP <= 0)
                     {
-                        Control.WaveBoss.HP = 0;
-                        Control.WaveBoss.HPLine.Width = 0;
                         var boom = new Image
                         {
                             Source = new BitmapImage(new Uri("/Images/bigbom.png", UriKind.Relative)),
@@ -168,15 +155,9 @@ namespace Runaway.Objects.GUI_Control.GUI_Objects
 
                         GameField.Children.Remove(Control.WaveBoss.Bullet.Look);
 
-                        GameField.Children.Remove(Look);
-
                         WaveEnd();
                     }
-                    else
-                    {
-                        ResetBullet();
-                    }
-                    Control.WaveBoss.HPLabel.Content = Control.WaveBoss.HP;
+                    ResetBullet();
                 }
                 else if (BulletPosition.IntersectsWith(Borders.TopBorder) == true)
                 {
@@ -189,9 +170,11 @@ namespace Runaway.Objects.GUI_Control.GUI_Objects
         {
             Control.StopWave();
 
+            GameSounds.PlayWaveResultsSound();
+
             Inventory.GetWinItems();
 
-            Objects.GamerStats.WaveState++;
+            GamerStats.WaveState++;
 
 
             MiniWindows.EndGameWindow win = new MiniWindows.EndGameWindow(false)
@@ -202,6 +185,7 @@ namespace Runaway.Objects.GUI_Control.GUI_Objects
         }
         public void Fire()
         {
+            GameSounds.PlayFire();
             SpawnNew();
             Start();
         }

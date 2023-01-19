@@ -15,8 +15,10 @@ namespace Runaway.Objects.GUI_Control
 {
     public class Ship : Base
     {
-        public Rect ShipPosition = new Rect(371, 30, 50, 50);
-        public long HP { get; set; }
+        private long _hp;
+
+        public Rect ShipPosition = new Rect(371, 30, 40, 30);
+        public long HP { get => _hp; set { HPStateChanger.HPChanged(this, value); _hp = value; } }
         public Rectangle HPLine { get; set; }
         public Label HPLabel { get; set; }
 
@@ -26,7 +28,7 @@ namespace Runaway.Objects.GUI_Control
 
         public Ship() : base()
         {
-            HP = ShipStats.HP;
+            _hp = ShipStats.HP;
 
             HPLabel = new Label()
             {
@@ -60,10 +62,9 @@ namespace Runaway.Objects.GUI_Control
                 Height = 50,
                 Width = 50,
                 Stretch = Stretch.Fill,
-                RenderTransformOrigin = new Point(0.434, 0.408),
             };
-            Canvas.SetLeft(Look, 371);
-            Canvas.SetBottom(Look, 30);
+            Canvas.SetLeft(Look, ShipPosition.X);
+            Canvas.SetBottom(Look, ShipPosition.Y);
         }
         public void Fire()
         {
@@ -77,7 +78,7 @@ namespace Runaway.Objects.GUI_Control
         }
         public new void Stop()
         {
-            if (Bullet != null) Bullet.Stop();
+            if (Bullet != null) Bullet.Stop();            
         }
     }
 }

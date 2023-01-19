@@ -29,9 +29,10 @@ namespace Runaway.MiniWindows
                 NextWave.Content = "Повторить";
             }
         }
-
+        bool IsNext;
         private void NextWave_Click(object sender, RoutedEventArgs e)
         {
+            IsNext = true;
             ButtonSounds.PlayClickSound();
             MainWindow.Main.Content = new View.GameScreen();
             Close();
@@ -42,11 +43,13 @@ namespace Runaway.MiniWindows
             ButtonSounds.PlaySelectSound();
         }
 
-        private void BackToMenu_Click(object sender, RoutedEventArgs e)
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            ButtonSounds.PlayClickSound();
-            MainWindow.Main.Content = new View.MainScreen();
-            Close();
+            if (!IsNext)
+            {
+                ButtonSounds.PlayClickSound();
+                MainWindow.Main.Content = new View.MainScreen();
+            }
         }
     }
 }

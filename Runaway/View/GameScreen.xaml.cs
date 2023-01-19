@@ -15,6 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Xml.Linq;
+using Runaway.Utilities;
 
 namespace Runaway.View
 {
@@ -25,33 +26,41 @@ namespace Runaway.View
     {
         public GameScreen()
         {
-            InitializeComponent();
-            GameField = null;
+            InitializeComponent();            
+
             GameField = MainGameField;
-            if (GamerStats.WaveState % 5 != 0) Control.RaidWaveField();
-            else Control.BossWaveField();            
+
+            if (GamerStats.WaveState % 5 != 0)
+            {
+                Music.PlayRaidSound();
+                Control.RaidWaveField();
+            }
+            else
+            {
+                Music.PlayBossSound();
+                Control.BossWaveField();
+            }
         }
 
         public static Canvas GameField;
 
         public static bool IsEndWave = false;
         WaveControl Control = new WaveControl();
-        public bool IsPause = false;
         public void MainWin_KeyDown(object sender, KeyEventArgs e)
         {
             if (!IsEndWave)
             {
                 if (e.Key == Key.Left)
                 {
-                    Control.GamerShip.ShipPosition.X -= 10;
+                    Control.GamerShip.ShipPosition.X -= ShipStats.ShipSpeed;
                     if (Control.GamerShip.ShipPosition.X <= 0) Control.GamerShip.ShipPosition.X = 744;
-                    else Canvas.SetLeft(Control.GamerShip.Look, Control.GamerShip.ShipPosition.X);
+                    Canvas.SetLeft(Control.GamerShip.Look, Control.GamerShip.ShipPosition.X);
                 }
                 if (e.Key == Key.Right)
                 {
-                    Control.GamerShip.ShipPosition.X += 10;
+                    Control.GamerShip.ShipPosition.X += ShipStats.ShipSpeed;
                     if (Control.GamerShip.ShipPosition.X >= 744) Control.GamerShip.ShipPosition.X = 0;
-                    else Canvas.SetLeft(Control.GamerShip.Look, Control.GamerShip.ShipPosition.X);
+                    Canvas.SetLeft(Control.GamerShip.Look, Control.GamerShip.ShipPosition.X);
                 }
                 if (e.Key == Key.Up)
                 {
@@ -60,7 +69,6 @@ namespace Runaway.View
                 if (e.Key == Key.Escape)
                 {
                     Control.StopWave();
-                    IsPause = true;
                     MiniWindows.MenuPauseWindow win = new MiniWindows.MenuPauseWindow(Control)
                     {
                         Owner = MainWindow.MainWin

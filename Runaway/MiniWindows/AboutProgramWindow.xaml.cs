@@ -28,6 +28,7 @@ namespace Runaway
 
         private void Window_Closed(object sender, EventArgs e)
         {
+            ButtonSounds.PlayClickSound();
             Music.PlayMenuSound();
         }
     }

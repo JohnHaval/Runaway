@@ -15,8 +15,9 @@ namespace Runaway.Objects.GUI_Control
 {
     public class Boss : Base
     {
+        private long _hp;
         public Rect BossPosition = new Rect(283, 320, 215, 144);
-        public long HP { get; set; }
+        public long HP { get => _hp; set { HPStateChanger.HPChanged(this, value); _hp = value; } }
         public Rectangle HPLine { get; set; }
         public Label HPLabel { get; private set; }
         public bool IsRightWay { get; set; }
@@ -30,9 +31,8 @@ namespace Runaway.Objects.GUI_Control
 
 
 
-            HP = HPControl.EnemyHP;
+            _hp = HPControl.BossHP;
 
-            Timer.Tick += Timer_Tick;
 
 
             Speed = SpeedControl.BossSpeed;
@@ -40,7 +40,7 @@ namespace Runaway.Objects.GUI_Control
 
             HPLabel = new Label()
             {
-                Content = HPControl.EnemyHP,
+                Content = HPControl.BossHP,
                 Width = 784,
                 Height = 28,
                 Background = null,
@@ -78,10 +78,10 @@ namespace Runaway.Objects.GUI_Control
 
         private void BossMove()
         {
-            if (IsRightWay == true) Canvas.SetLeft(Look, BossPosition.X += 1);
-            else if (IsRightWay == false) Canvas.SetLeft(Look, BossPosition.X -= 1);
-            if (BossPosition.X == 0) IsRightWay = true;
-            else if (BossPosition.X == 565) IsRightWay = false;
+            if (IsRightWay == true) Canvas.SetLeft(Look, BossPosition.X += 5);
+            else if (IsRightWay == false) Canvas.SetLeft(Look, BossPosition.X -= 5);
+            if (BossPosition.X <= 0) IsRightWay = true;
+            else if (BossPosition.X >= 565) IsRightWay = false;
         }
 
 

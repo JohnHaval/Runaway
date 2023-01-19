@@ -67,11 +67,17 @@
             <ImageBrush ImageSource="/Images/mainmenu.jpg"/>
     
         </Grid.Background>
-        
+
+        <Label x:Name="GamerNickName" 
+               Content="*NoName*"
+               Foreground="Yellow"
+               FontSize="30" 
+               Margin ="0,55,0,0" VerticalAlignment="Top"/>
+
         <Label x:Name="Runaway" 
                Content="Беглец" 
                Foreground="Red"
-               FontSize="60"/>
+               FontSize="60" Margin="0,-30,0,0"/>
         
         <Label x:Name="WaveCount" 
                Content="Волна:1" 

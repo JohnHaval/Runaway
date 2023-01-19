@@ -9,7 +9,7 @@
         SizeToContent="WidthAndHeight"
         AllowsTransparency="True"
         Background="Transparent"
-        WindowStartupLocation="CenterOwner">
+        WindowStartupLocation="CenterOwner" Closing="Window_Closing">
     
     <GroupBox HorizontalAlignment="Center" 
               VerticalAlignment="Center" 
@@ -51,6 +51,8 @@
                     FontFamily="Sitka Banner" 
                     FontSize="22" 
                     
+                    IsDefault="True"
+                    
                     Click="Continue_Click" 
                     MouseEnter="Button_MouseEnter"/>
             <Button x:Name="BackToMenu" 
@@ -63,8 +65,8 @@
                     Background="#3F0023FF" 
                     FontFamily="Sitka Banner" 
                     FontSize="22" 
+                    IsCancel="True"
                     
-                    Click="BackToMenu_Click" 
                     MouseEnter="Button_MouseEnter"/>
         </Grid>
     </GroupBox>

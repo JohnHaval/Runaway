@@ -12,6 +12,7 @@ namespace Runaway.Objects
         public static long WeaponDamageCost { get => 3000 * ShipStats.LvlWeaponDamage; }
         public static long BulletSpeedCost { get => 5000 * ShipStats.LvlBulletSpeed; }
         public static long FirePowerCost { get => 30000 * ShipStats.LvlFirePower; }
+        public static long ShipSpeedCost { get => 6000 * ShipStats.LvlShipSpeed; }
         public static long EnergyBlockCost { get => 300; }
         public static long UFODebrisCost { get => 500; }
         public static long MeteoritDebrisCost { get => 1000; }
