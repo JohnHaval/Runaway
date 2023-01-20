@@ -207,7 +207,12 @@
     <Resource Include="Sound\resultsofwave.wav" />
     <Resource Include="Sound\startfire.wav" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Images\music.png" />
+    <Resource Include="Images\musical-note.png" />
+    <Resource Include="Images\volume-mute.png" />
+    <Resource Include="Images\volume.png" />
+  </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
       <Visible>False</Visible>

@@ -10,6 +10,7 @@ namespace Runaway.Utilities
 {
     public static class ButtonSounds
     {
+        public static bool IsEnabled { get; set;} = true;
         private readonly static MediaPlayer SelectSound = new MediaPlayer();
         private readonly static MediaPlayer ClickSound = new MediaPlayer();
         private readonly static MediaPlayer BuySound = new MediaPlayer();
@@ -27,11 +28,13 @@ namespace Runaway.Utilities
 
         public static void PlayClickSound()
         {
+            if (!IsEnabled) return;
             StartAgain(ClickSound);
         }
 
         public static void PlaySelectSound()
         {
+            if (!IsEnabled) return;
             StartAgain(SelectSound);
         }
 
@@ -42,14 +45,17 @@ namespace Runaway.Utilities
         }
         public static void PlayBuySound()
         {
+            if (!IsEnabled) return;
             StartAgain(BuySound);
         }
         public static void PlaySellSound()
         {
+            if (!IsEnabled) return;
             StartAgain(SellSound);
         }
         public static void PlayCancelSound()
         {
+            if (!IsEnabled) return;
             StartAgain(CancelSound);
         }
     }

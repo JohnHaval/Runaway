@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Runaway.View"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="413" d:DesignWidth="800">
     <UserControl.Resources>
 
         <Style TargetType="Button">
@@ -59,13 +59,13 @@
         </Style>
 
     </UserControl.Resources>
-        
-    
+
+
     <Grid>
         <Grid.Background>
-    
+
             <ImageBrush ImageSource="/Images/mainmenu.jpg"/>
-    
+
         </Grid.Background>
 
         <Label x:Name="GamerNickName" 
@@ -78,7 +78,7 @@
                Content="Беглец" 
                Foreground="Red"
                FontSize="60" Margin="0,-30,0,0"/>
-        
+
         <Label x:Name="WaveCount" 
                Content="Волна:1" 
                Foreground="Green"
@@ -86,7 +86,7 @@
                FontSize="48">
 
         </Label>
-        
+
         <Button x:Name="AboutProgram" 
                 Width="50" 
                 Height="50" 
@@ -98,11 +98,61 @@
                 
                 MouseEnter="Button_MouseEnter" 
                 Click="AboutProgram_Click">
-            
+
             <Button.Content>
                 <Image Source="/Images/icon.jpg"/>
             </Button.Content>
-            
+
+        </Button>
+
+        <Button x:Name="MusicEnabler" 
+                Width="25" 
+                Height="25" 
+                Margin="0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top" 
+                BorderThickness="0" 
+                BorderBrush="Transparent"
+                
+                MouseEnter="Button_MouseEnter" 
+                Click="MusicEnabler_Click">
+
+            <Button.Content>
+                <Image Margin="5" Source="/Images/musical-note.png"/>
+            </Button.Content>
+
+        </Button>
+
+        <Button x:Name="SoundEnabler" 
+                Width="25" 
+                Height="25" 
+                Margin="30,0,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top" 
+                BorderThickness="0" 
+                BorderBrush="Transparent"
+                
+                MouseEnter="Button_MouseEnter" 
+                Click="SoundEnabler_Click">
+
+            <Button.Content>
+                <Image Margin="5" Source="/Images/volume.png"/>
+            </Button.Content>
+
+        </Button>
+
+        <Button x:Name="Plot" 
+                Margin="0,0,0,10"
+                Width="76"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Bottom" 
+                Content="Предыстория"
+                FontSize="10"
+                
+                MouseEnter="Button_MouseEnter" 
+                MouseLeave="Button_MouseLeave"
+                Click="Plot_Click">
+
         </Button>
 
         <StackPanel HorizontalAlignment="Center" 
@@ -149,5 +199,5 @@
         </StackPanel>
 
     </Grid>
-    
+
 </UserControl>

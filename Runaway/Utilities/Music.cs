@@ -9,6 +9,8 @@ namespace Runaway.Utilities
 {
     public static class Music
     {
+        private static bool _isEnabled = true;
+        public static bool IsEnabled { get => _isEnabled; set => EnableChange(value);}    
         private static readonly MediaPlayer PlayingMusic = new MediaPlayer();
         private static readonly Random Rnd = new Random();
         public static Enivironment EnivironmentState { get; private set; }
@@ -76,6 +78,7 @@ namespace Runaway.Utilities
 
         private static void Media_Ended(object sender, EventArgs e)
         {            
+            if (!IsEnabled) return;
             if (EnivironmentState == Enivironment.Menu) PlayingMusic.Open(PathsMusic[Rnd.Next(0, 4)]);
             else if (EnivironmentState == Enivironment.Marketplace) PlayingMusic.Open(PathsMusic[Rnd.Next(4, 7)]);
             else if (EnivironmentState == Enivironment.Raid) PlayingMusic.Open(PathsMusic[Rnd.Next(7, 14)]);
@@ -88,6 +91,7 @@ namespace Runaway.Utilities
 
         public static void PlayMenuSound()
         {
+            if (!IsEnabled) return;
             EnivironmentState = Enivironment.Menu;
             PlayingMusic.Open(PathsMusic[Rnd.Next(0)]);
             PlayingMusic.Play();
@@ -95,6 +99,7 @@ namespace Runaway.Utilities
 
         public static void PlayMarketplaceSound()
         {
+            if (!IsEnabled) return;
             EnivironmentState = Enivironment.Marketplace;
             PlayingMusic.Open(PathsMusic[Rnd.Next(4, 7)]);
             PlayingMusic.Play();
@@ -102,6 +107,7 @@ namespace Runaway.Utilities
 
         public static void PlayRaidSound()
         {
+            if (!IsEnabled) return;
             EnivironmentState = Enivironment.Raid;
             PlayingMusic.Open(PathsMusic[Rnd.Next(7, 14)]);
             PlayingMusic.Play();
@@ -109,6 +115,7 @@ namespace Runaway.Utilities
 
         public static void PlayBossSound()
         {
+            if (!IsEnabled) return;
             EnivironmentState = Enivironment.Boss;
             PlayingMusic.Open(PathsMusic[Rnd.Next(14, 21)]);
             PlayingMusic.Play();
@@ -116,9 +123,16 @@ namespace Runaway.Utilities
 
         public static void PlayFollowMeSound()
         {
+            if (!IsEnabled) return;
             EnivironmentState = Enivironment.FollowMe;
             PlayingMusic.Open(PathsMusic[21]);
             PlayingMusic.Play();
         }
+        private static void EnableChange(bool value)
+        {
+            if (value) PlayMenuSound();
+            else PlayingMusic.Stop();
+        }
+
     }
 }
