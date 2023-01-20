@@ -130,6 +130,7 @@ namespace Runaway.Utilities
         }
         private static void EnableChange(bool value)
         {
+            _isEnabled = value;
             if (value) PlayMenuSound();
             else PlayingMusic.Stop();
         }

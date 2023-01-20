@@ -164,8 +164,24 @@ namespace Runaway.View
 
         private void MusicEnabler_Click(object sender, RoutedEventArgs e)
         {
-            if (Music.IsEnabled) Music.IsEnabled = false;
-            else Music.IsEnabled = true;
+            if (Music.IsEnabled)
+            {
+                Music.IsEnabled = false;
+                MusicEnabler.Content = new Image()
+                {
+                    Margin = new Thickness(5),
+                    Source = new BitmapImage(new Uri("/Images/music.png", UriKind.Relative))
+                };
+            }
+            else
+            {
+                Music.IsEnabled = true;
+                MusicEnabler.Content = new Image()
+                {
+                    Margin = new Thickness(5),
+                    Source = new BitmapImage(new Uri("/Images/musical-note.png", UriKind.Relative))
+                };
+            }
         }
 
         private void SoundEnabler_Click(object sender, RoutedEventArgs e)
@@ -174,11 +190,21 @@ namespace Runaway.View
             {
                 ButtonSounds.IsEnabled =
                 GameSounds.IsEnabled = false;
+                SoundEnabler.Content = new Image()
+                {
+                    Margin = new Thickness(5),
+                    Source = new BitmapImage(new Uri("/Images/volume-mute.png", UriKind.Relative))
+                };
             }
             else
             {
                 ButtonSounds.IsEnabled =
                 GameSounds.IsEnabled = true;
+                SoundEnabler.Content = new Image()
+                {
+                    Margin = new Thickness(5),
+                    Source = new BitmapImage(new Uri("/Images/volume.png", UriKind.Relative))
+                };
             }
         }
     }
