@@ -86,8 +86,8 @@ namespace Runaway
                         MessageBoxButton.OK, MessageBoxImage.Information);
                 }
             }
-            else if (result == MessageBoxResult.Cancel) return false;
-            return true;
+            else if (result == MessageBoxResult.Cancel) return true;
+            return false;
         }
     }
 }
