@@ -69,8 +69,8 @@ namespace Runaway
         /// <returns>true - окно можно закрыть после вопроса, false - отменить закрытие окна</returns>
         private bool FixSave()
         {
-             MessageBoxResult result = MessageBox.Show("Во время сохранения произошла непредвиденная ошибка! " +
-                   "Хотите сохранить вручную? В случае отказа, данные будут утеряны!", "Ошибка сохранения", MessageBoxButton.YesNoCancel, MessageBoxImage.Warning);
+             MessageBoxResult result = MessageBox.Show("Сохранение не было произведено! " +
+                   "Хотите сохранить вручную? В случае отказа, данные будут утеряны!", "Отсутствие сохранения", MessageBoxButton.YesNoCancel, MessageBoxImage.Warning);
             if (result == MessageBoxResult.Yes)
             {
                 SaveFileDialog save = new SaveFileDialog

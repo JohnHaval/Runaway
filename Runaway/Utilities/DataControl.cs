@@ -23,7 +23,11 @@ namespace Runaway.Utilities
             {
                 LoadData(LastPath);
             }
-            catch { }
+            catch 
+            {
+                LastPath=string.Empty;
+                SaveLastPath();
+            }
         }
         public static void LoadData(string filePath)
         {
