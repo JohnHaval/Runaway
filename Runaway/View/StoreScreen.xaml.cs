@@ -91,12 +91,17 @@ namespace Runaway.View
             else
             {
                 ButtonSounds.PlayCancelSound();
+                MessageBox.Show("Для покупки улучшения, необходимо выбрать элемент из правого списка!", "Покупка", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
         
         private bool BuyObject(long storeObject)
         {
-            if (storeObject > Inventory.Wallet) return false;
+            if (storeObject > Inventory.Wallet)
+            {
+                MessageBox.Show("Недостаточно денег для совершения покупки улучшения!", "Покупка", MessageBoxButton.OK, MessageBoxImage.Error);
+                return false;
+            }
             Seller.Items.RemoveAt(Seller.SelectedIndex);
             Inventory.Wallet -= storeObject;
             runsinstore.Text = $"{Inventory.Wallet} Ru";
@@ -138,6 +143,7 @@ namespace Runaway.View
             else
             {
                 ButtonSounds.PlayCancelSound();
+                MessageBox.Show("Для продажи предмета из инвентаря, необходимо выбрать элемент из левого списка!", "Продажа", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
 
