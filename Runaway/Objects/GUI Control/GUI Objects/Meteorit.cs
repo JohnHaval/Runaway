@@ -85,7 +85,7 @@ namespace Runaway.Objects.GUI_Control
 
                     GameSounds.PlayFailedResultsSound();
 
-                    MessageBox.Show("К сожалению, вы проиграли :c\nВ результате сражения вы ничего не получили", "YOU LOSE ^.^", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("К сожалению, вы проиграли :c\nВ результате сражения вы ничего не получили", "Поражение ^.^", MessageBoxButton.OK, MessageBoxImage.Error);
 
 
                     MiniWindows.EndGameWindow win = new MiniWindows.EndGameWindow(false)
