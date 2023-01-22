@@ -11,7 +11,10 @@ using System.Xml.Linq;
 
 namespace Runaway.Objects.GUI_Control
 {
-    public abstract class Base
+	/// <summary>
+    /// Основоположник всех GUI игровых элементов.
+    /// </summary>
+    public class Base
     {
         public WaveControl Control = WaveControl.ThisWave;
         public Canvas GameField = GameScreen.GameField;

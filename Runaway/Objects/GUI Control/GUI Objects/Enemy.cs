@@ -94,7 +94,7 @@ namespace Runaway.Objects.GUI_Control
         }
         protected new void Timer_Tick(object sender, EventArgs e)
         {
-            base.Timer_Tick(sender, e);
+            base.Timer_Tick(sender, e);//Проверка состояния "стоп" для объекта
             EnemyMove();
         }
 

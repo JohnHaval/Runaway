@@ -26,7 +26,9 @@ namespace Runaway.Objects.GUI_Control
         }
 
         public static WaveControl ThisWave { get; set; }
-
+	/// <summary>
+    /// Инициализация простой волны
+    /// </summary>
         public void RaidWaveField()
         {
             InitializeRaidObjects();
@@ -44,7 +46,9 @@ namespace Runaway.Objects.GUI_Control
 
             StartWave();
         }
-
+		/// <summary>
+		/// Инициализация волны с боссом
+		/// </summary>
         public void BossWaveField()
         {
             InitializeBossObjects();
@@ -91,7 +95,7 @@ namespace Runaway.Objects.GUI_Control
             GameScreen.GameField.Children.Add(GamerShip.HPLabel);
         }
 
-
+		//Остановка/запуск игровых элементов
         public void StartWave()
         {
             GameScreen.IsEndWave = false;   

@@ -58,7 +58,7 @@ namespace Runaway.Utilities
             if(!IsEnabled) return;
             StartAgain(Failed);
         }
-
+		//Используется для запуска звука с позиции 0.
         public static void StartAgain(object sender)
         {
             ((MediaPlayer)sender).Position = TimeSpan.Zero;

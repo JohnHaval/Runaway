@@ -29,14 +29,9 @@ namespace Runaway.Objects.GUI_Control
 
             Timer.Tick += Timer_Tick;
 
-
-
             _hp = HPControl.BossHP;
 
-
-
             Speed = SpeedControl.BossSpeed;
-
 
             HPLabel = new Label()
             {
@@ -72,7 +67,7 @@ namespace Runaway.Objects.GUI_Control
         }
         protected new void Timer_Tick(object sender, EventArgs e)
         {
-            base.Timer_Tick(sender, e);
+            base.Timer_Tick(sender, e);//Проверка состояния "стоп" для объекта
             BossMove();
         }
 

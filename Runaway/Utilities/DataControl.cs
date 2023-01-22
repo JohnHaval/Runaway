@@ -12,6 +12,7 @@ namespace Runaway.Utilities
     public static class DataControl
     {
         public static string LastPath { get; set; }
+        public static bool IsSaved { get; set; } = true;
         static DataControl()
         {
             LoadLastPath();
@@ -43,6 +44,7 @@ namespace Runaway.Utilities
             ShipStats.ShipSpeed = Convert.ToInt32(dataReader.ReadLine());
             dataReader.Close();
             SaveLastPath();
+            IsSaved = true;
         }
 
         public static void SaveData()
@@ -51,7 +53,10 @@ namespace Runaway.Utilities
             {
                 SaveData(LastPath);
             }
-            catch { }
+            catch 
+            {
+                IsSaved = false;
+            }
         }
 
         public static void SaveData(string filePath)
@@ -73,6 +78,7 @@ namespace Runaway.Utilities
             writer.WriteLine(ShipStats.ShipSpeed);
             writer.Close();
             SaveLastPath();
+            IsSaved = true;
         }
         public static void SaveLastPath()
         {

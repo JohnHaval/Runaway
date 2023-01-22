@@ -34,7 +34,7 @@ namespace Runaway.Objects
 
             int meteorit = 0;
             int meteoritChance = rnd.Next(1, 5);
-            if (meteoritChance == 3)
+            if (meteoritChance == 3)//шансы выпадения элементов в конце волны при победе
             {
                 meteorit = rnd.Next(1, 3);
                 UFOSlimeCount += meteorit;

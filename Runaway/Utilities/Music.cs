@@ -22,7 +22,7 @@ namespace Runaway.Utilities
             Boss,
             FollowMe
         }
-
+		//Массив путей к медиа файлам, чтобы открыть нужный относительно требования
         private readonly static  Uri[] PathsMusic =
         {
             new Uri(@"..\..\Music\Menu\Bossfight - Intro.mp3", UriKind.Relative),//0
@@ -75,11 +75,11 @@ namespace Runaway.Utilities
         {
             PlayingMusic.MediaEnded += Media_Ended;
         }
-
+		
         private static void Media_Ended(object sender, EventArgs e)
         {            
             if (!IsEnabled) return;
-            if (EnivironmentState == Enivironment.Menu) PlayingMusic.Open(PathsMusic[Rnd.Next(0, 4)]);
+            if (EnivironmentState == Enivironment.Menu) PlayingMusic.Open(PathsMusic[Rnd.Next(0, 4)]);//Случайное воспроизведение музыки, относительно текущего статуса демонстратора
             else if (EnivironmentState == Enivironment.Marketplace) PlayingMusic.Open(PathsMusic[Rnd.Next(4, 7)]);
             else if (EnivironmentState == Enivironment.Raid) PlayingMusic.Open(PathsMusic[Rnd.Next(7, 14)]);
             else if (EnivironmentState == Enivironment.Boss) PlayingMusic.Open(PathsMusic[Rnd.Next(14, 21)]);

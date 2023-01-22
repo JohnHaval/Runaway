@@ -8,6 +8,10 @@ using System.Threading.Tasks;
 
 namespace Runaway.Objects.GUI_Control
 {
+	/// <summary>
+    /// Меняет состояние GUI элементов в зависимости от состояния соответствующего им объекта.
+	/// Используется для изменения статуса HP на экране пользователя.
+    /// </summary>
     public static class HPStateChanger
     {        
         public static void HPChanged(Boss boss, long value)

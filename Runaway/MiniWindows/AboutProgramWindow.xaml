@@ -9,7 +9,7 @@
         Height="250" 
         Width="365" 
         ResizeMode="NoResize" 
-        WindowStartupLocation="CenterScreen" 
+        WindowStartupLocation="CenterOwner" 
         WindowStyle="ToolWindow" 
         Icon="/Images/icon.jpg" 
         Closed="Window_Closed">

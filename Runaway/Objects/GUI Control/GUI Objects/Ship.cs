@@ -68,12 +68,12 @@ namespace Runaway.Objects.GUI_Control
         }
         public void Fire()
         {
-            if (Bullet == null) Bullet = new ShipBullet();
+            if (Bullet == null) Bullet = new ShipBullet();//Проверка используется на случай первого появления объекта в памяти
             else if (Bullet.IsStopped) Bullet.Fire();
         }
         public new void Start()
         {
-            if (Bullet != null)
+            if (Bullet != null)//На случай стопа без экземпляра пули корабля
                 if (Bullet.IsStopped) Bullet.Start();
         }
         public new void Stop()

@@ -30,7 +30,10 @@ namespace Runaway.View
             InitializeComponent();
             GamerNickName.Content = $"{GamerStats.NickName}";
             WaveCount.Content = $"Волна:{GamerStats.WaveState}";
-            Music.PlayMenuSound();            
+            Music.PlayMenuSound();
+
+            SetSoundImage(ButtonSounds.IsEnabled);
+            SetMusicImage(Music.IsEnabled);                        
         }
         
         private void Button_MouseEnter(object sender, MouseEventArgs e)
@@ -167,20 +170,12 @@ namespace Runaway.View
             if (Music.IsEnabled)
             {
                 Music.IsEnabled = false;
-                MusicEnabler.Content = new Image()
-                {
-                    Margin = new Thickness(5),
-                    Source = new BitmapImage(new Uri("/Images/music.png", UriKind.Relative))
-                };
+                SetMusicImage(false);
             }
             else
             {
                 Music.IsEnabled = true;
-                MusicEnabler.Content = new Image()
-                {
-                    Margin = new Thickness(5),
-                    Source = new BitmapImage(new Uri("/Images/musical-note.png", UriKind.Relative))
-                };
+                SetMusicImage(true);
             }
         }
 
@@ -190,20 +185,51 @@ namespace Runaway.View
             {
                 ButtonSounds.IsEnabled =
                 GameSounds.IsEnabled = false;
+                SetSoundImage(false);
+            }
+            else
+            {
+                ButtonSounds.IsEnabled =
+                GameSounds.IsEnabled = true;
+                SetSoundImage(true);
+            }
+        }
+
+        private void SetSoundImage(bool isEnable)
+        {
+            if (isEnable)
+            {
+                SoundEnabler.Content = new Image()
+                {
+                    Margin = new Thickness(5),
+                    Source = new BitmapImage(new Uri("/Images/volume.png", UriKind.Relative))
+                };
+            }
+            else
+            {
                 SoundEnabler.Content = new Image()
                 {
                     Margin = new Thickness(5),
                     Source = new BitmapImage(new Uri("/Images/volume-mute.png", UriKind.Relative))
                 };
             }
-            else
+        }
+        private void SetMusicImage(bool isEnable)
+        {
+            if (isEnable)
             {
-                ButtonSounds.IsEnabled =
-                GameSounds.IsEnabled = true;
-                SoundEnabler.Content = new Image()
+                MusicEnabler.Content = new Image()
                 {
                     Margin = new Thickness(5),
-                    Source = new BitmapImage(new Uri("/Images/volume.png", UriKind.Relative))
+                    Source = new BitmapImage(new Uri("/Images/musical-note.png", UriKind.Relative))
+                };
+            }
+            else
+            {
+                MusicEnabler.Content = new Image()
+                {
+                    Margin = new Thickness(5),
+                    Source = new BitmapImage(new Uri("/Images/music.png", UriKind.Relative))
                 };
             }
         }
