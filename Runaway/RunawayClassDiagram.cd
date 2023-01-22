@@ -1,0 +1,248 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Runaway.App">
+    <Position X="5.75" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Runaway.MainWindow" BaseTypeListCollapsed="true">
+    <Position X="11.25" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAQAAAAAAAABAAAAAAAACAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>MainWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Runaway.AboutProgramWindow" BaseTypeListCollapsed="true">
+    <Position X="1.75" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>MiniWindows\AboutProgramWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Runaway.MiniWindows.EndGameWindow" BaseTypeListCollapsed="true">
+    <Position X="3.75" Y="13.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQCAAAAAAAAAAAAABAAAAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>MiniWindows\EndGameWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Runaway.MiniWindows.MenuPauseWindow" BaseTypeListCollapsed="true">
+    <Position X="11.25" Y="15" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQCAAAAAAAAAAAAgBAAAAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>MiniWindows\MenuPauseWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Runaway.MiniWindows.NewGameWindow" BaseTypeListCollapsed="true">
+    <Position X="9.25" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAEAAAAAAAAAAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>MiniWindows\NewGameWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Runaway.Objects.DamageControl">
+    <Position X="9.25" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Objects\Enemy Control\DamageControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Runaway.Objects.GamerStats">
+    <Position X="3.75" Y="15.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAAAAAAAAAAABAAAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>Objects\Gamer Control\GamerStats.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Runaway.Objects.Inventory">
+    <Position X="16.5" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAFAAACAAAAgABAAAAAAAAAACAAAAAAAAAAQAAABAA=</HashCode>
+      <FileName>Objects\Gamer Control\Inventory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Runaway.Objects.ShipStats">
+    <Position X="5.75" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAQBAAAQAEEAAAEAAAABAEAAQAAAAAAAAFAAAAAAAAA=</HashCode>
+      <FileName>Objects\Gamer Control\ShipStats.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Runaway.Objects.Marketplace">
+    <Position X="3.75" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAQQAAQAIAAAAAAAAABAAQAAAAQQQAQAAA=</HashCode>
+      <FileName>Objects\Marketplace.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Runaway.Objects.Enemy_Control.HPControl">
+    <Position X="1.75" Y="14.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Objects\Enemy Control\HPControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Runaway.Objects.Enemy_Control.SpeedControl">
+    <Position X="1.75" Y="15.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAgAAAAAAAAAAEAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Objects\Enemy Control\SpeedControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Runaway.Objects.GUI_Control.Borders">
+    <Position X="7.5" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Objects\GUI Control\Borders.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Runaway.Objects.GUI_Control.Base">
+    <Position X="7.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAEACAAAABAAAAAAAABAAEAEAAAIAAAAAAEAAA=</HashCode>
+      <FileName>Objects\GUI Control\GUI Objects\Base.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Runaway.Objects.GUI_Control.Boss">
+    <Position X="3.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAACAAEABAAAAAAAAgQAAAAAAAIAAACAAYAAQ=</HashCode>
+      <FileName>Objects\GUI Control\GUI Objects\Boss.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Runaway.Objects.GUI_Control.Enemy">
+    <Position X="7.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEEAACAAAABAAAAAAAAgQAAAAAAAIAQACAAYAQA=</HashCode>
+      <FileName>Objects\GUI Control\GUI Objects\Enemy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Runaway.Objects.GUI_Control.Meteorit">
+    <Position X="12.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAEAAABAABAABAAIAAAAAAAIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Objects\GUI Control\GUI Objects\Meteorit.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Runaway.Objects.GUI_Control.Ship">
+    <Position X="4.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAgQAAEAAAAIAAACAgYAAA=</HashCode>
+      <FileName>Objects\GUI Control\GUI Objects\Ship.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Runaway.Objects.GUI_Control.HPStateChanger">
+    <Position X="5.75" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Objects\GUI Control\HPStateChanger.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Runaway.Objects.GUI_Control.WaveControl">
+    <Position X="14.75" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AUCAAAAAAAEAAAgAAAEQAAAAAAAAAAAAAAAAAhIBQgA=</HashCode>
+      <FileName>Objects\GUI Control\WaveControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Runaway.Objects.GUI_Control.GUI_Objects.BossBullet">
+    <Position X="5.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAABAAAAAABAAACAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Objects\GUI Control\GUI Objects\BossBullet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Runaway.Objects.GUI_Control.GUI_Objects.EnemyBullet">
+    <Position X="10" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAABAABAAAAAABAAACAAAAAIAAAAAAAAAQA=</HashCode>
+      <FileName>Objects\GUI Control\GUI Objects\EnemyBullet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Runaway.Objects.GUI_Control.GUI_Objects.ShipBullet">
+    <Position X="10.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACABAQBAAAAAABAAACAEAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Objects\GUI Control\GUI Objects\ShipBullet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Runaway.Properties.Resources">
+    <Position X="11.25" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Runaway.Properties.Settings">
+    <Position X="7.5" Y="15.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Runaway.Utilities.ButtonSounds">
+    <Position X="13" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QEQAAAAAAAAABAAAAAEAAAIAAIABAACAAgAAAAAAIEA=</HashCode>
+      <FileName>Utilities\ButtonSounds.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Runaway.Utilities.DataControl">
+    <Position X="1.75" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAQAAAAAAAAAAgQAAAAAAAAAACgAAAAAAA=</HashCode>
+      <FileName>Utilities\DataControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Runaway.Utilities.GameSounds">
+    <Position X="16.5" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAQAAMAAAYCASAEAACAAhAAAAEAAAQ=</HashCode>
+      <FileName>Utilities\GameSounds.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Runaway.Utilities.Music">
+    <Position X="7.5" Y="11.25" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="Runaway.Utilities.Music.Enivironment" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Utilities\Music.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AQAgAAAAAIBAABAAAAEAAAAAAAAAAAABCAIAAAAABKA=</HashCode>
+      <FileName>Utilities\Music.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Runaway.View.GameScreen" BaseTypeListCollapsed="true">
+    <Position X="13" Y="14.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAEAAAAAAAAAAAAAEEAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>View\GameScreen.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Runaway.View.MainScreen" BaseTypeListCollapsed="true">
+    <Position X="9.25" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAQgAAAgIAAAAACFAAEAIAAAQAAAAQAABAAAAAAAAAg=</HashCode>
+      <FileName>View\MainScreen.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Runaway.View.StoreScreen" BaseTypeListCollapsed="true">
+    <Position X="14.75" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAIAAAAAAAAAAAABAAAAAQAAAAAAAQAAAIEA=</HashCode>
+      <FileName>View\StoreScreen.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
