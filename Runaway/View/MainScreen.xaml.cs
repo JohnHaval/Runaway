@@ -244,6 +244,7 @@ namespace Runaway.View
                 ShipStats.ResetShipStats();
                 Inventory.ResetInventory();
                 DataControl.ResetLastPath();
+                MainWindow.Main.Content = new MainScreen();
             }
         }
     }
