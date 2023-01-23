@@ -11,11 +11,7 @@ namespace Runaway.Objects
     {        
         static ShipStats()
         {
-            HP = 20;
-            WeaponDamage = 5;
-            BulletSpeed = 20;
-            FirePower = 1;
-            ShipSpeed = 1;
+            ResetShipStats();
         }
         public static long HP { get; set; }
         public static long LvlHP { get => (HP - 20) / 10 + 1; }        
@@ -31,6 +27,14 @@ namespace Runaway.Objects
         public static int ShipSpeed { get; set; }
         public static int LvlShipSpeed { get => Math.Abs(ShipSpeed - 1) / 1 + 1; }
         public static int MaxShipSpeed { get => 10; }
+        public static void ResetShipStats()
+        {
+            HP = 20;
+            WeaponDamage = 5;
+            BulletSpeed = 20;
+            FirePower = 1;
+            ShipSpeed = 1;
+        }
 
     }
 }

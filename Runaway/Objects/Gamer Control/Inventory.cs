@@ -16,6 +16,15 @@ namespace Runaway.Objects
         public static int UFOSlimeCount { get; set; }
         public static int MonolithPartCount { get; set; }
 
+        public static void ResetInventory()
+        {
+            Wallet = 0;
+            EnergyBlockCount = 0;
+            UFODebrisCount = 0;
+            MeteoritDebrisCount = 0;
+            UFOSlimeCount = 0;
+            MonolithPartCount = 0;
+        }
         static Random rnd;
         public static void GetWinItems()
         {

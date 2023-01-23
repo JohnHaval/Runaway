@@ -25,8 +25,7 @@ namespace Runaway.Utilities
             }
             catch 
             {
-                LastPath=string.Empty;
-                SaveLastPath();
+                ResetLastPath();
             }
         }
         public static void LoadData(string filePath)
@@ -99,6 +98,12 @@ namespace Runaway.Utilities
                 reader.Close();
             }
             catch { }
+        }
+        public static void ResetLastPath()
+        {
+            LastPath = string.Empty;
+            SaveLastPath();
+            IsSaved = true;
         }
     }
 }

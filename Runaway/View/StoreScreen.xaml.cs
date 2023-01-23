@@ -99,7 +99,7 @@ namespace Runaway.View
         {
             if (storeObject > Inventory.Wallet)
             {
-                MessageBox.Show("Недостаточно денег для совершения покупки улучшения!", "Покупка", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Недостаточно денег для совершения покупки улучшения!", "Неудачная покупка", MessageBoxButton.OK, MessageBoxImage.Error);
                 return false;
             }
             Seller.Items.RemoveAt(Seller.SelectedIndex);

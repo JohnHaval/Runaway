@@ -142,16 +142,25 @@
         </Button>
 
         <Button x:Name="Plot" 
-                Margin="0,0,0,5"
-                Width="76"
-                HorizontalAlignment="Center"
+                HorizontalAlignment="Right"
                 VerticalAlignment="Bottom" 
                 Content="Предыстория"
-                FontSize="10"
                 
                 MouseEnter="Button_MouseEnter" 
                 MouseLeave="Button_MouseLeave"
                 Click="Plot_Click">
+
+        </Button>
+
+        <Button x:Name="ResetGameProgress" 
+                HorizontalAlignment="Left"
+                VerticalAlignment="Bottom" 
+                Content="Сбросить прогресс"
+                Width="150"
+                
+                MouseEnter="Button_MouseEnter" 
+                MouseLeave="Button_MouseLeave"
+                Click="ResetGameProgress_Click">
 
         </Button>
 

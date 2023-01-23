@@ -233,5 +233,18 @@ namespace Runaway.View
                 };
             }
         }
+
+        private void ResetGameProgress_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult result = MessageBox.Show("Вы уверены, что хотите сбросить игровой прогресс до начального уровлня? Сохранение останется, но его придется загружать вручную.",
+                "Сброс прогресса", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+            if (result == MessageBoxResult.Yes)
+            {
+                GamerStats.ResetGamerStats();
+                ShipStats.ResetShipStats();
+                Inventory.ResetInventory();
+                DataControl.ResetLastPath();
+            }
+        }
     }
 }
