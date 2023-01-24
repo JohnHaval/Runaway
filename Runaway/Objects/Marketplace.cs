@@ -10,11 +10,11 @@
         public static long BulletSpeedCost { get => 10000 * ShipStats.LvlBulletSpeed * GetWaveUpPrice(); }
         public static long FirePowerCost { get => 15000 * ShipStats.LvlFirePower * GetWaveUpPrice(); }
         public static long ShipSpeedCost { get => 15000 * ShipStats.LvlShipSpeed * GetWaveUpPrice(); }
-        public static long EnergyBlockCost { get => 100 * GetRatioAfterBoss(); }
-        public static long UFODebrisCost { get => 200 * GetRatioAfterBoss(); }
-        public static long MeteoritDebrisCost { get => 1000 * GetRatioAfterBoss(); }
-        public static long UFOSlimeCost { get => 2000 * GetRatioAfterBoss(); }
-        public static long MonolithPartCost { get => 5000 * GetRatioAfterBoss(); }
+        public static long EnergyBlockCost { get => 100 * GetWaveUpPrice(); }
+        public static long UFODebrisCost { get => 200 * GetWaveUpPrice(); }
+        public static long MeteoritDebrisCost { get => 1000 * GetWaveUpPrice(); }
+        public static long UFOSlimeCost { get => 2000 * GetWaveUpPrice(); }
+        public static long MonolithPartCost { get => 5000 * GetWaveUpPrice(); }
         private static long GetWaveUpPrice()
         {
             long waveUpPrice = 1, tempPrice = GetRatioAfterBoss();
