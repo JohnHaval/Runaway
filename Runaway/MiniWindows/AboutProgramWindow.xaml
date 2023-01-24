@@ -38,27 +38,27 @@
                FontSize="20"
                HorizontalAlignment="Left" 
                VerticalAlignment="Bottom" 
-               Foreground="DarkMagenta" 
+               Foreground="Black" 
                Margin="0,0,0,53"/>
 
         <Label Content="Hapro Bishop" 
                FontSize="20" 
                HorizontalAlignment="Right" 
                VerticalAlignment="Bottom"  
-               Foreground="DarkMagenta" 
+               Foreground="Black" 
                Margin="0,0,0,52"/>
 
         <Label Content="(Лопаткин Сергей ИСП-41)" 
                FontSize="20" 
                HorizontalAlignment="Center" 
                VerticalAlignment="Bottom" 
-               Foreground="DarkMagenta" 
+               Foreground="Black" 
                Margin="0,0,0,14"/>
 
         <Label Content="Ver.1.1" 
                FontSize="11" 
                HorizontalAlignment="Right" 
                VerticalAlignment="Bottom"  
-               Foreground="DarkMagenta"/>
+               Foreground="Black"/>
     </Grid>
 </Window>
