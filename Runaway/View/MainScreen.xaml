@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Runaway.View"
              mc:Ignorable="d" 
-             d:DesignHeight="413" d:DesignWidth="800">
+             d:DesignHeight="413" d:DesignWidth="800" Background="Black">
     <UserControl.Resources>
 
         <Style TargetType="Button">
@@ -66,7 +66,7 @@
     <Grid>
         <Grid.Background>
 
-            <ImageBrush ImageSource="/Images/mainmenu.jpg"/>
+            <ImageBrush Opacity="0.9" ImageSource="/Images/mainmenu.jpg"/>
 
         </Grid.Background>
 
