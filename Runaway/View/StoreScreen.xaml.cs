@@ -44,7 +44,7 @@ namespace Runaway.View
         private void Button_MouseEnter(object sender, MouseEventArgs e)
         {
             ButtonSounds.PlaySelectSound();
-            Foreground = new SolidColorBrush(Colors.Black);
+            ((Button)sender).Foreground = new SolidColorBrush(Colors.Black);
         }
 
         private void BackToMenu_Click(object sender, RoutedEventArgs e)
@@ -158,7 +158,7 @@ namespace Runaway.View
 
         private void Button_MouseLeave(object sender, MouseEventArgs e)
         {
-            Foreground = new SolidColorBrush(Colors.White);
+            ((Button)sender).Foreground = new SolidColorBrush(Colors.White);
         }
     }
 }
