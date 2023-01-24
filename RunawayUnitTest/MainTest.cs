@@ -25,7 +25,7 @@ namespace RunawayUnitTest
             if (ShipStats.HP - DamageControl.BossDamage != 90) throw new Exception();
         }
         [TestMethod]
-        public void _3TestBossDamage()
+        public void _3TestMeteoritDamage()
         {
             ShipStats.HP = 150;
             if (ShipStats.HP - DamageControl.MeteoritDamage != 105) throw new Exception();
