@@ -113,8 +113,7 @@
                 Margin="0"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top" 
-                BorderThickness="0" 
-                BorderBrush="Transparent"
+                BorderBrush="Black"
                 
                 MouseEnter="Button_MouseEnter" 
                 Click="MusicEnabler_Click">
@@ -131,8 +130,7 @@
                 Margin="30,0,0,0"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top" 
-                BorderThickness="0" 
-                BorderBrush="Transparent"
+                BorderBrush="Black"
                 
                 MouseEnter="Button_MouseEnter" 
                 Click="SoundEnabler_Click">
