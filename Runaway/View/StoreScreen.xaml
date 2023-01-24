@@ -49,7 +49,8 @@
                 FontFamily="Segoe UI Black" 
                 
                 Click="BackToMenu_Click"  
-                MouseEnter="Button_MouseEnter">
+                MouseEnter="Button_MouseEnter" 
+                MouseLeave="Button_MouseLeave">
         </Button>
         <Button x:Name="Buy" Content="Купить" 
                 HorizontalAlignment="Left" VerticalAlignment="Bottom" 
@@ -59,7 +60,9 @@
                 Foreground="White"
                 FontFamily="Segoe UI Black" 
                 
-                Click="Buy_Click" MouseEnter="Button_MouseEnter">
+                Click="Buy_Click" 
+                MouseEnter="Button_MouseEnter"
+                MouseLeave="Button_MouseLeave">
         </Button>
         <Button x:Name="Sell" Content="Продать" IsDefault="True" 
                 HorizontalAlignment="Left" VerticalAlignment="Bottom" 
@@ -70,7 +73,8 @@
                 Background="#CC000000"
                 
                 Click="Sell_Click" 
-                MouseEnter="Button_MouseEnter">
+                MouseEnter="Button_MouseEnter"
+                MouseLeave="Button_MouseLeave">
         </Button>
         <TextBox x:Name="runsinstore" 
                  HorizontalAlignment="Left" 

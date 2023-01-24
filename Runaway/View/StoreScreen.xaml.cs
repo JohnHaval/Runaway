@@ -4,6 +4,7 @@ using System;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media;
 
 namespace Runaway.View
 {
@@ -43,6 +44,7 @@ namespace Runaway.View
         private void Button_MouseEnter(object sender, MouseEventArgs e)
         {
             ButtonSounds.PlaySelectSound();
+            Foreground = new SolidColorBrush(Colors.Black);
         }
 
         private void BackToMenu_Click(object sender, RoutedEventArgs e)
@@ -152,6 +154,11 @@ namespace Runaway.View
                 MessageBox.Show("Магазин недоступен. Необходимо пройти первую волну для калибровки вашего скилла.", "Внимание", MessageBoxButton.OK, MessageBoxImage.Warning);
                 MainWindow.Main.Content = new MainScreen();
             }
+        }
+
+        private void Button_MouseLeave(object sender, MouseEventArgs e)
+        {
+            Foreground = new SolidColorBrush(Colors.White);
         }
     }
 }
