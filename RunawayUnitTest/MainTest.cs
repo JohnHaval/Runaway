@@ -8,7 +8,7 @@ namespace RunawayUnitTest
     [TestClass]
     public class MainTest
     {
-        public MainTest() 
+        public MainTest()
         {
             GamerStats.WaveState = 15;
         }
@@ -31,7 +31,7 @@ namespace RunawayUnitTest
             if (ShipStats.HP - DamageControl.MeteoritDamage != 105) throw new Exception();
         }
         [TestMethod]
-        public void _4TestDestoroyedBossesCount() 
+        public void _4TestDestoroyedBossesCount()
         {
             if (GamerStats.DestroyedBosses != 2) throw new Exception();
         }
