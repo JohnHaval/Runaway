@@ -65,7 +65,7 @@ namespace Runaway.Objects.GUI_Control.GUI_Objects
 
                         GameSounds.PlayBoom();
 
-                        Control.FirstEnemy.Stop();
+                        Control.FirstEnemy.Destroy();
 
                         GameField.Children.Remove(Control.FirstEnemy.Bullet.Look);
 
@@ -102,7 +102,7 @@ namespace Runaway.Objects.GUI_Control.GUI_Objects
 
                         GameSounds.PlayBoom();
 
-                        Control.SecondEnemy.Stop();
+                        Control.SecondEnemy.Destroy();
 
                         GameField.Children.Remove(Control.SecondEnemy.Bullet.Look);
 
@@ -182,15 +182,16 @@ namespace Runaway.Objects.GUI_Control.GUI_Objects
         {
             GameSounds.PlayFire();
             SpawnNew();
+            GameField.Children.Add(Look);
             Start();
         }
         public new void Start()
         {
             if (!GameField.Children.Contains(Look))
             {
-                GameField.Children.Add(Look);
+                return;
             }
-            base.Start();
+            else base.Start();
         }
 
         public void ResetBullet()

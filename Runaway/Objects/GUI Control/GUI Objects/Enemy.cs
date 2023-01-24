@@ -18,6 +18,8 @@ namespace Runaway.Objects.GUI_Control
         public Label HPLabel { get; set; }
         public Rectangle HPLine { get; set; }
 
+        public bool IsDestroyed { get; private set; }
+
 
         public bool IsFirstEnemy { get; set; }
 
@@ -119,9 +121,15 @@ namespace Runaway.Objects.GUI_Control
 
         public new void Start()
         {
+            if (IsDestroyed) return;
             if (Bullet == null) Bullet = new EnemyBullet(IsFirstEnemy);
             Bullet.Start();
             base.Start();
+        }
+        public void Destroy()
+        {
+            IsDestroyed = true;
+            Stop();
         }
     }
 }
