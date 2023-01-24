@@ -1,19 +1,14 @@
 ﻿using Runaway.Objects.Enemy_Control;
 using Runaway.Utilities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Runaway.Objects.GUI_Control
 {
-	/// <summary>
+    /// <summary>
     /// Меняет состояние GUI элементов в зависимости от состояния соответствующего им объекта.
-	/// Используется для изменения статуса HP на экране пользователя.
+    /// Используется для изменения статуса HP на экране пользователя.
     /// </summary>
     public static class HPStateChanger
-    {        
+    {
         public static void HPChanged(Boss boss, long value)
         {
             GameSounds.PlayHit();
@@ -34,7 +29,7 @@ namespace Runaway.Objects.GUI_Control
             if (value > 0)
             {
                 ship.HPLabel.Content = value;
-                ship.HPLine.Width =  ship.HPLine.Width * value / ShipStats.HP;
+                ship.HPLine.Width = ship.HPLine.Width * value / ShipStats.HP;
             }
             else
             {

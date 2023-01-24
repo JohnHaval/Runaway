@@ -1,17 +1,11 @@
-﻿using Runaway.Objects.Enemy_Control;
-using Runaway.View;
+﻿using Runaway.View;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Threading;
-using System.Xml.Linq;
 
 namespace Runaway.Objects.GUI_Control
 {
-	/// <summary>
+    /// <summary>
     /// Основоположник всех GUI игровых элементов.
     /// </summary>
     public class Base
@@ -29,7 +23,7 @@ namespace Runaway.Objects.GUI_Control
         }
         protected void Timer_Tick(object sender, EventArgs e)
         {
-            if (IsStopped == true) Timer.IsEnabled = false;            
+            if (IsStopped == true) Timer.IsEnabled = false;
         }
 
         public void Start()

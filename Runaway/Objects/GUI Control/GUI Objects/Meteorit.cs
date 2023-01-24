@@ -1,17 +1,10 @@
 ﻿using Runaway.Objects.Enemy_Control;
+using Runaway.Utilities;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Media.Imaging;
 using System.Windows.Media;
-using System.Windows.Threading;
-using Runaway.View;
-using System.Xml.Linq;
-using Runaway.Utilities;
+using System.Windows.Media.Imaging;
 
 namespace Runaway.Objects.GUI_Control
 {
@@ -39,13 +32,13 @@ namespace Runaway.Objects.GUI_Control
         {
             int metx = rnd.Next(50, 734);
             RectYSpeed = rnd.Next(4, 15);
-            MeteoritPosition = new Rect(metx, 235, 33, 50);            
+            MeteoritPosition = new Rect(metx, 235, 33, 50);
             Canvas.SetBottom(Look, MeteoritPosition.Y - 5);
             Canvas.SetLeft(Look, MeteoritPosition.X + 1);
             Start();
         }
         protected new void Timer_Tick(object sender, EventArgs e)
-        {            
+        {
             base.Timer_Tick(sender, e);//Проверка состояния "стоп" для объекта
             MeteoritMove();
         }

@@ -1,15 +1,4 @@
 ﻿using Runaway.View;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Media.Imaging;
-using System.Windows.Media;
-using System.Windows.Shapes;
-using Runaway.Utilities;
 
 namespace Runaway.Objects.GUI_Control
 {
@@ -26,9 +15,9 @@ namespace Runaway.Objects.GUI_Control
         }
 
         public static WaveControl ThisWave { get; set; }
-	/// <summary>
-    /// Инициализация простой волны
-    /// </summary>
+        /// <summary>
+        /// Инициализация простой волны
+        /// </summary>
         public void RaidWaveField()
         {
             InitializeRaidObjects();
@@ -46,9 +35,9 @@ namespace Runaway.Objects.GUI_Control
 
             StartWave();
         }
-		/// <summary>
-		/// Инициализация волны с боссом
-		/// </summary>
+        /// <summary>
+        /// Инициализация волны с боссом
+        /// </summary>
         public void BossWaveField()
         {
             InitializeBossObjects();
@@ -95,10 +84,10 @@ namespace Runaway.Objects.GUI_Control
             GameScreen.GameField.Children.Add(GamerShip.HPLabel);
         }
 
-		//Остановка/запуск игровых элементов
+        //Остановка/запуск игровых элементов
         public void StartWave()
         {
-            GameScreen.IsEndWave = false;   
+            GameScreen.IsEndWave = false;
             Meteor.Start();
             GamerShip.Start();
             if (GamerStats.WaveState % 5 == 0) WaveBoss.Start();

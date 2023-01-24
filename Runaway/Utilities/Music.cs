@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Media;
 
 namespace Runaway.Utilities
@@ -10,7 +6,7 @@ namespace Runaway.Utilities
     public static class Music
     {
         private static bool _isEnabled = true;
-        public static bool IsEnabled { get => _isEnabled; set => EnableChange(value);}    
+        public static bool IsEnabled { get => _isEnabled; set => EnableChange(value); }
         private static readonly MediaPlayer PlayingMusic = new MediaPlayer();
         private static readonly Random Rnd = new Random();
         public static Enivironment EnivironmentState { get; private set; }
@@ -22,8 +18,8 @@ namespace Runaway.Utilities
             Boss,
             FollowMe
         }
-		//Массив путей к медиа файлам, чтобы открыть нужный относительно требования
-        private readonly static  Uri[] PathsMusic =
+        //Массив путей к медиа файлам, чтобы открыть нужный относительно требования
+        private readonly static Uri[] PathsMusic =
         {
             new Uri(@"..\..\Music\Menu\Bossfight - Intro.mp3", UriKind.Relative),//0
 
@@ -75,9 +71,9 @@ namespace Runaway.Utilities
         {
             PlayingMusic.MediaEnded += Media_Ended;
         }
-		
+
         private static void Media_Ended(object sender, EventArgs e)
-        {            
+        {
             if (!IsEnabled) return;
             if (EnivironmentState == Enivironment.Menu) PlayingMusic.Open(PathsMusic[Rnd.Next(0, 4)]);//Случайное воспроизведение музыки, относительно текущего статуса демонстратора
             else if (EnivironmentState == Enivironment.Marketplace) PlayingMusic.Open(PathsMusic[Rnd.Next(4, 7)]);

@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Runaway.Objects;
+using System;
 using System.IO;
-using Runaway.Objects;
-using System.Windows.Documents;
 
 namespace Runaway.Utilities
 {
@@ -23,7 +18,7 @@ namespace Runaway.Utilities
             {
                 LoadData(LastPath);
             }
-            catch 
+            catch
             {
                 ResetLastPath();
             }
@@ -56,7 +51,7 @@ namespace Runaway.Utilities
             {
                 SaveData(LastPath);
             }
-            catch 
+            catch
             {
                 IsSaved = false;
             }

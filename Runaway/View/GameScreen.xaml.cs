@@ -1,21 +1,8 @@
 ﻿using Runaway.Objects;
 using Runaway.Objects.GUI_Control;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using System.Xml.Linq;
 using Runaway.Utilities;
+using System.Windows.Controls;
+using System.Windows.Input;
 
 namespace Runaway.View
 {
@@ -26,7 +13,7 @@ namespace Runaway.View
     {
         public GameScreen()
         {
-            InitializeComponent();            
+            InitializeComponent();
 
             GameField = MainGameField;
 
@@ -53,13 +40,13 @@ namespace Runaway.View
                 if (e.Key == Key.Left)
                 {
                     Control.GamerShip.ShipPosition.X -= ShipStats.ShipSpeed;
-                    if (Control.GamerShip.ShipPosition.X <= 0) Control.GamerShip.ShipPosition.X = 744;
+                    if (Control.GamerShip.ShipPosition.X <= 0) Control.GamerShip.ShipPosition.X = 0;
                     Canvas.SetLeft(Control.GamerShip.Look, Control.GamerShip.ShipPosition.X);
                 }
                 if (e.Key == Key.Right)
                 {
                     Control.GamerShip.ShipPosition.X += ShipStats.ShipSpeed;
-                    if (Control.GamerShip.ShipPosition.X >= 744) Control.GamerShip.ShipPosition.X = 0;
+                    if (Control.GamerShip.ShipPosition.X >= 744) Control.GamerShip.ShipPosition.X = 744;
                     Canvas.SetLeft(Control.GamerShip.Look, Control.GamerShip.ShipPosition.X);
                 }
                 if (e.Key == Key.Up)
@@ -84,5 +71,5 @@ namespace Runaway.View
             Control.GamerShip.Fire();
         }
 
-    }        
+    }
 }

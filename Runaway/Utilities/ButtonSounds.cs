@@ -1,16 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Controls;
 using System.Windows.Media;
 
 namespace Runaway.Utilities
 {
     public static class ButtonSounds
     {
-        public static bool IsEnabled { get; set;} = true;
+        public static bool IsEnabled { get; set; } = true;
         private readonly static MediaPlayer SelectSound = new MediaPlayer();
         private readonly static MediaPlayer ClickSound = new MediaPlayer();
         private readonly static MediaPlayer BuySound = new MediaPlayer();
@@ -37,7 +32,7 @@ namespace Runaway.Utilities
             if (!IsEnabled) return;
             StartAgain(SelectSound);
         }
-		//Используется для запуска звука с позиции 0.
+        //Используется для запуска звука с позиции 0.
         public static void StartAgain(object sender)
         {
             ((MediaPlayer)sender).Position = TimeSpan.Zero;

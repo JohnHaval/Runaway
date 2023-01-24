@@ -1,10 +1,5 @@
-﻿using Runaway.Objects.Enemy_Control;
-using Runaway.Utilities;
+﻿using Runaway.Utilities;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -126,7 +121,7 @@ namespace Runaway.Objects.GUI_Control.GUI_Objects
                     ResetBullet();
                 }
             }
-          
+
 
 
             if (Control.WaveBoss != null)
@@ -165,7 +160,7 @@ namespace Runaway.Objects.GUI_Control.GUI_Objects
                 }
             }
 
-        } 
+        }
         public void WaveEnd()
         {
             Control.StopWave();

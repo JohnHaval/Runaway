@@ -29,6 +29,12 @@
             <Setter Property="VerticalAlignment" Value="Top"/>
 
         </Style>
+
+        <Style TargetType="Button">
+
+            <Setter Property="BorderBrush" Value="Black"/>
+
+        </Style>
         
     </Application.Resources>
 </Application>

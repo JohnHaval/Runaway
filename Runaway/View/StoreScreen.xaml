@@ -5,118 +5,97 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Runaway.View"
              mc:Ignorable="d" 
-             d:DesignHeight="413" d:DesignWidth="800" Loaded="UserControl_Loaded">
+             d:DesignHeight="413" d:DesignWidth="800" Loaded="UserControl_Loaded" Background="Black">
     <Grid x:Name="storeandupgrader">
         <Grid.Background>
 
-            <ImageBrush ImageSource="/Images/store.jpeg"/>
+            <ImageBrush Opacity="0.3" ImageSource="/Images/store.jpeg"/>
 
         </Grid.Background>
-        <GroupBox x:Name="InvShip" Header="Инвентарь корабля" Height="370" Width="392" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="{x:Null}" FontSize="22" FontFamily="Sylfaen">
-            <GroupBox.Foreground>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black" Offset="1"/>
-                    <GradientStop Color="Red" Offset="0.44"/>
-                </LinearGradientBrush>
-            </GroupBox.Foreground>
-            <GroupBox.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black" Offset="1"/>
-                    <GradientStop Color="#7FA200FF"/>
-                </LinearGradientBrush>
-            </GroupBox.Background>
-            <ListBox x:Name="Ship" Background="{x:Null}" Foreground="Red" FontSize="12" FontFamily="Segoe UI Black" FontWeight="Bold"/>
+        <GroupBox x:Name="InvShip" 
+                  Header="Инвентарь корабля" 
+                  Height="370" Width="392" 
+                  HorizontalAlignment="Left" 
+                  VerticalAlignment="Top" 
+                  BorderBrush="{x:Null}" 
+                  FontSize="22" 
+                  FontFamily="Sylfaen"
+                  Foreground="White"
+                  Background="#CC000000">
+
+            <ListBox x:Name="Ship" Background="{x:Null}" Foreground="White" FontSize="12" FontFamily="Segoe UI Black" FontWeight="Bold"/>
         </GroupBox>
-        <GroupBox x:Name="InvSeller" Header="Торговец" Height="370" Width="392" HorizontalAlignment="Right" VerticalAlignment="Top" BorderBrush="{x:Null}" FontSize="22" FontFamily="Sylfaen">
-            <GroupBox.Foreground>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black" Offset="1"/>
-                    <GradientStop Color="Red" Offset="0.44"/>
-                </LinearGradientBrush>
-            </GroupBox.Foreground>
-            <GroupBox.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black" Offset="1"/>
-                    <GradientStop Color="#7FA200FF"/>
-                </LinearGradientBrush>
-            </GroupBox.Background>
-            <ListBox x:Name="Seller" Background="{x:Null}" Foreground="Red" FontSize="12" FontFamily="Segoe UI Black" FontWeight="Bold"/>
+        <GroupBox x:Name="InvSeller" 
+                  Header="Торговец" 
+                  Height="370" Width="392" 
+                  HorizontalAlignment="Right" 
+                  VerticalAlignment="Top" 
+                  BorderBrush="{x:Null}" 
+                  FontSize="22" FontFamily="Sylfaen"
+                  Foreground="White"
+                  Background="#CC000000">
+            <ListBox x:Name="Seller" Background="{x:Null}" Foreground="White" FontSize="12" FontFamily="Segoe UI Black" FontWeight="Bold"/>
         </GroupBox>
-        <Button x:Name="BackToMenu" Content="Вернуться в меню" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,370,0,0" Height="36" Width="126" BorderBrush="#FF8B00FF" FontFamily="Segoe UI Black" Click="BackToMenu_Click"  MouseEnter="Button_MouseEnter">
-            <Button.Foreground>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black" Offset="1"/>
-                    <GradientStop Color="Red"/>
-                </LinearGradientBrush>
-            </Button.Foreground>
-            <Button.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#CC8B00FF" Offset="0.4"/>
-                    <GradientStop Color="#FF6400B8"/>
-                    <GradientStop Color="#FF8B00FF" Offset="0.603"/>
-                    <GradientStop Color="#FF6900C1" Offset="1"/>
-                </LinearGradientBrush>
-            </Button.Background>
+        <Button x:Name="BackToMenu" 
+                Content="Вернуться в меню" 
+                HorizontalAlignment="Left" 
+                VerticalAlignment="Bottom" 
+                Margin="20,0,0,3" 
+                Height="36" 
+                Width="126" 
+                BorderBrush="White" 
+                Background="#CC000000"
+                Foreground="White"
+                FontFamily="Segoe UI Black" 
+                
+                Click="BackToMenu_Click"  
+                MouseEnter="Button_MouseEnter">
         </Button>
-        <Button x:Name="Buy" Content="Купить" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="639,370,0,0" Height="36" Width="126" BorderBrush="#FF8B00FF" FontFamily="Segoe UI Black" Click="Buy_Click" MouseEnter="Button_MouseEnter">
-            <Button.Foreground>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black" Offset="1"/>
-                    <GradientStop Color="Red"/>
-                </LinearGradientBrush>
-            </Button.Foreground>
-            <Button.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#CC8B00FF" Offset="0.4"/>
-                    <GradientStop Color="#FF6400B8"/>
-                    <GradientStop Color="#FF8B00FF" Offset="0.603"/>
-                    <GradientStop Color="#FF6900C1" Offset="1"/>
-                </LinearGradientBrush>
-            </Button.Background>
+        <Button x:Name="Buy" Content="Купить" 
+                HorizontalAlignment="Left" VerticalAlignment="Bottom" 
+                Margin="639,370,0,3" Height="36" Width="126" 
+                BorderBrush="White" 
+                Background="#CC000000"
+                Foreground="White"
+                FontFamily="Segoe UI Black" 
+                
+                Click="Buy_Click" MouseEnter="Button_MouseEnter">
         </Button>
-        <Button x:Name="Sell" Content="Продать" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="508,370,0,0" Height="36" Width="126" BorderBrush="#FF8B00FF" FontFamily="Segoe UI Black" Click="Sell_Click" MouseEnter="Button_MouseEnter">
-            <Button.Foreground>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black" Offset="1"/>
-                    <GradientStop Color="Red"/>
-                </LinearGradientBrush>
-            </Button.Foreground>
-            <Button.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#CC8B00FF" Offset="0.4"/>
-                    <GradientStop Color="#FF6400B8"/>
-                    <GradientStop Color="#FF8B00FF" Offset="0.603"/>
-                    <GradientStop Color="#FF6900C1" Offset="1"/>
-                </LinearGradientBrush>
-            </Button.Background>
+        <Button x:Name="Sell" Content="Продать" IsDefault="True" 
+                HorizontalAlignment="Left" VerticalAlignment="Bottom" 
+                Margin="508,0,0,3" Height="36" 
+                Width="126" BorderBrush="White" 
+                FontFamily="Segoe UI Black" 
+                Foreground="White"
+                Background="#CC000000"
+                
+                Click="Sell_Click" 
+                MouseEnter="Button_MouseEnter">
         </Button>
-        <TextBox x:Name="runsinstore" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="301,370,0,0" Width="171" Height="36" BorderBrush="#FF8B00FF" Foreground="Red" IsReadOnly="True" SelectionBrush="{x:Null}" FontSize="22" FontFamily="Yu Gothic Medium" TextDecorations="{x:Null}" ToolTip="Runs - валюта, используемая на космических станциях." Cursor="Arrow">
-            <TextBox.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FF9700FF" Offset="0.5"/>
-                    <GradientStop Color="#FF320055"/>
-                    <GradientStop Color="#FF6500AB" Offset="0.3"/>
-                    <GradientStop Color="#FF7200C0" Offset="0.7"/>
-                    <GradientStop Color="#FF40006D" Offset="1"/>
-                </LinearGradientBrush>
-            </TextBox.Background>
+        <TextBox x:Name="runsinstore" 
+                 HorizontalAlignment="Left" 
+                 VerticalAlignment="Bottom" 
+                 Margin="301,0,0,3" 
+                 Width="171" Height="36" 
+                 BorderBrush="Black" Foreground="White" 
+                 Background="#CC000000"
+                 IsReadOnly="True" 
+                 SelectionBrush="{x:Null}" FontSize="22" 
+                 FontFamily="Yu Gothic Medium" 
+                 TextDecorations="{x:Null}" 
+                 ToolTip="Runs - валюта, используемая на космических станциях.">
         </TextBox>
-        <Label Content="У вас:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="189,370,0,0" Height="36" Width="112" FontSize="20" FontFamily="SimSun" BorderBrush="#FF8B00FF" Foreground="Red" FontWeight="Bold">
-            <Label.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FF9700FF" Offset="0.5"/>
-                    <GradientStop Color="#FF320055"/>
-                    <GradientStop Color="#FF6500AB" Offset="0.3"/>
-                    <GradientStop Color="#FF7200C0" Offset="0.7"/>
-                    <GradientStop Color="#FF40006D" Offset="1"/>
-                </LinearGradientBrush>
-            </Label.Background>
-
-            <Label.Effect>
-
-                <DropShadowEffect BlurRadius="0" ShadowDepth="0"/>
-
-            </Label.Effect>
+        <Label Content="У вас:" 
+               HorizontalAlignment="Left" 
+               VerticalAlignment="Bottom" 
+               VerticalContentAlignment="Center"
+               Margin="189,0,0,3" 
+               Height="36" Width="112" 
+               FontSize="20" 
+               FontFamily="SimSun" 
+               BorderBrush="White" 
+               Foreground="White" FontWeight="Bold"
+               Background="#CC000000" Style="{Binding}">
         </Label>
     </Grid>
 </UserControl>

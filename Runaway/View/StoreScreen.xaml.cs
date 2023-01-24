@@ -1,20 +1,9 @@
 ﻿using Runaway.Objects;
 using Runaway.Utilities;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Ink;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Runaway.View
 {
@@ -69,7 +58,7 @@ namespace Runaway.View
                 ButtonSounds.PlayBuySound();
                 if (Convert.ToString(Seller.SelectedItem) == $"Оружие {ShipStats.LvlWeaponDamage}ур.({Marketplace.WeaponDamageCost} Ru)({ShipStats.WeaponDamage}(+5) D)")
                 {
-                    if (BuyObject(Marketplace.WeaponDamageCost)) ShipStats.WeaponDamage += 5;                    
+                    if (BuyObject(Marketplace.WeaponDamageCost)) ShipStats.WeaponDamage += 5;
                 }
                 else if (Convert.ToString(Seller.SelectedItem) == $"Укрепление корабля {ShipStats.LvlHP}ур.({Marketplace.HPCost} Ru)({ShipStats.HP}(+10) HP)")
                 {
@@ -94,7 +83,7 @@ namespace Runaway.View
                 MessageBox.Show("Для покупки улучшения, необходимо выбрать элемент из правого списка!", "Покупка", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
-        
+
         private bool BuyObject(long storeObject)
         {
             if (storeObject > Inventory.Wallet)
@@ -149,7 +138,7 @@ namespace Runaway.View
 
         private void SellObject(long storeObject)
         {
-            Ship.Items.RemoveAt(Ship.SelectedIndex);            
+            Ship.Items.RemoveAt(Ship.SelectedIndex);
             Inventory.Wallet += storeObject;
             runsinstore.Text = $"{Inventory.Wallet} Ru";
         }

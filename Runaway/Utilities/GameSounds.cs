@@ -1,15 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Media;
 
 namespace Runaway.Utilities
 {
     public static class GameSounds
     {
-        public static bool IsEnabled { get; set;} = true;
+        public static bool IsEnabled { get; set; } = true;
         private readonly static MediaPlayer Boom = new MediaPlayer();
         private readonly static MediaPlayer Hit = new MediaPlayer();
         private readonly static MediaPlayer Fire = new MediaPlayer();
@@ -29,36 +25,36 @@ namespace Runaway.Utilities
 
         public static void PlayBoom()
         {
-            if(!IsEnabled) return;
+            if (!IsEnabled) return;
             StartAgain(Boom);
         }
 
         public static void PlayHit()
         {
-            if(!IsEnabled) return;
+            if (!IsEnabled) return;
             StartAgain(Hit);
         }
         public static void PlayFire()
         {
-            if(!IsEnabled) return;
+            if (!IsEnabled) return;
             StartAgain(Fire);
         }
         public static void PlayNewWaveSound()
         {
-            if(!IsEnabled) return;
+            if (!IsEnabled) return;
             StartAgain(NewWave);
         }
         public static void PlayWaveResultsSound()
         {
-            if(!IsEnabled) return;
+            if (!IsEnabled) return;
             StartAgain(WaveResults);
         }
         public static void PlayFailedResultsSound()
         {
-            if(!IsEnabled) return;
+            if (!IsEnabled) return;
             StartAgain(Failed);
         }
-		//Используется для запуска звука с позиции 0.
+        //Используется для запуска звука с позиции 0.
         public static void StartAgain(object sender)
         {
             ((MediaPlayer)sender).Position = TimeSpan.Zero;

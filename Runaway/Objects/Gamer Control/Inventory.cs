@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace Runaway.Objects
@@ -53,15 +49,21 @@ namespace Runaway.Objects
             int slimeChance = rnd.Next(1, 10);
             if (slimeChance == 5)
             {
-                slime = rnd.Next(1,3);
+                slime = rnd.Next(1, 3);
                 UFOSlimeCount += slime;
             }
 
             int monolith = 0;
             int monolithChance = rnd.Next(1, 20);
             if (monolithChance == 5)
-            {                
+            {
                 MonolithPartCount++;
+                monolith++;
+            }
+            if (GamerStats.WaveState % 5 == 0)
+            {
+                MonolithPartCount++;
+                monolith++;
             }
             MessageBox.Show($"Получено денег: {wallet} " +
             $"Ru\nЛут:\n-Получено энергоблоков: {energy}x\n" +

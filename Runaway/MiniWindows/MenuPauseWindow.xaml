@@ -16,22 +16,11 @@
               Width="200" 
               Header="Пауза" 
               FontSize="20" 
-              BorderBrush="Black" 
-              Height="146">
+              BorderBrush="Black"
+              FontWeight="Bold"
+              Height="146" Foreground="White">
         
-        <GroupBox.Foreground>
-            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                <GradientStop Color="Black" Offset="1"/>
-                <GradientStop Color="#FFB900FF" Offset="0.513"/>
-                <GradientStop Color="#FF6B0093" Offset="0.927"/>
-                <GradientStop Color="Black"/>
-                <GradientStop Color="#FF9100C8" Offset="0.117"/>
-                <GradientStop Color="#FF8C00C1" Offset="0.667"/>
-                <GradientStop Color="#FF9700D0" Offset="0.36"/>
-                <GradientStop Color="#FF7500A2" Offset="0.813"/>
-                <GradientStop Color="#FF9300CB" Offset="0.22"/>
-            </LinearGradientBrush>
-        </GroupBox.Foreground>
+       
         <GroupBox.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                 <GradientStop Color="#BF470000" Offset="0"/>

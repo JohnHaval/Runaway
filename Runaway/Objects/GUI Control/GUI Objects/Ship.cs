@@ -1,10 +1,5 @@
-﻿using Runaway.Objects.Enemy_Control;
-using Runaway.Objects.GUI_Control.GUI_Objects;
+﻿using Runaway.Objects.GUI_Control.GUI_Objects;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -23,7 +18,7 @@ namespace Runaway.Objects.GUI_Control
         public Label HPLabel { get; set; }
 
 
-        public ShipBullet Bullet { get; set; } 
+        public ShipBullet Bullet { get; set; }
 
 
         public Ship() : base()
@@ -46,7 +41,7 @@ namespace Runaway.Objects.GUI_Control
             Canvas.SetBottom(HPLabel, 0);
 
             HPLine = new Rectangle()
-            {                
+            {
                 Fill = Brushes.Green,
                 Width = 784,
                 Height = 28,
@@ -78,7 +73,7 @@ namespace Runaway.Objects.GUI_Control
         }
         public new void Stop()
         {
-            if (Bullet != null) Bullet.Stop();            
+            if (Bullet != null) Bullet.Stop();
         }
     }
 }

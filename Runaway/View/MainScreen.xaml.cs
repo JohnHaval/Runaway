@@ -1,22 +1,13 @@
-﻿using Runaway.Objects;
+﻿using Microsoft.Win32;
+using Runaway.MiniWindows;
+using Runaway.Objects;
 using Runaway.Utilities;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Media;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using Runaway.MiniWindows;
-using Microsoft.Win32;
 
 namespace Runaway.View
 {
@@ -26,16 +17,16 @@ namespace Runaway.View
     public partial class MainScreen : UserControl
     {
         public MainScreen()
-        {            
+        {
             InitializeComponent();
             GamerNickName.Content = $"{GamerStats.NickName}";
             WaveCount.Content = $"Волна:{GamerStats.WaveState}";
             Music.PlayMenuSound();
 
             SetSoundImage(ButtonSounds.IsEnabled);
-            SetMusicImage(Music.IsEnabled);                        
+            SetMusicImage(Music.IsEnabled);
         }
-        
+
         private void Button_MouseEnter(object sender, MouseEventArgs e)
         {
             ((Button)sender).Foreground = new SolidColorBrush(Colors.Black);
@@ -126,7 +117,7 @@ namespace Runaway.View
                 $"Скорость пули({ShipStats.LvlBulletSpeed} ур.): {ShipStats.BulletSpeed}\n" +
                 $"Мощность выстрела({ShipStats.LvlFirePower} ур.): {ShipStats.FirePower})\n" +
                 $"Волна: {GamerStats.WaveState}\n" +
-                $"Боссов побеждено: {GamerStats.DestroyedBosses}", 
+                $"Боссов побеждено: {GamerStats.DestroyedBosses}",
                 "Статистика",
                 MessageBoxButton.OK,
                 MessageBoxImage.Information);
@@ -162,7 +153,7 @@ namespace Runaway.View
                 "тяжелые чувства...\n" +
                 "   После успешного побега, попытки связаться с другими выжившими оставались безуспешными. На тот момент вас не покидало чувство " +
                 "ненависти и желание уничтожить каждого на своем пути. Вы решаетесь вернуться туда, где когда-то было так приятно, " +
-                "красиво, уютно, чтобы продемонстрировать гнев жителя планеты Руна...","Предыстория", MessageBoxButton.OK, MessageBoxImage.Information);
+                "красиво, уютно, чтобы продемонстрировать гнев жителя планеты Руна...", "Предыстория", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
         private void MusicEnabler_Click(object sender, RoutedEventArgs e)

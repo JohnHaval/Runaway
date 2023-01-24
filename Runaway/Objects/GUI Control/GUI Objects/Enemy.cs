@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Media.Imaging;
-using System.Windows.Media;
-using System.Windows.Controls;
-using System.Windows.Shapes;
-using Runaway.Objects.Enemy_Control;
+﻿using Runaway.Objects.Enemy_Control;
 using Runaway.Objects.GUI_Control.GUI_Objects;
+using System;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
 
 namespace Runaway.Objects.GUI_Control
 {
@@ -53,7 +49,7 @@ namespace Runaway.Objects.GUI_Control
                 Stroke = Brushes.Black,
                 StrokeThickness = 3,
             };
-            
+
 
             HPLabel = new Label
             {
@@ -78,7 +74,7 @@ namespace Runaway.Objects.GUI_Control
                 Canvas.SetTop(HPLine, 0);
                 Canvas.SetLeft(HPLine, 0);
                 Canvas.SetLeft(Look, 130);
-                Canvas.SetTop(Look, 110);                
+                Canvas.SetTop(Look, 110);
             }
             else
             {

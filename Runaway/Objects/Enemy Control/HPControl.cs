@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Runaway.Objects.Enemy_Control
+﻿namespace Runaway.Objects.Enemy_Control
 {
     public static class HPControl
     {

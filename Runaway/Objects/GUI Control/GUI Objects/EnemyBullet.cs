@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Media.Imaging;
-using System.Windows.Media;
-using System.Windows.Controls;
-using System.Xml.Linq;
+﻿using Runaway.Objects.Enemy_Control;
 using Runaway.Utilities;
-using Runaway.Objects.Enemy_Control;
+using System;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
 
 namespace Runaway.Objects.GUI_Control.GUI_Objects
 {
@@ -61,7 +56,7 @@ namespace Runaway.Objects.GUI_Control.GUI_Objects
         public void BulletMove()
         {
             Canvas.SetBottom(Look, BulletPosition.Y -= 4);
-			ObjectIntersects();
+            ObjectIntersects();
         }
         public void ObjectIntersects()
         {
@@ -105,7 +100,7 @@ namespace Runaway.Objects.GUI_Control.GUI_Objects
             else if (BulletPosition.IntersectsWith(Borders.BottomBorder) == true)
             {
                 SpawnNew();
-            }            
+            }
         }
     }
 }
