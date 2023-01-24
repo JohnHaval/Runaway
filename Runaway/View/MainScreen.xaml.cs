@@ -116,6 +116,7 @@ namespace Runaway.View
                 $"Оружие({ShipStats.LvlWeaponDamage} ур.): {ShipStats.WeaponDamage}\n" +
                 $"Скорость пули({ShipStats.LvlBulletSpeed} ур.): {ShipStats.BulletSpeed}\n" +
                 $"Мощность выстрела({ShipStats.LvlFirePower} ур.): {ShipStats.FirePower})\n" +
+                $"Скорость корабля({ShipStats.LvlShipSpeed} ур.): {ShipStats.ShipSpeed})\n" +
                 $"Волна: {GamerStats.WaveState}\n" +
                 $"Боссов побеждено: {GamerStats.DestroyedBosses}",
                 "Статистика",
